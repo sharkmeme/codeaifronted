@@ -3,6 +3,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { ContactForm } from "@/components/ContactForm";
 import { BunnyOrb } from "@/components/BunnyOrb";
 import { Link } from "react-router-dom";
+import Typewriter from "@/components/Typewriter";
 
 export default function Home() {
   const scrollToSection = (id: string) => {
@@ -81,7 +82,7 @@ export default function Home() {
             data-glitch="BUNNYCODE.AI"
             data-testid="text-hero-title"
           >
-            BUNNYCODE.AI
+            <Typewriter text="BUNNYCODE.AI" speed={80} pause={1200} />
           </h1>
           
           {/* Tagline */}
