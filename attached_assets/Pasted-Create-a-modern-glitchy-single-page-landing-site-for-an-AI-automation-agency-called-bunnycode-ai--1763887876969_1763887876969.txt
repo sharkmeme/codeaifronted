@@ -1,0 +1,96 @@
+Create a modern, glitchy, single‑page landing site for an AI automation agency called “bunnycode.ai”. The design should visually resemble the attached o.xyz hero: minimal, high‑contrast, futuristic, and mostly one full‑screen hero section with subtle noise and scanline effects.
+
+GENERAL STYLE
+
+Overall vibe: sci‑fi, cyberpunk, but clean and minimal.
+
+Background: very light gray/white with faint vertical lines, noise, and super subtle texture.
+
+Color palette: black, dark gray, white, with small accents of neon blue, cyan, magenta, and yellow (used mainly in glitch / chromatic‑aberration effects).
+
+Typography: bold, geometric sans‑serif for headings; simple sans‑serif for body text. Wide tracking (letter spacing) on main title.
+
+Use lots of white space and centered alignment.
+
+LAYOUT
+
+Full viewport hero (100vh).
+
+Top navigation bar:
+
+Very thin, minimal bar, fixed at top.
+
+Left: small text logo “bunnycode.ai”.
+
+Center: links “SERVICES”, “SHOWCASE”, “ABOUT”, “CONTACT”.
+
+Right: small pill button “GET AUTOMATED”.
+
+Center hero content:
+
+Huge text across the width: “BUNNYCODE.AI” in all caps, spanning almost the whole screen, similar scale to the o.xyz wordmark.
+
+Apply a glitch / chromatic‑aberration effect to this text (RGB split, a few offset shadows, slight horizontal distortion).
+
+Behind the text, show a large, faint circular shape with matrix‑style binary digits or code inside it, low opacity.
+
+Under the main title: short tagline like “AI‑NATIVE AUTOMATIONS FOR TEAMS THAT MOVE FAST.” in smaller uppercase text.
+
+Bottom area of hero:
+
+Centered row of grayscale client/partner logo placeholders. Use simple rectangular or abstract logos with text labels (e.g. “CLIENT 1”, “CLIENT 2”, etc.), not real brand assets.
+
+A tiny caption above this row: “TRUSTED BY TEAMS WORLDWIDE”.
+
+SECTIONS BELOW HERO (simple and minimal)
+Directly under the hero, create 3 slim sections on a light background, still in the same visual style:
+
+“What We Automate”
+
+Three columns/cards describing services like “Sales & Lead Workflows”, “Internal Ops & Reporting”, “Content & Outreach Systems”.
+
+Each card: subtle border, hover lift, tiny glitch line animation on hover.
+
+“How It Works”
+
+A horizontal 3‑step timeline: “01 / Audit”, “02 / Build”, “03 / Optimize”.
+
+Thin lines, small numbered labels, and short descriptions.
+
+“Get Started”
+
+Centered CTA block with heading: “Ship your first automation with bunnycode.ai”.
+
+Short sentence and a solid button “BOOK A CALL” plus a ghost button “VIEW SHOWCASE”.
+
+VISUAL EFFECTS & ANIMATION
+
+Add a gentle animated noise/scanline overlay across the hero (CSS only if possible).
+
+Subtle vertical line dividers in the background to mimic a screen.
+
+Slow, minimal glitch animation on the main “BUNNYCODE.AI” text: tiny horizontal shifts, clipped sections, or random small distortions every few seconds.
+
+Hover states:
+
+Nav links: slight letter‑spacing increase and faint color accent.
+
+Primary buttons: small scale‑up and glow shadow.
+
+FOOTER
+
+Very minimal footer, same background as page.
+
+Left: “© bunnycode.ai”.
+
+Right: small inline links “Privacy”, “Contact”.
+
+TECHNICAL REQUIREMENTS
+
+Use plain HTML, CSS, and a little JavaScript for the glitch/noise animations. No heavy frameworks.
+
+Fully responsive: hero text and layout must scale gracefully from large desktop down to mobile. On mobile, stack navigation and reduce the wordmark size but keep the glitch style.
+
+Code should be clean and well‑structured with classes that match the design intent (e.g. .hero, .glitch-title, .noise-overlay, .logo-row, .section-services).
+
+Make the final result look like a custom, premium landing page for a serious AI automation agency, with the hero visually inspired by the o.xyz screenshot but not copying it exactly.
