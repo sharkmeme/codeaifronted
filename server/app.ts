@@ -8,6 +8,7 @@ import express, {
 } from "express";
 
 import { registerRoutes } from "./routes";
+import leadsRoute from "./routes/leads";
 
 export function log(message: string, source = "express") {
   const formattedTime = new Date().toLocaleTimeString("en-US", {
@@ -63,6 +64,8 @@ app.use((req, res, next) => {
 
   next();
 });
+
+app.use("/api/leads", leadsRoute);
 
 export default async function runApp(
   setup: (app: Express, server: Server) => Promise<void>,

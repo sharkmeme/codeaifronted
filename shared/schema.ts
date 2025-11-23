@@ -21,8 +21,13 @@ export const leads = pgTable("leads", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   name: text("name").notNull(),
   email: text("email").notNull(),
+  phone: text("phone"),
+  socials: text("socials"),
+  projectType: text("project_type"),
+  description: text("description"),
+  extraInfo: text("extra_info"),
   company: text("company"),
-  message: text("message").notNull(),
+  message: text("message"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
