@@ -68,7 +68,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section - Minimal */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-4">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-2">
         {/* Visual effects scoped to hero */}
         <div className="noise-overlay" />
         <div className="vertical-lines" />
@@ -89,20 +89,20 @@ export default function Home() {
       </section>
 
       {/* Intro Section */}
-      <section id="intro" className="pt-10 pb-16 px-6 lg:px-8 relative z-10 bg-background">
+      <section id="intro" className="pt-9 pb-13 px-6 lg:px-8 relative z-10 bg-background">
         <div className="max-w-7xl mx-auto text-center">
           {/* Tagline */}
-          <p className="text-base sm:text-lg md:text-xl uppercase tracking-ultra-wide text-muted-foreground max-w-xl mx-auto mb-10 leading-snug" data-testid="text-tagline">
+          <p className="text-base sm:text-lg md:text-xl uppercase tracking-ultra-wide text-muted-foreground max-w-lg mx-auto mb-10 leading-snug" data-testid="text-tagline">
             AI-Native Automation That Moves Fast.
           </p>
 
           {/* Subheadline */}
-          <p className="text-sm sm:text-base text-muted-foreground font-medium max-w-xl mx-auto mb-10 leading-relaxed" data-testid="text-subheadline">
+          <p className="text-sm sm:text-base text-muted-foreground font-medium max-w-lg mx-auto mb-10 leading-relaxed" data-testid="text-subheadline">
             We build fully automated systems, AI content engines, and next-generation workflows for creators and businesses.
           </p>
           
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-10">
             <Link to="/get-automated" data-testid="link-hero-get-automated">
               <Button 
                 size="lg" 
@@ -125,12 +125,12 @@ export default function Home() {
           </div>
           
           {/* Client trust section */}
-          <div className="mt-8">
+          <div className="mt-4">
             <p className="text-[10px] uppercase tracking-ultra-wide text-muted-foreground mb-4" data-testid="text-trusted-caption">
               Trusted by forward-thinking creators and businesses
             </p>
             
-            <div className="marquee opacity-55">
+            <div className="marquee opacity-62" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
               <div className="marquee-content h-12 flex items-center justify-center">
                 {/* First set */}
                 {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
@@ -173,11 +173,11 @@ export default function Home() {
       <section id="services" className="py-20 px-6 lg:px-8 relative z-10 bg-neutral-50">
         <div className="max-w-7xl mx-auto">
           <div className="h-px bg-neutral-200 mb-12"></div>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-16" data-testid="heading-services">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-18" data-testid="heading-services">
             What We Automate
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 icon: Zap,
@@ -204,12 +204,12 @@ export default function Home() {
               return (
                 <div
                   key={service.title}
-                  className="service-card group border border-border/50 p-8 hover-elevate hover:border-primary/30 hover:shadow-md transition-all duration-300 relative overflow-visible"
+                  className="service-card group border border-border/50 p-8 hover-elevate hover:border-primary/30 hover:shadow-lg transition-all duration-300 relative overflow-visible"
                   data-testid={`card-service-${i + 1}`}
                 >
                   <div className="glitch-line" />
                   <div className="mb-4 text-primary">
-                    <IconComponent className="w-11 h-11" />
+                    <IconComponent className="w-12 h-12" />
                   </div>
                   <h3 className="font-heading font-bold text-xl mb-4 tracking-wide" data-testid={`heading-service-${i + 1}`}>
                     {service.title}
@@ -228,9 +228,9 @@ export default function Home() {
       <div className="h-px bg-neutral-200 my-20"></div>
 
       {/* Showcase Section */}
-      <section id="showcase" className="py-20 px-6 lg:px-8 relative z-10 bg-neutral-50">
+      <section id="showcase" className="py-17 px-6 lg:px-8 relative z-10 bg-neutral-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-20" data-testid="heading-showcase">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-24" data-testid="heading-showcase">
             Featured Work
           </h2>
           
@@ -274,7 +274,7 @@ export default function Home() {
               >
                 <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors" />
                 <div className="relative">
-                  <p className="text-[10px] uppercase tracking-ultra-wide text-blue-400 mb-3" data-testid={`text-showcase-category-${i + 1}`}>
+                  <p className="text-[10px] uppercase tracking-ultra-wide text-blue-500 mb-3" data-testid={`text-showcase-category-${i + 1}`}>
                     {project.category}
                   </p>
                   <h3 className="font-heading font-bold text-xl mb-2 tracking-wide" data-testid={`heading-showcase-${i + 1}`}>
@@ -294,13 +294,13 @@ export default function Home() {
       <div className="h-px bg-neutral-200 my-20"></div>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6 lg:px-8 relative z-10">
-        <div className="max-w-7xl mx-auto">
+      <section id="about" className="py-16 px-6 lg:px-8 relative z-10 bg-neutral-50">
+        <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide mb-4" data-testid="heading-about">
               Who We Are
             </h2>
-            <div className="h-1 w-16 bg-blue-500 rounded-full mx-auto mb-8"></div>
+            <div className="h-0.5 w-16 bg-blue-500/70 rounded-full mx-auto mb-8"></div>
             <div className="space-y-6 text-muted-foreground leading-relaxed max-w-3xl mx-auto">
               <p data-testid="text-about-1">
                 Bunnycode is an AI automation agency built for the modern era. We specialize in creating intelligent systems that work 24/7, eliminating repetitive tasks and amplifying human potential.
@@ -315,7 +315,7 @@ export default function Home() {
           </div>
             
           <div className="h-px bg-neutral-200 mb-12"></div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
             {[
               {
                 number: '01',
@@ -335,7 +335,7 @@ export default function Home() {
             ].map((step, i) => (
               <div key={step.number} className="border border-neutral-200 p-6 hover-elevate transition-all" data-testid={`step-${i + 1}`}>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full border-2 border-primary bg-background flex items-center justify-center flex-shrink-0">
+                  <div className="w-9 h-9 rounded-full border-2 border-primary bg-background flex items-center justify-center flex-shrink-0">
                     <span className="font-heading font-bold text-lg text-primary" data-testid={`text-step-number-${i + 1}`}>
                       {step.number}
                     </span>
@@ -356,12 +356,12 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <div className="h-px bg-neutral-200 my-20"></div>
+      <div className="h-px bg-neutral-200 my-16"></div>
 
       {/* Contact Section */}
-      <section id="contact" className="py-12 px-6 lg:px-8 relative z-10">
+      <section id="contact" className="py-10 px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-heading font-bold tracking-wide mb-6" data-testid="heading-cta">
               Ship Your First Automation
             </h2>
@@ -375,12 +375,12 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="pt-6 pb-8 px-6 lg:px-8 relative z-10">
-        <div className="h-px bg-neutral-200 mb-8"></div>
+      <footer className="pt-5 pb-7 px-6 lg:px-8 relative z-10">
+        <div className="h-px bg-gradient-to-r from-transparent via-neutral-300 to-transparent mb-8"></div>
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-start">
             <div>
-              <h3 className="font-heading font-bold text-lg mb-4" data-testid="heading-footer-brand">
+              <h3 className="font-heading font-bold text-lg mb-4 tracking-wide" data-testid="heading-footer-brand">
                 Bunnycode.ai
               </h3>
               <p className="text-sm text-muted-foreground" data-testid="text-footer-tagline">
@@ -389,7 +389,7 @@ export default function Home() {
             </div>
             
             <div>
-              <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4" data-testid="heading-footer-links">
+              <h4 className="font-heading font-semibold text-sm uppercase tracking-wide mb-4" data-testid="heading-footer-links">
                 Navigation
               </h4>
               <div className="flex flex-col gap-2">
@@ -425,7 +425,7 @@ export default function Home() {
             </div>
             
             <div>
-              <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4" data-testid="heading-footer-action">
+              <h4 className="font-heading font-semibold text-sm uppercase tracking-wide mb-4" data-testid="heading-footer-action">
                 Get Started
               </h4>
               <Link to="/get-automated" data-testid="link-footer-get-automated">

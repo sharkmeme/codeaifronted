@@ -135,7 +135,7 @@ export function ContactForm() {
         <Button
           type="submit"
           size="lg"
-          className="max-w-md mx-auto w-full text-sm uppercase tracking-wider py-2.5"
+          className="max-w-md mx-auto w-full text-sm uppercase tracking-wider py-2.5 bg-[#3f80f5] hover:bg-[#3069d5]"
           disabled={form.formState.isSubmitting}
           data-testid="button-submit-form"
         >
