@@ -79,7 +79,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto w-full text-center relative z-10">
           {/* Main glitch title */}
           <h1 
-            className="glitch-text font-heading font-bold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-extra-wide"
+            className="glitch-text font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-extra-wide"
             data-glitch="BUNNYCODE.AI"
             data-testid="text-hero-title"
           >
