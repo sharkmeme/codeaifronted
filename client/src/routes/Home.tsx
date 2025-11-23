@@ -89,15 +89,15 @@ export default function Home() {
       </section>
 
       {/* Intro Section */}
-      <section id="intro" className="pt-9 pb-13 px-6 lg:px-8 relative z-10 bg-background dark:bg-neutral-950">
+      <section id="intro" className="pt-24 pb-24 px-6 lg:px-8 relative z-10 bg-background dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto text-center">
           {/* Tagline */}
-          <p className="text-base sm:text-lg md:text-xl uppercase tracking-ultra-wide text-muted-foreground max-w-lg mx-auto mb-10 leading-snug" data-testid="text-tagline">
+          <p className="text-base sm:text-lg md:text-xl uppercase tracking-ultra-wide text-muted-foreground max-w-lg mx-auto mb-8 leading-snug" data-testid="text-tagline">
             AI-Native Automation That Moves Fast.
           </p>
 
           {/* Subheadline */}
-          <p className="text-sm sm:text-base text-muted-foreground font-medium max-w-lg mx-auto mb-10 leading-relaxed" data-testid="text-subheadline">
+          <p className="text-sm sm:text-base text-muted-foreground font-medium max-w-lg mx-auto mb-8 leading-relaxed" data-testid="text-subheadline">
             We build fully automated systems, AI content engines, and next-generation workflows for creators and businesses.
           </p>
           
@@ -167,13 +167,12 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <div className="h-px bg-neutral-200 dark:bg-neutral-700 mt-20 mb-0"></div>
+      <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-12"></div>
 
       {/* Services Section */}
-      <section id="services" className="pt-4 pb-20 px-6 lg:px-8 relative z-10 bg-neutral-50 dark:bg-neutral-950">
+      <section id="services" className="pt-24 pb-24 px-6 lg:px-8 relative z-10 bg-neutral-50 dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto">
-          <div className="h-px bg-neutral-200 dark:bg-neutral-700 mb-12"></div>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-18 dark:text-white dark:font-semibold" data-testid="heading-services">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-8 dark:text-white dark:font-semibold" data-testid="heading-services">
             What We Automate
           </h2>
           
@@ -225,12 +224,12 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-20"></div>
+      <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-12"></div>
 
       {/* Showcase Section */}
-      <section id="showcase" className="py-17 px-6 lg:px-8 relative z-10 bg-neutral-50 dark:bg-neutral-950">
+      <section id="showcase" className="pt-24 pb-24 px-6 lg:px-8 relative z-10 bg-neutral-50 dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-24" data-testid="heading-showcase">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-8" data-testid="heading-showcase">
             Featured Work
           </h2>
           
@@ -291,13 +290,13 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-20"></div>
+      <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-12"></div>
 
       {/* About Section */}
-      <section id="about" className="py-16 px-6 lg:px-8 relative z-10 bg-neutral-50 dark:bg-neutral-950">
+      <section id="about" className="pt-24 pb-24 px-6 lg:px-8 relative z-10 bg-neutral-50 dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide mb-4" data-testid="heading-about">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide mb-8" data-testid="heading-about">
               Who We Are
             </h2>
             <div className="h-0.5 w-16 bg-blue-500/70 rounded-full mx-auto mb-8"></div>
@@ -314,7 +313,7 @@ export default function Home() {
             </div>
           </div>
             
-          <div className="h-px bg-neutral-200 dark:bg-neutral-700 dark:opacity-70 mb-12"></div>
+          <div className="h-px bg-neutral-200 dark:bg-neutral-700 dark:opacity-70 my-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
             {[
               {
@@ -356,13 +355,13 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-16"></div>
+      <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-12"></div>
 
       {/* Contact Section */}
-      <section id="contact" className="py-10 px-6 lg:px-8 relative z-10 dark:bg-neutral-950">
+      <section id="contact" className="pt-24 pb-24 px-6 lg:px-8 relative z-10 dark:bg-neutral-950">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-5xl font-heading font-bold tracking-wide mb-6" data-testid="heading-cta">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold tracking-wide mb-8" data-testid="heading-cta">
               Ship Your First Automation
             </h2>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto" data-testid="text-cta">
@@ -375,7 +374,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="pt-5 pb-7 px-6 lg:px-8 relative z-10 dark:bg-neutral-950">
+      <footer className="pt-24 pb-24 px-6 lg:px-8 relative z-10 dark:bg-neutral-950">
         <div className="h-px bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent mb-8"></div>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-start">

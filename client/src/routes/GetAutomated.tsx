@@ -30,9 +30,9 @@ export default function GetAutomated() {
   }
 
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-900 flex justify-center p-6">
+    <div className="min-h-screen w-full bg-gradient-to-b from-white to-neutral-100 dark:from-neutral-950 dark:to-neutral-900 flex justify-center pt-24 pb-24 px-6">
       <div className="max-w-2xl w-full">
-        <h1 className="text-4xl font-extrabold text-center mb-10 text-neutral-900 dark:text-neutral-100">Get Automated</h1>
+        <h1 className="text-4xl font-extrabold text-center mb-8 text-neutral-900 dark:text-neutral-100">Get Automated</h1>
 
         <div className="rounded-2xl border border-neutral-200 dark:border-neutral-800 shadow-md bg-white dark:bg-neutral-950 p-10 space-y-8">
           {success ? (
