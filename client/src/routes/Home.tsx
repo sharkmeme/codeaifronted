@@ -13,7 +13,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 backdrop-blur-sm bg-background/80">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -166,9 +166,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-12"></div>
-
       {/* Services Section */}
       <section id="services" className="pt-24 pb-24 px-6 lg:px-8 relative z-10 bg-neutral-50 dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto">
@@ -222,9 +219,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Divider */}
-      <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-12"></div>
 
       {/* Showcase Section */}
       <section id="showcase" className="pt-24 pb-24 px-6 lg:px-8 relative z-10 bg-neutral-50 dark:bg-neutral-950">
@@ -289,9 +283,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Divider */}
-      <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-12"></div>
-
       {/* About Section */}
       <section id="about" className="pt-24 pb-24 px-6 lg:px-8 relative z-10 bg-neutral-50 dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4">
@@ -353,9 +344,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Divider */}
-      <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-12"></div>
 
       {/* Contact Section */}
       <section id="contact" className="pt-24 pb-24 px-6 lg:px-8 relative z-10 bg-background dark:bg-neutral-950">
