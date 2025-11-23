@@ -408,6 +408,9 @@
     position: relative;
     display: inline-block;
     animation: glitch-skew 3s infinite;
+    text-shadow:
+      1px 1px hsl(195 100% 50% / 0.4),
+      -1px -1px hsl(310 100% 60% / 0.4);
   }
 
   .glitch-text::before,
@@ -424,12 +427,14 @@
   .glitch-text::before {
     color: hsl(195 100% 55%);
     z-index: -1;
+    transform: translate(1px, -1px);
     animation: glitch-before 3s infinite;
   }
 
   .glitch-text::after {
     color: hsl(310 100% 60%);
     z-index: -2;
+    transform: translate(-1px, 1px);
     animation: glitch-after 3s infinite;
   }
 
