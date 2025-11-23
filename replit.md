@@ -58,21 +58,34 @@ Preferred communication style: Simple, everyday language.
 
 ### Data Storage
 
-**Database Setup**
-- Drizzle ORM configured for PostgreSQL (@neondatabase/serverless for serverless Postgres)
-- Schema-first approach with TypeScript types generated from Drizzle schemas
-- Zod integration via drizzle-zod for runtime validation
-- Database push workflow using `npm run db:push` for schema synchronization
+**Database Setup - Supabase Integration**
+- **Supabase** as the primary database (PostgreSQL-based with real-time capabilities)
+- Supabase client library (@supabase/supabase-js) for database operations
+- Credentials stored securely in Replit Secrets (SUPABASE_URL, SUPABASE_ANON_KEY)
+- Centralized client configuration in shared/supabase.ts
 
 **Current Schema**
-- **Users table**: UUID primary keys (auto-generated), username/password authentication fields
-- **Leads table**: Contact form submissions with name, email, company (optional), message, and timestamp
-- Schema located in shared/schema.ts for code sharing between client and server
+- **Leads table**: Contact form submissions with the following fields:
+  - id (bigserial, auto-generated primary key)
+  - name, email, phone (required text fields)
+  - socials (optional text field for social media handles)
+  - project_type (required - maps from projectType in frontend)
+  - description (required text field)
+  - extra_info (optional - maps from extraInfo in frontend)
+  - created_at (timestamp with timezone, auto-generated)
+- Row Level Security (RLS) enabled with public insert and read policies
 
 **Storage Pattern**
-- Interface-based storage abstraction (IStorage) for type-safe CRUD operations
-- DatabaseStorage class using Drizzle ORM for PostgreSQL operations
-- Lead management: createLead, getLeads, getLead methods for contact form functionality
+- Direct Supabase client usage via `supabase.from('leads').insert()`
+- Type-safe Lead type definition in shared/supabase.ts
+- API routes handle field name mapping (camelCase frontend → snake_case database)
+- Error handling for both Supabase-specific and general server errors
+
+**Supabase Features Available**
+- Real-time subscriptions for live data updates
+- Built-in authentication system (not yet implemented)
+- File storage capabilities (not yet implemented)
+- Row Level Security for fine-grained access control
 
 ### External Dependencies
 
@@ -90,9 +103,10 @@ Preferred communication style: Simple, everyday language.
 - zod: Schema validation (integrated with Drizzle for database schemas)
 
 **Database & ORM**
-- drizzle-orm: TypeScript ORM with type-safe queries
-- drizzle-kit: Schema management and migrations
-- @neondatabase/serverless: Serverless PostgreSQL driver
+- @supabase/supabase-js: Supabase client for PostgreSQL database operations, real-time, auth, and storage
+- drizzle-orm: TypeScript ORM with type-safe queries (legacy - replaced by Supabase)
+- drizzle-kit: Schema management and migrations (legacy)
+- @neondatabase/serverless: Serverless PostgreSQL driver (legacy)
 - connect-pg-simple: PostgreSQL session store (for future session management)
 
 **Utilities**
