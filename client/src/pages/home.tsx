@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ContactForm } from "@/components/ContactForm";
+import { BunnyOrb } from "@/components/BunnyOrb";
 
 export default function Home() {
   const scrollToSection = (id: string) => {
@@ -70,6 +71,7 @@ export default function Home() {
         <div className="vertical-lines" />
         <div className="scanlines" />
         <div className="matrix-circle" />
+        <BunnyOrb />
         
         <div className="max-w-7xl mx-auto w-full text-center relative z-10">
           {/* Main glitch title */}

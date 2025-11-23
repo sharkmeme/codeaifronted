@@ -520,6 +520,60 @@
     }
   }
 
+  /* Bunny Orb - Animated orb with bunny face */
+  .bunny-orb-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(70vh, 70vw);
+    height: min(70vh, 70vw);
+    max-width: 800px;
+    max-height: 800px;
+    z-index: 0;
+    pointer-events: none;
+    transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .bunny-orb {
+    width: 100%;
+    height: 100%;
+    color: hsl(var(--foreground) / 0.15);
+    filter: blur(0.5px);
+  }
+
+  .bunny-orb.rotating {
+    animation: bunny-orb-rotate 25s linear infinite;
+  }
+
+  @keyframes bunny-orb-rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .bunny-eye {
+    transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* Disable animations for reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .bunny-orb.rotating {
+      animation: none;
+    }
+    
+    .bunny-orb-wrapper {
+      transition: none;
+    }
+    
+    .bunny-eye {
+      transition: none;
+    }
+  }
+
   /* Responsive adjustments for mobile glitch effects */
   @media (max-width: 768px) {
     .glitch-text::before,
@@ -529,6 +583,16 @@
 
     .matrix-circle {
       opacity: 0.04;
+    }
+
+    .bunny-orb-wrapper {
+      width: min(80vh, 80vw);
+      height: min(80vh, 80vw);
+    }
+
+    .bunny-orb {
+      opacity: 0.6;
+      filter: blur(1px);
     }
 
     .noise-overlay {
