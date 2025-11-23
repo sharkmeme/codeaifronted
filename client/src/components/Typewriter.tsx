@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 
 export default function Typewriter({
   text,
-  speed = 80,
-  pause = 1200, // pause before restarting
+  speed = 220,
+  pause = 6500, // pause before restarting
 }: {
   text: string;
   speed?: number;
