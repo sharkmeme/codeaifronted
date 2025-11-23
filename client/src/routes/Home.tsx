@@ -68,7 +68,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section - Minimal */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-8">
         {/* Visual effects scoped to hero */}
         <div className="noise-overlay" />
         <div className="vertical-lines" />
@@ -89,20 +89,20 @@ export default function Home() {
       </section>
 
       {/* Intro Section */}
-      <section id="intro" className="py-24 px-6 lg:px-8 relative z-10 bg-background">
+      <section id="intro" className="pt-14 pb-24 px-6 lg:px-8 relative z-10 bg-background border-b border-neutral-200">
         <div className="max-w-7xl mx-auto text-center">
           {/* Tagline */}
-          <p className="text-base sm:text-lg md:text-xl uppercase tracking-ultra-wide text-muted-foreground max-w-3xl mx-auto mb-12" data-testid="text-tagline">
+          <p className="text-base sm:text-lg md:text-xl uppercase tracking-ultra-wide text-muted-foreground max-w-2xl mx-auto mb-10" data-testid="text-tagline">
             AI-Native Automation That Moves Fast.
           </p>
 
           {/* Subheadline */}
-          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed" data-testid="text-subheadline">
+          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed" data-testid="text-subheadline">
             We build fully automated systems, AI content engines, and next-generation workflows for creators and businesses.
           </p>
           
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
             <Link to="/get-automated" data-testid="link-hero-get-automated">
               <Button 
                 size="lg" 
@@ -116,7 +116,7 @@ export default function Home() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="text-sm uppercase tracking-wider px-8 min-w-[200px]"
+              className="text-sm uppercase tracking-wider px-8 min-w-[200px] shadow-sm"
               data-testid="button-hero-view-services"
               onClick={() => scrollToSection('services')}
             >
@@ -130,8 +130,8 @@ export default function Home() {
               Trusted by forward-thinking creators and businesses
             </p>
             
-            <div className="marquee opacity-40">
-              <div className="marquee-content">
+            <div className="marquee opacity-45">
+              <div className="marquee-content h-12 flex items-center">
                 {/* First set */}
                 {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
                   <div 
@@ -142,10 +142,19 @@ export default function Home() {
                     {client}
                   </div>
                 ))}
-                {/* Duplicate set for seamless loop */}
+                {/* Second set */}
                 {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
                   <div 
                     key={`${client}-2-${i}`}
+                    className="flex items-center justify-center h-12 px-6 border border-border/50 bg-card/30 text-xs font-mono tracking-wider"
+                  >
+                    {client}
+                  </div>
+                ))}
+                {/* Third set */}
+                {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
+                  <div 
+                    key={`${client}-3-${i}`}
                     className="flex items-center justify-center h-12 px-6 border border-border/50 bg-card/30 text-xs font-mono tracking-wider"
                   >
                     {client}
@@ -158,13 +167,13 @@ export default function Home() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-24 px-6 lg:px-8 relative z-10 bg-background">
+      <section id="services" className="py-24 px-6 lg:px-8 relative z-10 bg-neutral-50 mt-16">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-16" data-testid="heading-services">
             What We Automate
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
             {[
               {
                 icon: Zap,
@@ -196,7 +205,7 @@ export default function Home() {
                 >
                   <div className="glitch-line" />
                   <div className="mb-4 text-primary">
-                    <IconComponent className="w-8 h-8" />
+                    <IconComponent className="w-10 h-10" />
                   </div>
                   <h3 className="font-heading font-bold text-xl mb-4 tracking-wide" data-testid={`heading-service-${i + 1}`}>
                     {service.title}
@@ -212,13 +221,13 @@ export default function Home() {
       </section>
 
       {/* Showcase Section */}
-      <section id="showcase" className="py-24 px-6 lg:px-8 relative z-10 bg-card/30">
+      <section id="showcase" className="py-24 px-6 lg:px-8 relative z-10 bg-neutral-50 border-t border-neutral-200 mt-32">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-16" data-testid="heading-showcase">
             Featured Work
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9">
             {[
               {
                 title: 'Automation Dashboard',
@@ -275,13 +284,14 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-24 px-6 lg:px-8 relative z-10">
+      <section id="about" className="py-24 pt-44 px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide mb-8" data-testid="heading-about">
                 Who We Are
               </h2>
+              <div className="h-1 w-16 bg-blue-500 rounded-full mb-8"></div>
               <div className="space-y-6 text-muted-foreground leading-relaxed">
                 <p data-testid="text-about-1">
                   Bunnycode is an AI automation agency built for the modern era. We specialize in creating intelligent systems that work 24/7, eliminating repetitive tasks and amplifying human potential.
@@ -295,7 +305,7 @@ export default function Home() {
               </div>
             </div>
             
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 gap-8">
               {[
                 {
                   number: '01',
@@ -313,9 +323,9 @@ export default function Home() {
                   description: 'Continuous monitoring and refinement ensure peak performance and ROI.',
                 },
               ].map((step, i) => (
-                <div key={step.number} className="border border-border/50 p-6 hover-elevate transition-all" data-testid={`step-${i + 1}`}>
+                <div key={step.number} className="border border-neutral-300 p-6 hover-elevate transition-all" data-testid={`step-${i + 1}`}>
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-full border-2 border-primary bg-background flex items-center justify-center flex-shrink-0">
+                    <div className="w-11 h-11 rounded-full border-2 border-primary bg-background flex items-center justify-center flex-shrink-0">
                       <span className="font-heading font-bold text-lg text-primary" data-testid={`text-step-number-${i + 1}`}>
                         {step.number}
                       </span>
@@ -337,7 +347,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-24 px-6 lg:px-8 relative z-10">
+      <section id="contact" className="py-16 px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-heading font-bold tracking-wide mb-6" data-testid="heading-cta">
@@ -353,12 +363,12 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 lg:px-8 border-t border-border/40 relative z-10">
+      <footer className="py-8 px-6 lg:px-8 border-t border-neutral-200 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
               <h3 className="font-heading font-bold text-lg mb-4" data-testid="heading-footer-brand">
-                Bunnyhoney.ai
+                Bunnycode.ai
               </h3>
               <p className="text-sm text-muted-foreground" data-testid="text-footer-tagline">
                 AI-Native Automation
@@ -417,9 +427,9 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="pt-8 border-t border-border/40 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="pt-8 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p className="text-sm text-muted-foreground" data-testid="text-copyright">
-              © 2025 Bunnyhoney.ai — All rights reserved
+              © 2025 Bunnycode.ai — All rights reserved
             </p>
             <div className="flex items-center gap-6">
               <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors" data-testid="link-privacy">

@@ -1,0 +1,77 @@
+Perform a full final polish pass on the Bunnycode.ai homepage across all sections.  
+Make the following exact changes and apply them ONLY to Home.tsx and index.css:
+
+-----------------------------------
+1. HERO SECTION
+-----------------------------------
+• Move bunny orb down by 40–60px for better centering.
+• Add a subtle section divider or 32px bottom margin to separate hero from intro.
+• Keep glitch effect untouched.
+
+-----------------------------------
+2. INTRO SECTION
+-----------------------------------
+• Reduce top padding by 40px.
+• Add max-w-2xl to the text block.
+• Add a light bottom divider (border-b border-neutral-200).
+• Add shadow-sm to the secondary button.
+• Slightly reduce vertical whitespace inside the intro section.
+
+-----------------------------------
+3. MARQUEE SECTION
+-----------------------------------
+• Set marquee item opacity to 0.45.
+• Add a fixed height container (h-12 flex items-center).
+• Reduce gap to gap-8.
+• Duplicate marquee content 3× for smooth infinite loop.
+
+-----------------------------------
+4. WHAT WE AUTOMATE SECTION
+-----------------------------------
+• Add a light background tint: bg-neutral-50.
+• Increase icon size by 20%.
+• Increase card gaps (gap-10).
+• Add 64px top margin before this section.
+
+-----------------------------------
+5. FEATURED WORK SECTION
+-----------------------------------
+• Add top margin (mt-32).
+• Add a top border: border-t border-neutral-200.
+• Add subtle background tint (bg-neutral-50).
+• Increase spacing between cards by 12px.
+
+-----------------------------------
+6. WHO WE ARE SECTION
+-----------------------------------
+• Add 80px top padding.
+• Add decorative divider line under the heading:
+  <div className="h-1 w-16 bg-blue-500 rounded-full mx-auto mt-4"></div>
+
+-----------------------------------
+7. AUDIT / BUILD / OPTIMIZE SECTION
+-----------------------------------
+• Add 32px vertical spacing between items.
+• Increase border contrast: border-neutral-300.
+• Reduce icon size by 10%.
+
+-----------------------------------
+8. CONTACT FORM
+-----------------------------------
+• Reduce spacing above the section.
+• Mark “Company” field as optional (placeholder: “Your company name (optional)”).
+• Make the submit button max-w-md mx-auto instead of full width.
+
+-----------------------------------
+9. FOOTER
+-----------------------------------
+• Change “Bunnyhoney.ai” to “Bunnycode.ai”.
+• Reduce spacing between form and footer by 40px.
+• Add a subtle divider: border-t border-neutral-200.
+
+-----------------------------------
+IMPORTANT:
+• Do NOT touch the typewriter animation.
+• Do NOT modify the glitch keyframes.
+• Do NOT modify the backend, routing, or form logic.
+• Only apply changes to layout, spacing, styling, and minor content wording.

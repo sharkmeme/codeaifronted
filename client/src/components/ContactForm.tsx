@@ -118,12 +118,12 @@ export function ContactForm() {
           name="company"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="text-sm uppercase tracking-wide">Company</FormLabel>
+              <FormLabel className="text-sm uppercase tracking-wide">Company (optional)</FormLabel>
               <FormControl>
                 <Input
                   {...field}
                   value={field.value || ""}
-                  placeholder="Your company name"
+                  placeholder="Your company name (optional)"
                   data-testid="input-company"
                   className="bg-card"
                 />
@@ -156,7 +156,7 @@ export function ContactForm() {
         <Button
           type="submit"
           size="lg"
-          className="w-full text-sm uppercase tracking-wider"
+          className="max-w-md mx-auto w-full text-sm uppercase tracking-wider"
           disabled={form.formState.isSubmitting}
           data-testid="button-submit-form"
         >
