@@ -385,6 +385,7 @@
   .matrix-circle::before {
     content: "01001001 01001110 01010100 01000101 01010010 01001110 01000001 01001100 00100000 01000101 01010010 01010010 01001111 01010010 00100000 01000011 01001111 01000100 01000101 00100000 00110100 00110000 00110100 00100000 01001110 01001111 01010100 00100000 01000110 01001111 01010101 01001110 01000100";
     position: absolute;
+    inset: 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -398,6 +399,9 @@
     font-size: clamp(8px, 1vw, 12px);
     line-height: 1.8;
     word-wrap: break-word;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
     overflow-wrap: break-word;
     color: hsl(var(--primary) / 0.3);
     opacity: 0.5;
