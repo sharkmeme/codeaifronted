@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ContactForm } from "@/components/ContactForm";
 import { BunnyOrb } from "@/components/BunnyOrb";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const scrollToSection = (id: string) => {
@@ -52,13 +53,13 @@ export default function Home() {
             
             <div className="flex items-center gap-3">
               <ThemeToggle />
-              <Button 
-                size="sm" 
-                className="text-xs uppercase tracking-wider rounded-full px-6"
+              <Link
+                to="/get-automated"
+                className="px-4 py-2 rounded-full bg-blue-500 text-white font-semibold hover:bg-blue-600 transition"
                 data-testid="button-get-automated"
               >
-                Get Automated
-              </Button>
+                GET AUTOMATED
+              </Link>
             </div>
           </div>
         </div>
