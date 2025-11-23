@@ -46,7 +46,7 @@ export default function GetAutomated() {
                 name="name"
                 required
                 placeholder="Your Name"
-                className="w-full p-3 rounded-xl border border-neutral-300 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 dark:placeholder:text-neutral-400"
+                className="w-full p-3 rounded-xl border border-neutral-300 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 dark:placeholder:text-neutral-600"
               />
 
               <input
@@ -54,20 +54,20 @@ export default function GetAutomated() {
                 type="email"
                 required
                 placeholder="Email"
-                className="w-full p-3 rounded-xl border border-neutral-300 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 dark:placeholder:text-neutral-400"
+                className="w-full p-3 rounded-xl border border-neutral-300 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 dark:placeholder:text-neutral-600"
               />
 
               <input
                 name="phone"
                 required
                 placeholder="Phone Number"
-                className="w-full p-3 rounded-xl border border-neutral-300 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 dark:placeholder:text-neutral-400"
+                className="w-full p-3 rounded-xl border border-neutral-300 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 dark:placeholder:text-neutral-600"
               />
 
               <input
                 name="socials"
                 placeholder="Instagram (optional)"
-                className="w-full p-3 rounded-xl border border-neutral-300 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 dark:placeholder:text-neutral-400"
+                className="w-full p-3 rounded-xl border border-neutral-300 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 dark:placeholder:text-neutral-600"
               />
 
               <select
@@ -87,13 +87,13 @@ export default function GetAutomated() {
                 name="description"
                 required
                 placeholder="Describe your project"
-                className="w-full p-3 rounded-xl border border-neutral-300 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-neutral-50 dark:bg-neutral-900 h-32 resize-none text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 dark:placeholder:text-neutral-400"
+                className="w-full p-3 rounded-xl border border-neutral-300 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-neutral-50 dark:bg-neutral-900 h-32 resize-none text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 dark:placeholder:text-neutral-600"
               />
 
               <textarea
                 name="extraInfo"
                 placeholder="Extra information (optional)"
-                className="w-full p-3 rounded-xl border border-neutral-300 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-neutral-50 dark:bg-neutral-900 h-32 resize-none text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 dark:placeholder:text-neutral-400"
+                className="w-full p-3 rounded-xl border border-neutral-300 dark:border-neutral-700 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition bg-neutral-50 dark:bg-neutral-900 h-32 resize-none text-neutral-900 dark:text-neutral-100 placeholder:text-neutral-500 dark:placeholder:text-neutral-600"
               />
 
               {error && <div className="text-red-600 dark:text-red-400">{error}</div>}
@@ -101,7 +101,7 @@ export default function GetAutomated() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200 dark:shadow-blue-900/50"
+                className="w-full py-3 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-700 dark:bg-blue-600 dark:hover:bg-blue-500 transition shadow-lg shadow-blue-200 dark:shadow-blue-900/50"
               >
                 {loading ? "Submitting..." : "Submit"}
               </button>

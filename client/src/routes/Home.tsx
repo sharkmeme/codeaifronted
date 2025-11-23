@@ -68,7 +68,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section - Minimal */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-2">
+      <section className="hero relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-2 dark:bg-black">
         {/* Visual effects scoped to hero */}
         <div className="noise-overlay" />
         <div className="vertical-lines" />
@@ -89,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* Intro Section */}
-      <section id="intro" className="pt-9 pb-13 px-6 lg:px-8 relative z-10 bg-background">
+      <section id="intro" className="pt-9 pb-13 px-6 lg:px-8 relative z-10 bg-background dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto text-center">
           {/* Tagline */}
           <p className="text-base sm:text-lg md:text-xl uppercase tracking-ultra-wide text-muted-foreground max-w-lg mx-auto mb-10 leading-snug" data-testid="text-tagline">
@@ -130,13 +130,13 @@ export default function Home() {
               Trusted by forward-thinking creators and businesses
             </p>
             
-            <div className="marquee opacity-62" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
+            <div className="marquee opacity-62 dark:opacity-80" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
               <div className="marquee-content h-12 flex items-center justify-center">
                 {/* First set */}
                 {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
                   <div 
                     key={`${client}-1-${i}`}
-                    className="flex items-center justify-center h-12 px-6 border border-border/50 bg-card/30 text-xs font-mono tracking-wider"
+                    className="flex items-center justify-center h-12 px-6 border border-border/50 bg-card/30 text-xs font-mono tracking-wider dark:text-neutral-300"
                     data-testid={`logo-client-${i + 1}`}
                   >
                     {client}
@@ -146,7 +146,7 @@ export default function Home() {
                 {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
                   <div 
                     key={`${client}-2-${i}`}
-                    className="flex items-center justify-center h-12 px-6 border border-border/50 bg-card/30 text-xs font-mono tracking-wider"
+                    className="flex items-center justify-center h-12 px-6 border border-border/50 bg-card/30 text-xs font-mono tracking-wider dark:text-neutral-300"
                   >
                     {client}
                   </div>
@@ -155,7 +155,7 @@ export default function Home() {
                 {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
                   <div 
                     key={`${client}-3-${i}`}
-                    className="flex items-center justify-center h-12 px-6 border border-border/50 bg-card/30 text-xs font-mono tracking-wider"
+                    className="flex items-center justify-center h-12 px-6 border border-border/50 bg-card/30 text-xs font-mono tracking-wider dark:text-neutral-300"
                   >
                     {client}
                   </div>
@@ -167,13 +167,13 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <div className="h-px bg-neutral-200 mt-20 mb-0"></div>
+      <div className="h-px bg-neutral-200 dark:bg-neutral-700 mt-20 mb-0"></div>
 
       {/* Services Section */}
-      <section id="services" className="pt-4 pb-20 px-6 lg:px-8 relative z-10 bg-neutral-50">
+      <section id="services" className="pt-4 pb-20 px-6 lg:px-8 relative z-10 bg-neutral-50 dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto">
-          <div className="h-px bg-neutral-200 mb-12"></div>
-          <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-18" data-testid="heading-services">
+          <div className="h-px bg-neutral-200 dark:bg-neutral-700 mb-12"></div>
+          <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-18 dark:text-white dark:font-semibold" data-testid="heading-services">
             What We Automate
           </h2>
           
@@ -204,11 +204,11 @@ export default function Home() {
               return (
                 <div
                   key={service.title}
-                  className="service-card group border border-border/50 p-8 hover-elevate hover:border-primary/30 hover:shadow-lg transition-all duration-300 relative overflow-visible"
+                  className="service-card group border border-border/50 p-8 hover-elevate hover:border-primary/30 hover:shadow-lg transition-all duration-300 relative overflow-visible dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200 dark:hover:shadow-neutral-800"
                   data-testid={`card-service-${i + 1}`}
                 >
                   <div className="glitch-line" />
-                  <div className="mb-4 text-primary">
+                  <div className="mb-4 text-primary dark:text-blue-400">
                     <IconComponent className="w-12 h-12" />
                   </div>
                   <h3 className="font-heading font-bold text-xl mb-4 tracking-wide" data-testid={`heading-service-${i + 1}`}>
@@ -225,10 +225,10 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <div className="h-px bg-neutral-200 my-20"></div>
+      <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-20"></div>
 
       {/* Showcase Section */}
-      <section id="showcase" className="py-17 px-6 lg:px-8 relative z-10 bg-neutral-50">
+      <section id="showcase" className="py-17 px-6 lg:px-8 relative z-10 bg-neutral-50 dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-24" data-testid="heading-showcase">
             Featured Work
@@ -269,12 +269,12 @@ export default function Home() {
             ].map((project, i) => (
               <div
                 key={project.title}
-                className="group border border-border/50 p-8 hover-elevate hover:border-primary/30 hover:shadow-md transition-all duration-300 relative overflow-hidden"
+                className="group border border-border/50 p-8 hover-elevate hover:border-primary/30 hover:shadow-md transition-all duration-300 relative overflow-hidden dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200 dark:hover:shadow-neutral-800"
                 data-testid={`card-showcase-${i + 1}`}
               >
                 <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors" />
                 <div className="relative">
-                  <p className="text-[10px] uppercase tracking-ultra-wide text-blue-500 mb-3" data-testid={`text-showcase-category-${i + 1}`}>
+                  <p className="text-[10px] uppercase tracking-ultra-wide text-blue-500 dark:text-blue-400 mb-3" data-testid={`text-showcase-category-${i + 1}`}>
                     {project.category}
                   </p>
                   <h3 className="font-heading font-bold text-xl mb-2 tracking-wide" data-testid={`heading-showcase-${i + 1}`}>
@@ -291,17 +291,17 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <div className="h-px bg-neutral-200 my-20"></div>
+      <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-20"></div>
 
       {/* About Section */}
-      <section id="about" className="py-16 px-6 lg:px-8 relative z-10 bg-neutral-50">
+      <section id="about" className="py-16 px-6 lg:px-8 relative z-10 bg-neutral-50 dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide mb-4" data-testid="heading-about">
               Who We Are
             </h2>
             <div className="h-0.5 w-16 bg-blue-500/70 rounded-full mx-auto mb-8"></div>
-            <div className="space-y-6 text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+            <div className="space-y-6 text-muted-foreground dark:text-neutral-200 leading-relaxed dark:leading-relaxed max-w-3xl mx-auto">
               <p data-testid="text-about-1">
                 Bunnycode is an AI automation agency built for the modern era. We specialize in creating intelligent systems that work 24/7, eliminating repetitive tasks and amplifying human potential.
               </p>
@@ -314,7 +314,7 @@ export default function Home() {
             </div>
           </div>
             
-          <div className="h-px bg-neutral-200 mb-12"></div>
+          <div className="h-px bg-neutral-200 dark:bg-neutral-700 dark:opacity-70 mb-12"></div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
             {[
               {
@@ -333,10 +333,10 @@ export default function Home() {
                 description: 'Continuous monitoring and refinement ensure peak performance and ROI.',
               },
             ].map((step, i) => (
-              <div key={step.number} className="border border-neutral-200 p-6 hover-elevate transition-all" data-testid={`step-${i + 1}`}>
+              <div key={step.number} className="border border-neutral-200 p-6 hover-elevate transition-all dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200" data-testid={`step-${i + 1}`}>
                 <div className="flex items-start gap-4">
-                  <div className="w-9 h-9 rounded-full border-2 border-primary bg-background flex items-center justify-center flex-shrink-0">
-                    <span className="font-heading font-bold text-lg text-primary" data-testid={`text-step-number-${i + 1}`}>
+                  <div className="w-9 h-9 rounded-full border-2 border-primary dark:border-blue-400 bg-background dark:bg-neutral-900 flex items-center justify-center flex-shrink-0">
+                    <span className="font-heading font-bold text-lg text-primary dark:text-blue-400" data-testid={`text-step-number-${i + 1}`}>
                       {step.number}
                     </span>
                   </div>
@@ -356,10 +356,10 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <div className="h-px bg-neutral-200 my-16"></div>
+      <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-16"></div>
 
       {/* Contact Section */}
-      <section id="contact" className="py-10 px-6 lg:px-8 relative z-10">
+      <section id="contact" className="py-10 px-6 lg:px-8 relative z-10 dark:bg-neutral-950">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-heading font-bold tracking-wide mb-6" data-testid="heading-cta">
@@ -375,8 +375,8 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="pt-5 pb-7 px-6 lg:px-8 relative z-10">
-        <div className="h-px bg-gradient-to-r from-transparent via-neutral-300 to-transparent mb-8"></div>
+      <footer className="pt-5 pb-7 px-6 lg:px-8 relative z-10 dark:bg-neutral-950">
+        <div className="h-px bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent mb-8"></div>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-start">
             <div>
@@ -440,15 +440,15 @@ export default function Home() {
             </div>
           </div>
           
-          <div className="pt-8 border-t border-neutral-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-muted-foreground" data-testid="text-copyright">
+          <div className="pt-8 border-t border-neutral-200 dark:border-neutral-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-muted-foreground dark:text-neutral-400" data-testid="text-copyright">
               © 2025 Bunnycode.ai — All rights reserved
             </p>
             <div className="flex items-center gap-6">
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors" data-testid="link-privacy">
+              <a href="#" className="text-sm text-muted-foreground dark:text-neutral-400 hover:text-foreground transition-colors" data-testid="link-privacy">
                 Privacy Policy
               </a>
-              <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors" data-testid="link-terms">
+              <a href="#" className="text-sm text-muted-foreground dark:text-neutral-400 hover:text-foreground transition-colors" data-testid="link-terms">
                 Terms of Service
               </a>
             </div>

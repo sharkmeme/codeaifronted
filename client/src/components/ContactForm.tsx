@@ -83,7 +83,7 @@ export function ContactForm() {
                     {...field}
                     placeholder="Your name"
                     data-testid="input-name"
-                    className="bg-card"
+                    className="bg-card dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-100 dark:placeholder-neutral-500"
                   />
                 </FormControl>
                 <FormMessage />
@@ -103,7 +103,7 @@ export function ContactForm() {
                     type="email"
                     placeholder="your@email.com"
                     data-testid="input-email"
-                    className="bg-card"
+                    className="bg-card dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-100 dark:placeholder-neutral-500"
                   />
                 </FormControl>
                 <FormMessage />
@@ -124,7 +124,7 @@ export function ContactForm() {
                   placeholder="Tell us about your automation needs..."
                   rows={6}
                   data-testid="input-message"
-                  className="bg-card resize-none"
+                  className="bg-card resize-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-100 dark:placeholder-neutral-500"
                 />
               </FormControl>
               <FormMessage />
@@ -135,7 +135,7 @@ export function ContactForm() {
         <Button
           type="submit"
           size="lg"
-          className="max-w-md mx-auto w-full text-sm uppercase tracking-wider py-2.5 bg-[#3f80f5] hover:bg-[#3069d5]"
+          className="max-w-md mx-auto w-full text-sm uppercase tracking-wider py-2.5 bg-[#3f80f5] hover:bg-[#3069d5] dark:bg-blue-600 dark:hover:bg-blue-500"
           disabled={form.formState.isSubmitting}
           data-testid="button-submit-form"
         >
