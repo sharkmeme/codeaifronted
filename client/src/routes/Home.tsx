@@ -358,7 +358,7 @@ export default function Home() {
       <div className="h-px bg-neutral-200 dark:bg-neutral-700 my-12"></div>
 
       {/* Contact Section */}
-      <section id="contact" className="pt-24 pb-24 px-6 lg:px-8 relative z-10 dark:bg-neutral-950">
+      <section id="contact" className="pt-24 pb-24 px-6 lg:px-8 relative z-10 bg-background dark:bg-neutral-950">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-5xl font-heading font-bold tracking-wide mb-8" data-testid="heading-cta">
@@ -374,7 +374,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="pt-24 pb-24 px-6 lg:px-8 relative z-10 dark:bg-neutral-950">
+      <footer className="pt-24 pb-24 px-6 lg:px-8 relative z-10 bg-background dark:bg-neutral-950">
         <div className="h-px bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent mb-8"></div>
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-start">
