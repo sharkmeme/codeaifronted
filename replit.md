@@ -2,7 +2,7 @@
 
 ## Overview
 
-bunnycode.ai is a single-page marketing website for an AI automation agency. The application features a minimal, futuristic design with cyberpunk aesthetics inspired by o.xyz, showcasing services for AI-native automation solutions targeting sales workflows, internal operations, and content systems. The site is built as a modern React application with a focus on visual effects like glitch animations, chromatic aberration, and matrix-style design elements.
+bunnycode.ai is a marketing website and lead capture platform for an AI automation agency. The application features a minimal, futuristic design with cyberpunk aesthetics inspired by o.xyz, showcasing services for AI-native automation solutions targeting sales workflows, internal operations, and content systems. The site includes a functional contact form with database-backed lead storage. The application is built as a modern React SPA with a focus on visual effects like glitch animations, chromatic aberration, and matrix-style design elements.
 
 ## User Preferences
 
@@ -62,17 +62,17 @@ Preferred communication style: Simple, everyday language.
 - Drizzle ORM configured for PostgreSQL (@neondatabase/serverless for serverless Postgres)
 - Schema-first approach with TypeScript types generated from Drizzle schemas
 - Zod integration via drizzle-zod for runtime validation
-- Migration system configured in drizzle.config.ts with migrations output to /migrations directory
+- Database push workflow using `npm run db:push` for schema synchronization
 
 **Current Schema**
-- Users table with UUID primary keys (auto-generated)
-- Username/password authentication fields
+- **Users table**: UUID primary keys (auto-generated), username/password authentication fields
+- **Leads table**: Contact form submissions with name, email, company (optional), message, and timestamp
 - Schema located in shared/schema.ts for code sharing between client and server
 
 **Storage Pattern**
-- Interface-based storage abstraction (IStorage) allows swapping implementations
-- In-memory storage (MemStorage) currently active for development
-- Ready for PostgreSQL integration via Drizzle ORM when database is provisioned
+- Interface-based storage abstraction (IStorage) for type-safe CRUD operations
+- DatabaseStorage class using Drizzle ORM for PostgreSQL operations
+- Lead management: createLead, getLeads, getLead methods for contact form functionality
 
 ### External Dependencies
 

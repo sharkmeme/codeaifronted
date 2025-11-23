@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { ArrowRight } from "lucide-react";
+import { ContactForm } from "@/components/ContactForm";
 
 export default function Home() {
   const scrollToSection = (id: string) => {
@@ -199,23 +199,19 @@ export default function Home() {
 
       {/* CTA Section */}
       <section id="contact" className="py-24 px-6 lg:px-8 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-5xl font-heading font-bold tracking-wide mb-6" data-testid="heading-cta">
-            Ship your first automation with bunnycode.ai
-          </h2>
-          <p className="text-muted-foreground text-lg mb-12 max-w-2xl mx-auto" data-testid="text-cta">
-            Let's build something remarkable together. Get started today and transform your workflows.
-          </p>
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-heading font-bold tracking-wide mb-6" data-testid="heading-cta">
+              Ship your first automation with bunnycode.ai
+            </h2>
+            <p className="text-muted-foreground text-lg max-w-2xl mx-auto" data-testid="text-cta">
+              Let's build something remarkable together. Fill out the form below and we'll get back to you within 24 hours.
+            </p>
+          </div>
           
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button 
-              size="lg" 
-              className="text-sm uppercase tracking-wider px-8 group"
-              data-testid="button-book-call"
-            >
-              Book a Call
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-            </Button>
+          <ContactForm />
+          
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-12">
             <Button 
               size="lg" 
               variant="outline" 
