@@ -447,11 +447,11 @@
     }
     20% {
       clip-path: inset(40% 0 35% 0);
-      transform: translate(-3px, 2px);
+      transform: translate(-1px, 1px);
     }
     22% {
       clip-path: inset(70% 0 15% 0);
-      transform: translate(3px, -2px);
+      transform: translate(1px, -1px);
     }
     24% {
       clip-path: inset(0 0 0 0);
@@ -466,11 +466,11 @@
     }
     20% {
       clip-path: inset(15% 0 60% 0);
-      transform: translate(3px, -2px);
+      transform: translate(1px, -1px);
     }
     22% {
       clip-path: inset(25% 0 40% 0);
-      transform: translate(-3px, 2px);
+      transform: translate(-1px, 1px);
     }
     24% {
       clip-path: inset(0 0 0 0);
