@@ -130,16 +130,28 @@ export default function Home() {
               Trusted by forward-thinking creators and businesses
             </p>
             
-            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-40">
-              {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
-                <div 
-                  key={client}
-                  className="flex items-center justify-center h-12 px-6 border border-border/50 bg-card/30 text-xs font-mono tracking-wider"
-                  data-testid={`logo-client-${i + 1}`}
-                >
-                  {client}
-                </div>
-              ))}
+            <div className="marquee opacity-40">
+              <div className="marquee-content">
+                {/* First set */}
+                {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
+                  <div 
+                    key={`${client}-1-${i}`}
+                    className="flex items-center justify-center h-12 px-6 border border-border/50 bg-card/30 text-xs font-mono tracking-wider"
+                    data-testid={`logo-client-${i + 1}`}
+                  >
+                    {client}
+                  </div>
+                ))}
+                {/* Duplicate set for seamless loop */}
+                {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
+                  <div 
+                    key={`${client}-2-${i}`}
+                    className="flex items-center justify-center h-12 px-6 border border-border/50 bg-card/30 text-xs font-mono tracking-wider"
+                  >
+                    {client}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
