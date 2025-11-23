@@ -86,6 +86,11 @@ export default {
         sans: ["var(--font-sans)"],
         serif: ["var(--font-serif)"],
         mono: ["var(--font-mono)"],
+        heading: ["var(--font-heading)"],
+      },
+      letterSpacing: {
+        'ultra-wide': '0.25em',
+        'extra-wide': '0.15em',
       },
       keyframes: {
         "accordion-down": {
