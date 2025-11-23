@@ -70,8 +70,8 @@ export function ContactForm() {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 max-w-2xl mx-auto" data-testid="contact-form">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 max-sm:space-y-3 max-w-2xl mx-auto" data-testid="contact-form">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-sm:gap-3 max-sm:grid-cols-1">
           <FormField
             control={form.control}
             name="name"
@@ -83,7 +83,7 @@ export function ContactForm() {
                     {...field}
                     placeholder="Your name"
                     data-testid="input-name"
-                    className="bg-card dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-100 dark:placeholder-neutral-500"
+                    className="bg-card dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-100 dark:placeholder-neutral-500 max-sm:w-full max-sm:text-sm max-sm:p-3"
                   />
                 </FormControl>
                 <FormMessage />
@@ -103,7 +103,7 @@ export function ContactForm() {
                     type="email"
                     placeholder="your@email.com"
                     data-testid="input-email"
-                    className="bg-card dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-100 dark:placeholder-neutral-500"
+                    className="bg-card dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-100 dark:placeholder-neutral-500 max-sm:w-full max-sm:text-sm max-sm:p-3"
                   />
                 </FormControl>
                 <FormMessage />
@@ -124,7 +124,7 @@ export function ContactForm() {
                   placeholder="Tell us about your automation needs..."
                   rows={6}
                   data-testid="input-message"
-                  className="bg-card resize-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-100 dark:placeholder-neutral-500"
+                  className="bg-card resize-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-100 dark:placeholder-neutral-500 max-sm:w-full max-sm:text-sm max-sm:p-3"
                 />
               </FormControl>
               <FormMessage />
@@ -135,7 +135,7 @@ export function ContactForm() {
         <Button
           type="submit"
           size="lg"
-          className="max-w-md mx-auto w-full text-sm uppercase tracking-wider py-2.5 bg-[#3f80f5] hover:bg-[#3069d5] dark:bg-blue-600 dark:hover:bg-blue-500"
+          className="max-w-md mx-auto w-full text-sm uppercase tracking-wider py-2.5 max-sm:w-full max-sm:py-3 bg-[#3f80f5] hover:bg-[#3069d5] dark:bg-blue-600 dark:hover:bg-blue-500"
           disabled={form.formState.isSubmitting}
           data-testid="button-submit-form"
         >

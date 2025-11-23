@@ -46,7 +46,7 @@ export function BunnyOrb() {
   return (
     <div
       ref={wrapperRef}
-      className="bunny-orb-wrapper"
+      className="bunny-orb-wrapper max-sm:w-64 max-sm:h-64 max-sm:mx-auto"
       data-testid="bunny-orb-wrapper"
     >
       <div

@@ -1,0 +1,159 @@
+Optimize the full mobile layout of the entire Bunnycode.ai site.  
+Apply ONLY responsive Tailwind classes (sm:, md:, lg:, max-sm:) and do not modify desktop styles.
+
+Make these changes across all sections in Home.tsx, ContactForm.tsx, and GetAutomated page:
+
+--------------------------------------------
+1. HERO SECTION (Mobile)
+--------------------------------------------
+• Hero title:
+  Replace any fixed text sizes with:
+    text-4xl max-sm:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl
+
+• Center the glitch text properly on mobile:
+    max-sm:text-center
+    max-sm:leading-[1.1]
+
+• Reduce hero vertical spacing on mobile:
+    max-sm:pt-16 max-sm:pb-12
+
+• Bunny orb:
+    Add:
+      max-sm:w-64 max-sm:h-64 max-sm:mx-auto
+
+--------------------------------------------
+2. INTRO SECTION (Mobile)
+--------------------------------------------
+• Text block:
+    max-sm:max-w-xs max-sm:px-4 max-sm:text-center
+
+• Buttons:
+    Stack on mobile:
+      max-sm:flex-col
+      max-sm:gap-3
+      max-sm:w-full
+
+• Center all content on mobile:
+    max-sm:mx-auto
+    max-sm:text-center
+
+--------------------------------------------
+3. MARQUEE SECTION (Mobile)
+--------------------------------------------
+• Shrink container height:
+    max-sm:h-10
+
+• Reduce gap between items:
+    max-sm:gap-6
+
+• Reduce font size:
+    max-sm:text-xs
+
+--------------------------------------------
+4. WHAT WE AUTOMATE (Mobile)
+--------------------------------------------
+• Convert 2x2 grid to single-column stack:
+    max-sm:grid-cols-1
+
+• Reduce card padding:
+    max-sm:p-4
+
+• Reduce icon size:
+    max-sm:text-3xl
+
+• Center all content:
+    max-sm:text-center
+
+--------------------------------------------
+5. FEATURED WORK (Mobile)
+--------------------------------------------
+• Convert grid to single column:
+    max-sm:grid-cols-1
+
+• Reduce spacing:
+    max-sm:gap-6
+
+• Reduce card padding:
+    max-sm:p-4
+
+• Center categories and titles:
+    max-sm:text-center
+
+--------------------------------------------
+6. WHO WE ARE (Mobile)
+--------------------------------------------
+• Max text width:
+    max-sm:max-w-xs max-sm:px-4
+
+• Center text:
+    max-sm:text-center
+
+• Adjust divider:
+    max-sm:mx-auto max-sm:w-12
+
+--------------------------------------------
+7. AUDIT / BUILD / OPTIMIZE (Mobile)
+--------------------------------------------
+• Turn 3-column horizontal layout into stacked layout:
+    max-sm:flex-col max-sm:gap-6
+
+• Reduce card padding:
+    max-sm:p-4
+
+• Center text + icons:
+    max-sm:text-center
+
+--------------------------------------------
+8. CONTACT SECTION (Home Page)
+--------------------------------------------
+• Form layout:
+    max-sm:flex-col
+    max-sm:gap-3
+
+• Inputs:
+    max-sm:w-full
+    max-sm:text-sm
+    max-sm:p-3
+
+• Button:
+    max-sm:w-full
+    max-sm:py-3
+
+• Reduce top spacing:
+    max-sm:pt-12
+
+--------------------------------------------
+9. GET AUTOMATED PAGE (Separate Page)
+--------------------------------------------
+• Reduce container width:
+    max-sm:w-[95%] max-sm:mx-auto
+
+• Inputs:
+    max-sm:p-3
+    max-sm:text-sm
+
+• Text areas:
+    max-sm:h-28
+
+• Button:
+    max-sm:w-full
+    max-sm:py-3
+
+--------------------------------------------
+10. FOOTER (Mobile)
+--------------------------------------------
+• Convert columns to stacked layout:
+    max-sm:flex-col max-sm:gap-6 max-sm:text-center
+
+• Reduce padding:
+    max-sm:pt-8 max-sm:pb-8
+
+• Reduce text size:
+    max-sm:text-sm
+
+--------------------------------------------
+Important:
+--------------------------------------------
+• Do NOT change any desktop styling.
+• Do NOT touch glitch-text, typewriter, hero effects, database, backend, or spacing rules for desktop.
+• Only apply mobile breakpoints (max-sm: and sm:).

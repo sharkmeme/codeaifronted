@@ -68,7 +68,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section - Minimal */}
-      <section className="hero relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-2 dark:bg-black">
+      <section className="hero relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-2 dark:bg-black max-sm:pt-16 max-sm:pb-12">
         {/* Visual effects scoped to hero */}
         <div className="noise-overlay" />
         <div className="vertical-lines" />
@@ -79,7 +79,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto w-full text-center relative z-10">
           {/* Main glitch title */}
           <h1 
-            className="glitch-text font-heading font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-extra-wide"
+            className="glitch-text font-heading font-bold text-4xl max-sm:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-extra-wide max-sm:text-center max-sm:leading-[1.1]"
             data-glitch="BUNNYCODE.AI"
             data-testid="text-hero-title"
           >
@@ -92,21 +92,21 @@ export default function Home() {
       <section id="intro" className="pt-24 pb-24 px-6 lg:px-8 relative z-10 bg-background dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto text-center">
           {/* Tagline */}
-          <p className="text-base sm:text-lg md:text-xl uppercase tracking-ultra-wide text-muted-foreground max-w-lg mx-auto mb-8 leading-snug" data-testid="text-tagline">
+          <p className="text-base sm:text-lg md:text-xl uppercase tracking-ultra-wide text-muted-foreground max-w-lg max-sm:max-w-xs max-sm:px-4 mx-auto mb-8 leading-snug max-sm:text-center" data-testid="text-tagline">
             AI-Native Automation That Moves Fast.
           </p>
 
           {/* Subheadline */}
-          <p className="text-sm sm:text-base text-muted-foreground font-medium max-w-lg mx-auto mb-8 leading-relaxed" data-testid="text-subheadline">
+          <p className="text-sm sm:text-base text-muted-foreground font-medium max-w-lg max-sm:max-w-xs max-sm:px-4 mx-auto mb-8 leading-relaxed max-sm:text-center" data-testid="text-subheadline">
             We build fully automated systems, AI content engines, and next-generation workflows for creators and businesses.
           </p>
           
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 mb-10">
-            <Link to="/get-automated" data-testid="link-hero-get-automated">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 max-sm:gap-3 mb-10 max-sm:w-full max-sm:mx-auto">
+            <Link to="/get-automated" data-testid="link-hero-get-automated" className="max-sm:w-full">
               <Button 
                 size="lg" 
-                className="text-sm uppercase tracking-wider px-8 min-w-[200px]"
+                className="text-sm uppercase tracking-wider px-8 min-w-[200px] max-sm:w-full"
                 data-testid="button-hero-get-automated"
               >
                 Get Automated
@@ -116,7 +116,7 @@ export default function Home() {
             <Button 
               size="lg" 
               variant="outline" 
-              className="text-sm uppercase tracking-wider px-8 min-w-[200px] shadow-sm"
+              className="text-sm uppercase tracking-wider px-8 min-w-[200px] max-sm:w-full shadow-sm"
               data-testid="button-hero-view-services"
               onClick={() => scrollToSection('services')}
             >
@@ -131,12 +131,12 @@ export default function Home() {
             </p>
             
             <div className="marquee opacity-62 dark:opacity-80" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
-              <div className="marquee-content h-12 flex items-center justify-center">
+              <div className="marquee-content h-12 max-sm:h-10 flex items-center justify-center max-sm:gap-6">
                 {/* First set */}
                 {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
                   <div 
                     key={`${client}-1-${i}`}
-                    className="flex items-center justify-center h-12 px-6 border border-border/50 bg-card/30 text-xs font-mono tracking-wider dark:text-neutral-300"
+                    className="flex items-center justify-center h-12 max-sm:h-10 px-6 border border-border/50 bg-card/30 text-xs max-sm:text-[10px] font-mono tracking-wider dark:text-neutral-300"
                     data-testid={`logo-client-${i + 1}`}
                   >
                     {client}
@@ -146,7 +146,7 @@ export default function Home() {
                 {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
                   <div 
                     key={`${client}-2-${i}`}
-                    className="flex items-center justify-center h-12 px-6 border border-border/50 bg-card/30 text-xs font-mono tracking-wider dark:text-neutral-300"
+                    className="flex items-center justify-center h-12 max-sm:h-10 px-6 border border-border/50 bg-card/30 text-xs max-sm:text-[10px] font-mono tracking-wider dark:text-neutral-300"
                   >
                     {client}
                   </div>
@@ -155,7 +155,7 @@ export default function Home() {
                 {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
                   <div 
                     key={`${client}-3-${i}`}
-                    className="flex items-center justify-center h-12 px-6 border border-border/50 bg-card/30 text-xs font-mono tracking-wider dark:text-neutral-300"
+                    className="flex items-center justify-center h-12 max-sm:h-10 px-6 border border-border/50 bg-card/30 text-xs max-sm:text-[10px] font-mono tracking-wider dark:text-neutral-300"
                   >
                     {client}
                   </div>
@@ -173,7 +173,7 @@ export default function Home() {
             What We Automate
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 icon: Zap,
@@ -200,12 +200,12 @@ export default function Home() {
               return (
                 <div
                   key={service.title}
-                  className="service-card group border border-border/50 p-8 hover-elevate hover:border-primary/30 hover:shadow-lg transition-all duration-300 relative overflow-visible dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200 dark:hover:shadow-neutral-800"
+                  className="service-card group border border-border/50 p-8 max-sm:p-4 hover-elevate hover:border-primary/30 hover:shadow-lg transition-all duration-300 relative overflow-visible dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200 dark:hover:shadow-neutral-800 max-sm:text-center"
                   data-testid={`card-service-${i + 1}`}
                 >
                   <div className="glitch-line" />
-                  <div className="mb-4 text-primary dark:text-blue-400">
-                    <IconComponent className="w-12 h-12" />
+                  <div className="mb-4 text-primary dark:text-blue-400 max-sm:flex max-sm:justify-center">
+                    <IconComponent className="w-12 h-12 max-sm:w-10 max-sm:h-10" />
                   </div>
                   <h3 className="font-heading font-bold text-xl mb-4 tracking-wide" data-testid={`heading-service-${i + 1}`}>
                     {service.title}
@@ -227,7 +227,7 @@ export default function Home() {
             Featured Work
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9">
+          <div className="grid grid-cols-1 max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 max-sm:gap-6">
             {[
               {
                 title: 'Automation Dashboard',
@@ -262,7 +262,7 @@ export default function Home() {
             ].map((project, i) => (
               <div
                 key={project.title}
-                className="group border border-border/50 p-8 hover-elevate hover:border-primary/30 hover:shadow-md transition-all duration-300 relative overflow-hidden dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200 dark:hover:shadow-neutral-800"
+                className="group border border-border/50 p-8 max-sm:p-4 hover-elevate hover:border-primary/30 hover:shadow-md transition-all duration-300 relative overflow-hidden dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200 dark:hover:shadow-neutral-800 max-sm:text-center"
                 data-testid={`card-showcase-${i + 1}`}
               >
                 <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors" />
@@ -290,8 +290,8 @@ export default function Home() {
             <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide mb-8" data-testid="heading-about">
               Who We Are
             </h2>
-            <div className="h-0.5 w-16 bg-blue-500/70 rounded-full mx-auto mb-8"></div>
-            <div className="space-y-6 text-muted-foreground dark:text-neutral-200 leading-relaxed dark:leading-relaxed max-w-3xl mx-auto">
+            <div className="h-0.5 w-16 max-sm:w-12 bg-blue-500/70 rounded-full mx-auto mb-8"></div>
+            <div className="space-y-6 text-muted-foreground dark:text-neutral-200 leading-relaxed dark:leading-relaxed max-w-3xl max-sm:max-w-xs max-sm:px-4 mx-auto max-sm:text-center">
               <p data-testid="text-about-1">
                 Bunnycode is an AI automation agency built for the modern era. We specialize in creating intelligent systems that work 24/7, eliminating repetitive tasks and amplifying human potential.
               </p>
@@ -305,7 +305,7 @@ export default function Home() {
           </div>
             
           <div className="h-px bg-neutral-200 dark:bg-neutral-700 dark:opacity-70 my-12"></div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-sm:gap-6 max-w-5xl mx-auto">
             {[
               {
                 number: '01',
@@ -323,8 +323,8 @@ export default function Home() {
                 description: 'Continuous monitoring and refinement ensure peak performance and ROI.',
               },
             ].map((step, i) => (
-              <div key={step.number} className="border border-neutral-200 p-6 hover-elevate transition-all dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200" data-testid={`step-${i + 1}`}>
-                <div className="flex items-start gap-4">
+              <div key={step.number} className="border border-neutral-200 p-6 max-sm:p-4 hover-elevate transition-all dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200 max-sm:text-center" data-testid={`step-${i + 1}`}>
+                <div className="flex items-start gap-4 max-sm:flex-col max-sm:items-center">
                   <div className="w-9 h-9 rounded-full border-2 border-primary dark:border-blue-400 bg-background dark:bg-neutral-900 flex items-center justify-center flex-shrink-0">
                     <span className="font-heading font-bold text-lg text-primary dark:text-blue-400" data-testid={`text-step-number-${i + 1}`}>
                       {step.number}
@@ -346,7 +346,7 @@ export default function Home() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="pt-24 pb-24 px-6 lg:px-8 relative z-10 bg-background dark:bg-neutral-950">
+      <section id="contact" className="pt-24 max-sm:pt-12 pb-24 px-6 lg:px-8 relative z-10 bg-background dark:bg-neutral-950">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-3xl md:text-5xl font-heading font-bold tracking-wide mb-8" data-testid="heading-cta">
@@ -362,48 +362,48 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="pt-24 pb-24 px-6 lg:px-8 relative z-10 bg-background dark:bg-neutral-950">
+      <footer className="pt-24 max-sm:pt-8 pb-24 max-sm:pb-8 px-6 lg:px-8 relative z-10 bg-background dark:bg-neutral-950">
         <div className="h-px bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent mb-8"></div>
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-sm:gap-6 mb-8 items-start max-sm:text-center">
             <div>
-              <h3 className="font-heading font-bold text-lg mb-4 tracking-wide" data-testid="heading-footer-brand">
+              <h3 className="font-heading font-bold text-lg max-sm:text-base mb-4 tracking-wide" data-testid="heading-footer-brand">
                 Bunnycode.ai
               </h3>
-              <p className="text-sm text-muted-foreground" data-testid="text-footer-tagline">
+              <p className="text-sm max-sm:text-xs text-muted-foreground" data-testid="text-footer-tagline">
                 AI-Native Automation
               </p>
             </div>
             
             <div>
-              <h4 className="font-heading font-semibold text-sm uppercase tracking-wide mb-4" data-testid="heading-footer-links">
+              <h4 className="font-heading font-semibold text-sm max-sm:text-xs uppercase tracking-wide mb-4" data-testid="heading-footer-links">
                 Navigation
               </h4>
               <div className="flex flex-col gap-2">
                 <button 
                   onClick={() => scrollToSection('services')}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
+                  className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center"
                   data-testid="link-footer-services"
                 >
                   Services
                 </button>
                 <button 
                   onClick={() => scrollToSection('showcase')}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
+                  className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center"
                   data-testid="link-footer-showcase"
                 >
                   Showcase
                 </button>
                 <button 
                   onClick={() => scrollToSection('about')}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
+                  className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center"
                   data-testid="link-footer-about"
                 >
                   About
                 </button>
                 <button 
                   onClick={() => scrollToSection('contact')}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors text-left"
+                  className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center"
                   data-testid="link-footer-contact"
                 >
                   Contact
@@ -412,7 +412,7 @@ export default function Home() {
             </div>
             
             <div>
-              <h4 className="font-heading font-semibold text-sm uppercase tracking-wide mb-4" data-testid="heading-footer-action">
+              <h4 className="font-heading font-semibold text-sm max-sm:text-xs uppercase tracking-wide mb-4" data-testid="heading-footer-action">
                 Get Started
               </h4>
               <Link to="/get-automated" data-testid="link-footer-get-automated">
