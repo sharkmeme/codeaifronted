@@ -167,10 +167,10 @@ export default function Home() {
       </section>
 
       {/* Divider */}
-      <div className="h-px bg-neutral-200 my-20"></div>
+      <div className="h-px bg-neutral-200 mt-20 mb-0"></div>
 
       {/* Services Section */}
-      <section id="services" className="py-20 px-6 lg:px-8 relative z-10 bg-neutral-50">
+      <section id="services" className="pt-4 pb-20 px-6 lg:px-8 relative z-10 bg-neutral-50">
         <div className="max-w-7xl mx-auto">
           <div className="h-px bg-neutral-200 mb-12"></div>
           <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-18" data-testid="heading-services">
