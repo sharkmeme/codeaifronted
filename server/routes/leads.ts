@@ -27,12 +27,14 @@ router.post("/", async (req, res) => {
 
     res.json({ success: true });
 
-    setImmediate(() => {
-      mailer.sendMail({
-        from: "Bunnycode Leads <no-reply@bunnycode.ai>",
-        to: process.env.ALERT_EMAIL,
-        subject: "New Lead Submission",
-        text: `
+    setImmediate(async () => {
+      console.log("Sending email FROM:", process.env.SMTP_USER, "TO:", process.env.ALERT_EMAIL);
+      try {
+        await mailer.sendMail({
+          from: process.env.SMTP_USER,
+          to: process.env.ALERT_EMAIL,
+          subject: "New Lead Submission",
+          text: `
 New lead received:
 
 Name: ${req.body.name}
@@ -43,9 +45,11 @@ Project Type: ${req.body.projectType}
 Description: ${req.body.description}
 Extra Info: ${req.body.extraInfo}
   `,
-      }).catch((emailError) => {
-        console.error("Email sending failed:", emailError);
-      });
+        });
+        console.log("EMAIL SENT OK");
+      } catch (err) {
+        console.error("EMAIL SEND ERROR:", err);
+      }
     });
   } catch (err) {
     console.error("Server error:", err);
