@@ -98,7 +98,7 @@ export default function Home() {
           
           {/* Hero CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
-            <Link to="/get-automated">
+            <Link to="/get-automated" data-testid="link-hero-get-automated">
               <Button 
                 size="lg" 
                 className="text-sm uppercase tracking-wider px-8 min-w-[200px]"
@@ -388,7 +388,7 @@ export default function Home() {
               <h4 className="font-heading font-semibold text-sm uppercase tracking-wider mb-4" data-testid="heading-footer-action">
                 Get Started
               </h4>
-              <Link to="/get-automated">
+              <Link to="/get-automated" data-testid="link-footer-get-automated">
                 <Button 
                   variant="outline" 
                   className="w-full sm:w-auto"
