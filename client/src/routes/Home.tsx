@@ -67,7 +67,7 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section */}
+      {/* Hero Section - Minimal */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 pt-16 overflow-hidden">
         {/* Visual effects scoped to hero */}
         <div className="noise-overlay" />
@@ -79,13 +79,18 @@ export default function Home() {
         <div className="max-w-7xl mx-auto w-full text-center relative z-10">
           {/* Main glitch title */}
           <h1 
-            className="glitch-text font-heading font-bold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-extra-wide mb-8"
+            className="glitch-text font-heading font-bold text-6xl sm:text-7xl md:text-8xl lg:text-9xl tracking-extra-wide"
             data-glitch="BUNNYCODE.AI"
             data-testid="text-hero-title"
           >
             <Typewriter text="BUNNYCODE.AI" />
           </h1>
-          
+        </div>
+      </section>
+
+      {/* Intro Section */}
+      <section id="intro" className="py-24 px-6 lg:px-8 relative z-10 bg-background">
+        <div className="max-w-7xl mx-auto text-center">
           {/* Tagline */}
           <p className="text-base sm:text-lg md:text-xl uppercase tracking-ultra-wide text-muted-foreground max-w-3xl mx-auto mb-12" data-testid="text-tagline">
             AI-Native Automation That Moves Fast.
@@ -96,8 +101,8 @@ export default function Home() {
             We build fully automated systems, AI content engines, and next-generation workflows for creators and businesses.
           </p>
           
-          {/* Hero CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-20">
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-24">
             <Link to="/get-automated" data-testid="link-hero-get-automated">
               <Button 
                 size="lg" 
@@ -120,7 +125,7 @@ export default function Home() {
           </div>
           
           {/* Client trust section */}
-          <div className="mt-32 md:mt-40">
+          <div>
             <p className="text-[10px] uppercase tracking-ultra-wide text-muted-foreground mb-6" data-testid="text-trusted-caption">
               Trusted by forward-thinking creators and businesses
             </p>
