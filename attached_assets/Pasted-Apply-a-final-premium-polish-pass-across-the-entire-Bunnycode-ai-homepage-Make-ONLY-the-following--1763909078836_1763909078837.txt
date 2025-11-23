@@ -1,0 +1,113 @@
+Apply a final premium polish pass across the entire Bunnycode.ai homepage.
+
+Make ONLY the following improvements to Home.tsx, ContactForm.tsx, BunnyOrb.tsx (position only), and index.css.
+
+---------------------------------------------
+1. GLOBAL SPACING + ALIGNMENT
+---------------------------------------------
+• Ensure ALL section titles are centered consistently:
+  - “Who We Are” should be centered (currently left-aligned).
+  - Apply the same title styling used for “What We Automate” and “Featured Work”.
+
+• Reduce all unnecessary empty white gaps between major sections by ~15%.
+
+• Add subtle section fade separators between all major sections:
+  <div className="h-px bg-neutral-200 my-20"></div>
+
+---------------------------------------------
+2. HERO SECTION
+---------------------------------------------
+• Move bunny orb down by another 10–20px so it never touches the navbar on large screens.
+• Reduce the hero → intro gap by ~20%.
+• DO NOT modify glitch or typewriter logic.
+
+---------------------------------------------
+3. INTRO SECTION
+---------------------------------------------
+• Reduce vertical padding above and below intro text by ~20px.
+• Tighten the heading line-height (leading-snug).
+• Reduce button group gap to gap-3.
+• Constrain text width to max-w-xl instead of max-w-2xl.
+• Slightly increase weight of paragraph text (font-medium).
+
+---------------------------------------------
+4. MARQUEE SECTION
+---------------------------------------------
+• Center the marquee items vertically perfectly using:
+  className="h-12 flex items-center justify-center"
+
+• Reduce marquee animation speed slightly:
+  from 18s or 20s → 24s duration
+
+• Increase opacity of items to 0.55.
+
+• Reduce vertical padding above and below marquee by 24px each.
+
+---------------------------------------------
+5. WHAT WE AUTOMATE SECTION
+---------------------------------------------
+• Increase icons by +10% for balance.
+• Add hover shadow to cards:
+  hover:shadow-md transition-shadow
+
+• Add subtle top fade:
+  <div className="h-px bg-neutral-200 mb-12"></div>
+
+---------------------------------------------
+6. FEATURED WORK SECTION
+---------------------------------------------
+• Increase spacing between title and cards by +20px.
+• Increase category label tint slightly:
+  from text-blue-300 → text-blue-400
+
+• Add hover shadow to cards:
+  hover:shadow-md transition-shadow
+
+---------------------------------------------
+7. WHO WE ARE SECTION
+---------------------------------------------
+• CENTER the “Who We Are” heading (important).
+• Center the blue divider line under it.
+• Constrain paragraph text to max-w-3xl mx-auto.
+• Reduce the top padding slightly.
+• Reduce paragraph line-height to leading-relaxed.
+
+---------------------------------------------
+8. AUDIT / BUILD / OPTIMIZE SECTION
+---------------------------------------------
+• Reduce icon circles by another -10%.
+• Reduce circle border color intensity (border-neutral-200).
+• Add subtle divider above this section.
+
+---------------------------------------------
+9. CONTACT FORM
+---------------------------------------------
+• Remove the entire “Company (Optional)” field.
+• Reduce top padding by ~30px.
+• Make submit button slightly smaller:
+  py-3 → py-2.5
+• Center everything tightly.
+
+---------------------------------------------
+10. FOOTER
+---------------------------------------------
+• Reduce vertical padding above footer by 24px.
+• Add subtle top gradient:
+  <div className="h-px bg-neutral-200"></div>
+• Make footer navigation column spacing tighter (reduce gap by ~20%).
+• Style footer “Get Automated” link as ghost button.
+
+---------------------------------------------
+IMPORTANT RULES:
+---------------------------------------------
+• Do NOT modify:
+  - glitch keyframes
+  - typewriter component
+  - backend or form logic
+  - routing
+
+• Only apply layout, spacing, alignment, and minor styling improvements.
+• Ensure consistency across all sections.
+• The goal is premium polish (o.xyz / Apple level).
+
+After applying all changes, re-run the front-end.

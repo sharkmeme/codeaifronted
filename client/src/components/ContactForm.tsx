@@ -19,7 +19,6 @@ export function ContactForm() {
     defaultValues: {
       name: "",
       email: "",
-      company: "",
       message: "",
     },
   });
@@ -115,26 +114,6 @@ export function ContactForm() {
 
         <FormField
           control={form.control}
-          name="company"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel className="text-sm uppercase tracking-wide">Company (optional)</FormLabel>
-              <FormControl>
-                <Input
-                  {...field}
-                  value={field.value || ""}
-                  placeholder="Your company name (optional)"
-                  data-testid="input-company"
-                  className="bg-card"
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
           name="message"
           render={({ field }) => (
             <FormItem>
@@ -156,7 +135,7 @@ export function ContactForm() {
         <Button
           type="submit"
           size="lg"
-          className="max-w-md mx-auto w-full text-sm uppercase tracking-wider"
+          className="max-w-md mx-auto w-full text-sm uppercase tracking-wider py-2.5"
           disabled={form.formState.isSubmitting}
           data-testid="button-submit-form"
         >

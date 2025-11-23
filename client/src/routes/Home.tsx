@@ -68,7 +68,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section - Minimal */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-8">
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-4">
         {/* Visual effects scoped to hero */}
         <div className="noise-overlay" />
         <div className="vertical-lines" />
@@ -89,20 +89,20 @@ export default function Home() {
       </section>
 
       {/* Intro Section */}
-      <section id="intro" className="pt-14 pb-24 px-6 lg:px-8 relative z-10 bg-background border-b border-neutral-200">
+      <section id="intro" className="pt-10 pb-16 px-6 lg:px-8 relative z-10 bg-background">
         <div className="max-w-7xl mx-auto text-center">
           {/* Tagline */}
-          <p className="text-base sm:text-lg md:text-xl uppercase tracking-ultra-wide text-muted-foreground max-w-2xl mx-auto mb-10" data-testid="text-tagline">
+          <p className="text-base sm:text-lg md:text-xl uppercase tracking-ultra-wide text-muted-foreground max-w-xl mx-auto mb-10 leading-snug" data-testid="text-tagline">
             AI-Native Automation That Moves Fast.
           </p>
 
           {/* Subheadline */}
-          <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed" data-testid="text-subheadline">
+          <p className="text-sm sm:text-base text-muted-foreground font-medium max-w-xl mx-auto mb-10 leading-relaxed" data-testid="text-subheadline">
             We build fully automated systems, AI content engines, and next-generation workflows for creators and businesses.
           </p>
           
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12">
             <Link to="/get-automated" data-testid="link-hero-get-automated">
               <Button 
                 size="lg" 
@@ -125,13 +125,13 @@ export default function Home() {
           </div>
           
           {/* Client trust section */}
-          <div>
-            <p className="text-[10px] uppercase tracking-ultra-wide text-muted-foreground mb-6" data-testid="text-trusted-caption">
+          <div className="mt-8">
+            <p className="text-[10px] uppercase tracking-ultra-wide text-muted-foreground mb-4" data-testid="text-trusted-caption">
               Trusted by forward-thinking creators and businesses
             </p>
             
-            <div className="marquee opacity-45">
-              <div className="marquee-content h-12 flex items-center">
+            <div className="marquee opacity-55">
+              <div className="marquee-content h-12 flex items-center justify-center">
                 {/* First set */}
                 {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
                   <div 
@@ -166,9 +166,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="h-px bg-neutral-200 my-20"></div>
+
       {/* Services Section */}
-      <section id="services" className="py-24 px-6 lg:px-8 relative z-10 bg-neutral-50 mt-16">
+      <section id="services" className="py-20 px-6 lg:px-8 relative z-10 bg-neutral-50">
         <div className="max-w-7xl mx-auto">
+          <div className="h-px bg-neutral-200 mb-12"></div>
           <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-16" data-testid="heading-services">
             What We Automate
           </h2>
@@ -200,12 +204,12 @@ export default function Home() {
               return (
                 <div
                   key={service.title}
-                  className="service-card group border border-border/50 p-8 hover-elevate hover:border-primary/30 transition-all duration-300 relative overflow-visible"
+                  className="service-card group border border-border/50 p-8 hover-elevate hover:border-primary/30 hover:shadow-md transition-all duration-300 relative overflow-visible"
                   data-testid={`card-service-${i + 1}`}
                 >
                   <div className="glitch-line" />
                   <div className="mb-4 text-primary">
-                    <IconComponent className="w-10 h-10" />
+                    <IconComponent className="w-11 h-11" />
                   </div>
                   <h3 className="font-heading font-bold text-xl mb-4 tracking-wide" data-testid={`heading-service-${i + 1}`}>
                     {service.title}
@@ -220,10 +224,13 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="h-px bg-neutral-200 my-20"></div>
+
       {/* Showcase Section */}
-      <section id="showcase" className="py-24 px-6 lg:px-8 relative z-10 bg-neutral-50 border-t border-neutral-200 mt-32">
+      <section id="showcase" className="py-20 px-6 lg:px-8 relative z-10 bg-neutral-50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-16" data-testid="heading-showcase">
+          <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide text-center mb-20" data-testid="heading-showcase">
             Featured Work
           </h2>
           
@@ -262,12 +269,12 @@ export default function Home() {
             ].map((project, i) => (
               <div
                 key={project.title}
-                className="group border border-border/50 p-8 hover-elevate hover:border-primary/30 transition-all duration-300 relative overflow-hidden"
+                className="group border border-border/50 p-8 hover-elevate hover:border-primary/30 hover:shadow-md transition-all duration-300 relative overflow-hidden"
                 data-testid={`card-showcase-${i + 1}`}
               >
                 <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors" />
                 <div className="relative">
-                  <p className="text-[10px] uppercase tracking-ultra-wide text-primary mb-3" data-testid={`text-showcase-category-${i + 1}`}>
+                  <p className="text-[10px] uppercase tracking-ultra-wide text-blue-400 mb-3" data-testid={`text-showcase-category-${i + 1}`}>
                     {project.category}
                   </p>
                   <h3 className="font-heading font-bold text-xl mb-2 tracking-wide" data-testid={`heading-showcase-${i + 1}`}>
@@ -283,53 +290,56 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="h-px bg-neutral-200 my-20"></div>
+
       {/* About Section */}
-      <section id="about" className="py-24 pt-44 px-6 lg:px-8 relative z-10">
+      <section id="about" className="py-20 px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide mb-8" data-testid="heading-about">
-                Who We Are
-              </h2>
-              <div className="h-1 w-16 bg-blue-500 rounded-full mb-8"></div>
-              <div className="space-y-6 text-muted-foreground leading-relaxed">
-                <p data-testid="text-about-1">
-                  Bunnycode is an AI automation agency built for the modern era. We specialize in creating intelligent systems that work 24/7, eliminating repetitive tasks and amplifying human potential.
-                </p>
-                <p data-testid="text-about-2">
-                  Founded by engineers and creators who understand the power of automation, we've built our reputation on delivering production-ready solutions that scale. From content pipelines to trading algorithms, we architect systems that perform.
-                </p>
-                <p data-testid="text-about-3">
-                  What makes us different? We don't just automate—we build AI-native systems from the ground up. Every project is custom-engineered for your specific workflow, optimized for performance, and designed to evolve with your business.
-                </p>
-              </div>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold tracking-wide mb-4" data-testid="heading-about">
+              Who We Are
+            </h2>
+            <div className="h-1 w-16 bg-blue-500 rounded-full mx-auto mb-8"></div>
+            <div className="space-y-6 text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+              <p data-testid="text-about-1">
+                Bunnycode is an AI automation agency built for the modern era. We specialize in creating intelligent systems that work 24/7, eliminating repetitive tasks and amplifying human potential.
+              </p>
+              <p data-testid="text-about-2">
+                Founded by engineers and creators who understand the power of automation, we've built our reputation on delivering production-ready solutions that scale. From content pipelines to trading algorithms, we architect systems that perform.
+              </p>
+              <p data-testid="text-about-3">
+                What makes us different? We don't just automate—we build AI-native systems from the ground up. Every project is custom-engineered for your specific workflow, optimized for performance, and designed to evolve with your business.
+              </p>
             </div>
+          </div>
             
-            <div className="grid grid-cols-1 gap-8">
-              {[
-                {
-                  number: '01',
-                  title: 'Audit',
-                  description: 'We analyze your current workflows and identify high-impact automation opportunities.',
-                },
-                {
-                  number: '02',
-                  title: 'Build',
-                  description: 'Our team designs and implements custom AI-native automation solutions tailored to your needs.',
-                },
-                {
-                  number: '03',
-                  title: 'Optimize',
-                  description: 'Continuous monitoring and refinement ensure peak performance and ROI.',
-                },
-              ].map((step, i) => (
-                <div key={step.number} className="border border-neutral-300 p-6 hover-elevate transition-all" data-testid={`step-${i + 1}`}>
-                  <div className="flex items-start gap-4">
-                    <div className="w-11 h-11 rounded-full border-2 border-primary bg-background flex items-center justify-center flex-shrink-0">
-                      <span className="font-heading font-bold text-lg text-primary" data-testid={`text-step-number-${i + 1}`}>
-                        {step.number}
-                      </span>
-                    </div>
+          <div className="h-px bg-neutral-200 mb-12"></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {[
+              {
+                number: '01',
+                title: 'Audit',
+                description: 'We analyze your current workflows and identify high-impact automation opportunities.',
+              },
+              {
+                number: '02',
+                title: 'Build',
+                description: 'Our team designs and implements custom AI-native automation solutions tailored to your needs.',
+              },
+              {
+                number: '03',
+                title: 'Optimize',
+                description: 'Continuous monitoring and refinement ensure peak performance and ROI.',
+              },
+            ].map((step, i) => (
+              <div key={step.number} className="border border-neutral-200 p-6 hover-elevate transition-all" data-testid={`step-${i + 1}`}>
+                <div className="flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full border-2 border-primary bg-background flex items-center justify-center flex-shrink-0">
+                    <span className="font-heading font-bold text-lg text-primary" data-testid={`text-step-number-${i + 1}`}>
+                      {step.number}
+                    </span>
+                  </div>
                     <div>
                       <h3 className="font-heading font-bold text-lg mb-2 tracking-wide" data-testid={`heading-step-${i + 1}`}>
                         {step.title}
@@ -341,13 +351,15 @@ export default function Home() {
                   </div>
                 </div>
               ))}
-            </div>
           </div>
         </div>
       </section>
 
+      {/* Divider */}
+      <div className="h-px bg-neutral-200 my-20"></div>
+
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-6 lg:px-8 relative z-10">
+      <section id="contact" className="py-12 px-6 lg:px-8 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-heading font-bold tracking-wide mb-6" data-testid="heading-cta">
@@ -363,9 +375,10 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-8 px-6 lg:px-8 border-t border-neutral-200 relative z-10">
+      <footer className="pt-6 pb-8 px-6 lg:px-8 relative z-10">
+        <div className="h-px bg-neutral-200 mb-8"></div>
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div>
               <h3 className="font-heading font-bold text-lg mb-4" data-testid="heading-footer-brand">
                 Bunnycode.ai
@@ -417,7 +430,7 @@ export default function Home() {
               </h4>
               <Link to="/get-automated" data-testid="link-footer-get-automated">
                 <Button 
-                  variant="outline" 
+                  variant="ghost" 
                   className="w-full sm:w-auto"
                   data-testid="button-footer-get-automated"
                 >
