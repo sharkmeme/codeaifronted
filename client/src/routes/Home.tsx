@@ -230,33 +230,33 @@ export default function Home() {
           <div className="grid grid-cols-1 max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 max-sm:gap-6">
             {[
               {
-                title: 'Automation Dashboard',
-                subtitle: 'Real-time workflow monitoring',
+                title: 'Full-Spectrum Workflow Intelligence',
+                subtitle: 'Real-time monitoring, automated task routing, error-detection, and analytics-driven optimization—built to run mission-critical operations without human bottlenecks.',
                 category: 'Process Automation',
               },
               {
-                title: 'AI Content Engine',
-                subtitle: 'Multi-channel content generation',
+                title: 'Multi-Channel Creation. Zero Manual Work.',
+                subtitle: 'Automatically generate, repurpose, schedule, and distribute content across all platforms. High-volume output with brand-consistent quality.',
                 category: 'Content Automation',
               },
               {
-                title: 'Trading Bot Framework',
-                subtitle: 'Algorithmic trading platform',
+                title: 'Lightning-Fast Execution. Data-Driven Decisions.',
+                subtitle: 'Adaptive algorithms, real-time market scanning, automated strategy execution, and performance tracking—engineered for speed and accuracy.',
                 category: 'Trading Automation',
               },
               {
-                title: 'AI Website Builder',
-                subtitle: 'Intelligent web application',
+                title: 'Websites That Think, React & Convert.',
+                subtitle: 'AI-powered landing pages, dynamic content blocks, automated SEO, and instant A/B testing—built for growth and personalization at scale.',
                 category: 'Web Development',
               },
               {
-                title: 'Short-Form Automation',
-                subtitle: 'Social media content pipeline',
+                title: 'High-Volume Short-Form Production Engine.',
+                subtitle: 'Auto-cut, auto-caption, auto-resize, and auto-post videos—all aligned to your niche, style, and current trends. Scales with your brand, not your workload.',
                 category: 'Content Automation',
               },
               {
-                title: 'Lead-Gen Funnels',
-                subtitle: 'Automated customer acquisition',
+                title: 'AI-Operated Customer Acquisition Systems.',
+                subtitle: 'Intelligent lead scoring, automated outreach, CRM syncing, and conversion tracking—plug-and-play funnels that run 24/7.',
                 category: 'Process Automation',
               },
             ].map((project, i) => (
