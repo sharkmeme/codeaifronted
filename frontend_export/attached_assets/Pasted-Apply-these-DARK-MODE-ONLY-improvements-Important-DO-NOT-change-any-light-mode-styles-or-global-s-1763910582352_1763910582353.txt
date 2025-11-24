@@ -1,0 +1,98 @@
+Apply these DARK MODE ONLY improvements. 
+Important: DO NOT change any light-mode styles or global spacing. 
+Only use `dark:` Tailwind classes or `html.dark` scoped CSS.
+
+---------------------------------------------
+1. HERO & SECTION BACKGROUND FIX
+---------------------------------------------
+• Ensure ONLY the hero has: dark:bg-black.
+• For all sections below hero (#intro-section, #automate-section, #featured-section, #about-section, #steps-section), add:
+  dark:bg-neutral-950
+
+• Ensure .matrix-circle::before does NOT apply dark background outside hero:
+  Change selector from `.matrix-circle::before` to `.hero .matrix-circle::before`
+
+---------------------------------------------
+2. MARQUEE (client logos)
+---------------------------------------------
+• Increase visibility:
+  dark:text-neutral-300
+  dark:opacity-80
+
+---------------------------------------------
+3. “WHAT WE AUTOMATE” TITLE
+---------------------------------------------
+• Add:
+  dark:text-white
+  dark:font-semibold
+
+---------------------------------------------
+4. SERVICE CARDS & FEATURED WORK CARDS
+---------------------------------------------
+For ALL cards (services, featured work, and steps), add:
+
+• dark:bg-neutral-900
+• dark:border-neutral-700
+• dark:text-neutral-200
+• dark:hover:shadow-neutral-800
+
+Icons:
+• dark:text-blue-400
+
+---------------------------------------------
+5. WHO WE ARE SECTION
+---------------------------------------------
+• dark:bg-neutral-950
+• dark:text-neutral-200
+• dark:leading-relaxed
+• Divider:
+  dark:bg-neutral-700 dark:opacity-70
+
+---------------------------------------------
+6. AUDIT / BUILD / OPTIMIZE CARDS
+---------------------------------------------
+Same card styling:
+• dark:bg-neutral-900
+• dark:border-neutral-700
+• dark:text-neutral-200
+• dark:text-blue-400 for icons
+
+---------------------------------------------
+7. CONTACT SECTION
+---------------------------------------------
+Inputs:
+• dark:bg-neutral-900
+• dark:border-neutral-700
+• dark:text-neutral-100
+• dark:placeholder-neutral-500
+
+Button:
+• dark:bg-blue-600
+• dark:hover:bg-blue-500
+
+---------------------------------------------
+8. GET AUTOMATED PAGE
+---------------------------------------------
+Container:
+• dark:bg-neutral-950
+
+Inputs:
+• dark:bg-neutral-900
+• dark:border-neutral-700
+• dark:text-neutral-100
+• dark:placeholder-neutral-600
+
+Button:
+• dark:bg-blue-600
+• dark:hover:bg-blue-500
+
+---------------------------------------------
+9. FOOTER
+---------------------------------------------
+• dark:bg-neutral-950
+• dark:text-neutral-400
+• dark:border-neutral-800
+
+---------------------------------------------
+Critical Rule:
+ONLY modify dark mode styles. DO NOT touch light mode or spacing.

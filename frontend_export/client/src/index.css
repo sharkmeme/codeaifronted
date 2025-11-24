@@ -1,0 +1,666 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LIGHT MODE */
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+  --opaque-button-border-intensity: -8;
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+  --background: 0 0% 98%;
+  --foreground: 0 0% 8%;
+  --border: 0 0% 92%;
+  --card: 0 0% 96%;
+  --card-foreground: 0 0% 8%;
+  --card-border: 0 0% 93%;
+  --sidebar: 0 0% 94%;
+  --sidebar-foreground: 0 0% 8%;
+  --sidebar-border: 0 0% 90%;
+  --sidebar-primary: 195 100% 45%;
+  --sidebar-primary-foreground: 195 100% 98%;
+  --sidebar-accent: 0 0% 88%;
+  --sidebar-accent-foreground: 0 0% 8%;
+  --sidebar-ring: 195 100% 45%;
+  --popover: 0 0% 92%;
+  --popover-foreground: 0 0% 8%;
+  --popover-border: 0 0% 88%;
+  --primary: 195 100% 45%;
+  --primary-foreground: 195 100% 98%;
+  --secondary: 0 0% 86%;
+  --secondary-foreground: 0 0% 8%;
+  --muted: 0 3% 88%;
+  --muted-foreground: 0 3% 25%;
+  --accent: 195 15% 90%;
+  --accent-foreground: 195 15% 12%;
+  --destructive: 0 84% 42%;
+  --destructive-foreground: 0 84% 98%;
+  --input: 0 0% 78%;
+  --ring: 195 100% 45%;
+  --chart-1: 195 100% 35%;
+  --chart-2: 310 100% 40%;
+  --chart-3: 280 85% 45%;
+  --chart-4: 50 100% 45%;
+  --chart-5: 160 75% 38%;
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Space Mono, monospace;
+  --font-heading: Space Grotesk, system-ui, sans-serif;
+  --radius: .5rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.02);
+  --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.03);
+  --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.03), 0px 1px 2px -1px hsl(0 0% 0% / 0.04);
+  --shadow: 0px 2px 0px 0px hsl(0 0% 0% / 0.04), 0px 1px 2px -1px hsl(0 0% 0% / 0.05);
+  --shadow-md: 0px 2px 0px 0px hsl(0 0% 0% / 0.05), 0px 2px 4px -1px hsl(0 0% 0% / 0.06);
+  --shadow-lg: 0px 2px 0px 0px hsl(0 0% 0% / 0.06), 0px 4px 6px -1px hsl(0 0% 0% / 0.08);
+  --shadow-xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.08), 0px 8px 10px -1px hsl(0 0% 0% / 0.10);
+  --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.12);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+/* Fallback for older browsers */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+.dark {
+  --button-outline: rgba(255,255,255, .10);
+  --badge-outline: rgba(255,255,255, .05);
+  --opaque-button-border-intensity: 9;
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .09);
+  --background: 0 0% 6%;
+  --foreground: 0 0% 95%;
+  --border: 0 0% 14%;
+  --card: 0 0% 8%;
+  --card-foreground: 0 0% 95%;
+  --card-border: 0 0% 11%;
+  --sidebar: 0 0% 10%;
+  --sidebar-foreground: 0 0% 95%;
+  --sidebar-border: 0 0% 13%;
+  --sidebar-primary: 195 100% 55%;
+  --sidebar-primary-foreground: 195 100% 8%;
+  --sidebar-accent: 0 0% 14%;
+  --sidebar-accent-foreground: 0 0% 95%;
+  --sidebar-ring: 195 100% 55%;
+  --popover: 0 0% 12%;
+  --popover-foreground: 0 0% 95%;
+  --popover-border: 0 0% 16%;
+  --primary: 195 100% 55%;
+  --primary-foreground: 195 100% 8%;
+  --secondary: 0 0% 18%;
+  --secondary-foreground: 0 0% 95%;
+  --muted: 195 8% 16%;
+  --muted-foreground: 195 8% 75%;
+  --accent: 195 12% 15%;
+  --accent-foreground: 195 12% 90%;
+  --destructive: 0 84% 35%;
+  --destructive-foreground: 0 84% 98%;
+  --input: 0 0% 28%;
+  --ring: 195 100% 55%;
+  --chart-1: 195 100% 65%;
+  --chart-2: 310 100% 70%;
+  --chart-3: 280 85% 72%;
+  --chart-4: 50 100% 68%;
+  --chart-5: 160 75% 65%;
+  --shadow-2xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.15);
+  --shadow-xs: 0px 2px 0px 0px hsl(0 0% 0% / 0.20);
+  --shadow-sm: 0px 2px 0px 0px hsl(0 0% 0% / 0.20), 0px 1px 2px -1px hsl(0 0% 0% / 0.25);
+  --shadow: 0px 2px 0px 0px hsl(0 0% 0% / 0.25), 0px 1px 2px -1px hsl(0 0% 0% / 0.30);
+  --shadow-md: 0px 2px 0px 0px hsl(0 0% 0% / 0.30), 0px 2px 4px -1px hsl(0 0% 0% / 0.35);
+  --shadow-lg: 0px 2px 0px 0px hsl(0 0% 0% / 0.35), 0px 4px 6px -1px hsl(0 0% 0% / 0.40);
+  --shadow-xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.40), 0px 8px 10px -1px hsl(0 0% 0% / 0.45);
+  --shadow-2xl: 0px 2px 0px 0px hsl(0 0% 0% / 0.50);
+
+/* Fallback for older browsers */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/**
+ * Using the elevate system.
+ * Automatic contrast adjustment.
+ *
+ * <element className="hover-elevate" />
+ * <element className="active-elevate-2" />
+ *
+ * // Using the tailwind utility when a data attribute is "on"
+ * <element className="toggle-elevate data-[state=on]:toggle-elevated" />
+ * // Or manually controlling the toggle state
+ * <element className="toggle-elevate toggle-elevated" />
+ *
+ * Elevation systems have to handle many states.
+ * - not-hovered, vs. hovered vs. active  (three mutually exclusive states)
+ * - toggled or not
+ * - focused or not (this is not handled with these utilities)
+ *
+ * Even without handling focused or not, this is six possible combinations that
+ * need to be distinguished from eachother visually.
+ */
+@layer utilities {
+
+  /* Hide ugly search cancel button in Chrome until we can style it properly */
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  /* Placeholder styling for contentEditable div */
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  /* .no-default-hover-elevate/no-default-active-elevate is an escape hatch so consumers of
+   * buttons/badges can remove the automatic brightness adjustment on interactions
+   * and program their own. */
+  .no-default-hover-elevate {}
+
+  .no-default-active-elevate {}
+
+
+  /**
+   * Toggleable backgrounds go behind the content. Hoverable/active goes on top.
+   * This way they can stack/compound. Both will overlap the parent's borders!
+   * So borders will be automatically adjusted both on toggle, and hover/active,
+   * and they will be compounded.
+   */
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    /*border-radius: inherit;   match rounded corners */
+    border-radius: inherit;
+    z-index: -1;
+    /* sits behind content but above backdrop */
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  /* Does not work on elements with overflow:hidden! */
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    /*border-radius: inherit;   match rounded corners */
+    border-radius: inherit;
+    z-index: 999;
+    /* sits in front of content */
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+
+  /* ========================================
+     CYBERPUNK GLITCH EFFECTS
+     ======================================== */
+
+  /* Noise overlay - animated grain texture (scoped to hero) */
+  .noise-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    animation: noise 0.2s steps(2) infinite;
+  }
+
+  @keyframes noise {
+    0%, 100% { transform: translate(0, 0); }
+    10% { transform: translate(-2%, -2%); }
+    20% { transform: translate(2%, -2%); }
+    30% { transform: translate(-2%, 2%); }
+    40% { transform: translate(2%, 2%); }
+    50% { transform: translate(-2%, 0); }
+    60% { transform: translate(2%, 0); }
+    70% { transform: translate(0, -2%); }
+    80% { transform: translate(0, 2%); }
+    90% { transform: translate(-2%, -2%); }
+  }
+
+  /* Vertical lines background (scoped to hero) */
+  .vertical-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.7;
+    background-image: repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 79px,
+      hsl(var(--border) / 0.15) 79px,
+      hsl(var(--border) / 0.15) 80px
+    );
+  }
+
+  /* Scanlines overlay */
+  .scanlines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    background-image: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      hsl(var(--foreground) / 0.02) 2px,
+      hsl(var(--foreground) / 0.02) 4px
+    );
+    animation: scanline 6s linear infinite;
+  }
+
+  @keyframes scanline {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+  }
+
+  /* Matrix circle with binary code */
+  .matrix-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: min(90vw, 800px);
+    height: min(90vw, 800px);
+    border-radius: 50%;
+    opacity: 0.08;
+    z-index: 0;
+    background-image: radial-gradient(
+      circle,
+      transparent 30%,
+      hsl(var(--primary) / 0.1) 30%,
+      hsl(var(--primary) / 0.1) 31%,
+      transparent 31%
+    );
+    pointer-events: none;
+  }
+
+  .hero .matrix-circle::before {
+    content: "01001001 01001110 01010100 01000101 01010010 01001110 01000001 01001100 00100000 01000101 01010010 01010010 01001111 01010010 00100000 01000011 01001111 01000100 01000101 00100000 00110100 00110000 00110100 00100000 01001110 01001111 01010100 00100000 01000110 01001111 01010101 01001110 01000100";
+    position: absolute;
+    inset: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: clamp(8px, 1vw, 12px);
+    line-height: 1.8;
+    word-wrap: break-word;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+    overflow-wrap: break-word;
+    color: hsl(var(--primary) / 0.3);
+    opacity: 0.5;
+  }
+
+  /* Glitch text effect with chromatic aberration */
+  .glitch-text {
+    position: relative;
+    display: inline-block;
+    animation: glitch-skew 3s infinite;
+  }
+
+  .glitch-text::before,
+  .glitch-text::after {
+    content: attr(data-glitch);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+  }
+
+  .glitch-text::before {
+    color: hsl(195 100% 55%);
+    z-index: -1;
+    animation: glitch-before 3s infinite;
+  }
+
+  .glitch-text::after {
+    color: hsl(310 100% 60%);
+    z-index: -2;
+    animation: glitch-after 3s infinite;
+  }
+
+  @keyframes glitch-skew {
+    0%, 100% { transform: skew(0deg); }
+    20% { transform: skew(0deg); }
+    22% { transform: skew(-2deg); }
+    24% { transform: skew(0deg); }
+  }
+
+  @keyframes glitch-before {
+    0%, 100% { 
+      clip-path: inset(0 0 0 0);
+      transform: translate(0, 0);
+    }
+    20% {
+      clip-path: inset(32% 0 28% 0);
+      transform: translate(-3px, 2px);
+    }
+    22% {
+      clip-path: inset(56% 0 12% 0);
+      transform: translate(3px, -2px);
+    }
+    24% {
+      clip-path: inset(0 0 0 0);
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes glitch-after {
+    0%, 100% { 
+      clip-path: inset(0 0 0 0);
+      transform: translate(0, 0);
+    }
+    20% {
+      clip-path: inset(12% 0 48% 0);
+      transform: translate(3px, -2px);
+    }
+    22% {
+      clip-path: inset(20% 0 32% 0);
+      transform: translate(-3px, 2px);
+    }
+    24% {
+      clip-path: inset(0 0 0 0);
+      transform: translate(0, 0);
+    }
+  }
+
+  /* Service card glitch line effect */
+  .service-card {
+    position: relative;
+  }
+
+  .glitch-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(195 100% 55% / 0.8),
+      hsl(310 100% 60% / 0.8),
+      transparent
+    );
+    opacity: 0;
+    transform: translateY(-50%);
+    transition: opacity 0.3s ease;
+  }
+
+  .service-card:hover .glitch-line {
+    opacity: 1;
+    animation: glitch-line-sweep 0.6s ease-in-out;
+  }
+
+  @keyframes glitch-line-sweep {
+    0% {
+      transform: translateX(-100%) translateY(-50%);
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%) translateY(-50%);
+      opacity: 0;
+    }
+  }
+
+  /* Bunny Orb - Animated orb with image */
+  .bunny-orb-wrapper {
+    position: absolute;
+    top: calc(50% + 78px);
+    left: 50%;
+    width: min(60vw, 520px);
+    height: min(60vw, 520px);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .bunny-orb {
+    width: 100%;
+    height: 100%;
+    border-radius: 9999px;
+    background: radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.2),
+        rgba(240, 240, 240, 0.95)
+      );
+    box-shadow:
+      0 0 0 1px rgba(0, 0, 0, 0.05),
+      0 0 80px rgba(0, 0, 0, 0.18) inset;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bunny-orb-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: grayscale(1) contrast(1.3);
+    opacity: 0.85;
+    mix-blend-mode: multiply;
+  }
+
+  .bunny-orb--float {
+    animation: bunnyFloat 14s ease-in-out infinite;
+  }
+
+  @keyframes bunnyFloat {
+    0%, 100% {
+      transform: translateY(-10px) scale(1.02);
+    }
+    50% {
+      transform: translateY(10px) scale(0.98);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bunny-orb--float {
+      animation: none;
+    }
+  }
+
+  /* Responsive adjustments for mobile glitch effects */
+  @media (max-width: 768px) {
+    .glitch-text::before,
+    .glitch-text::after {
+      opacity: 0.5;
+    }
+
+    .matrix-circle {
+      opacity: 0.04;
+    }
+
+    .noise-overlay {
+      opacity: 0.015;
+      animation: none;
+    }
+
+    .vertical-lines {
+      opacity: 0.4;
+    }
+
+    .scanlines {
+      opacity: 0.5;
+      animation-duration: 10s;
+    }
+
+    @keyframes glitch-skew {
+      0%, 100% { transform: skew(0deg); }
+    }
+
+    @keyframes glitch-before {
+      0%, 100% { 
+        clip-path: inset(0 0 0 0);
+        transform: translate(0, 0);
+      }
+    }
+
+    @keyframes glitch-after {
+      0%, 100% { 
+        clip-path: inset(0 0 0 0);
+        transform: translate(0, 0);
+      }
+    }
+  }
+
+  /* Marquee Animation */
+  .marquee {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .marquee-content {
+    display: flex;
+    gap: 2rem;
+    animation: marquee-scroll 26s linear infinite;
+    white-space: nowrap;
+  }
+
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-33.333%); }
+  }
+
+  /* Integration Logo Hover Effects */
+  .integration-logo {
+    @apply h-10 opacity-80 cursor-pointer transition-all duration-200 ease-out hover:scale-110 hover:opacity-100;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+
+  .integration-logo:hover {
+    filter: drop-shadow(0 0 6px rgba(0,140,255,0.45));
+  }
+
+  .dark .integration-logo:hover {
+    filter: drop-shadow(0 0 8px rgba(0,170,255,0.55));
+  }
+
+  /* Marquee Logo Effects */
+  .marquee-logo {
+    @apply h-10 w-auto opacity-80 transition-all duration-200 ease-out hover:opacity-100 hover:scale-110 dark:opacity-90;
+  }
+}

@@ -1,0 +1,57 @@
+Add a Calendly booking integration to Home.tsx.
+
+===============================================
+1. Insert CTA Button Between Two Sections
+===============================================
+Place this EXACTLY between the “Featured Work” section and the “We Connect Your Apps and Services” section:
+
+<div className="w-full flex justify-center pt-24 pb-12">
+  <button
+    onClick={() => {
+      const target = document.getElementById("calendly");
+      if (target) target.scrollIntoView({ behavior: "smooth" });
+    }}
+    className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl
+               font-medium shadow-md transition-all duration-200"
+  >
+    Book a Strategy Session
+  </button>
+</div>
+
+===============================================
+2. Add Calendly Inline Embed Section
+===============================================
+AFTER the Integrations section (id="integrations"), insert this new Calendly section:
+
+<section id="calendly" className="bg-background dark:bg-neutral-950 w-full pt-24 pb-24">
+
+  <h2 className="text-center text-3xl font-bold mb-8">
+    Schedule Your Consultation
+  </h2>
+
+  <div className="max-w-3xl mx-auto">
+    <!-- Calendly inline widget begin -->
+    <div
+      className="calendly-inline-widget"
+      data-url="https://calendly.com/akademischesghosteditor/30min?hide_event_type_details=1"
+      style={{ minWidth: "320px", height: "700px" }}
+    ></div>
+    <script
+      type="text/javascript"
+      src="https://assets.calendly.com/assets/external/widget.js"
+      async
+    ></script>
+    <!-- Calendly inline widget end -->
+  </div>
+
+</section>
+
+===============================================
+Requirements
+===============================================
+• Do NOT modify any other sections or layout.  
+• Preserve spacing (pt-24 pb-24) with the global spacing system.  
+• Smooth scroll must work.  
+• Calendly embed must load correctly.  
+• Support dark/light mode automatically.  
+• Do NOT change featured work, integrations, hero, glitch, or marquee.  

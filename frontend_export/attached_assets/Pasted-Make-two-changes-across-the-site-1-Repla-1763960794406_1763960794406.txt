@@ -1,0 +1,60 @@
+Make two changes across the site:
+
+========================================================
+1) Replace marquee logos with WEBP versions
+========================================================
+
+Open Home.tsx and locate the marquee under the “GET AUTOMATED” and “VIEW SERVICES” buttons.
+
+Replace all .png logo references with the .webp versions:
+
+<img src="/logos/7eleven.webp"  alt="7-Eleven"  className="marquee-logo max-sm:h-6 md:h-10" />
+<img src="/logos/doordash.webp" alt="Doordash" className="marquee-logo max-sm:h-6 md:h-10" />
+<img src="/logos/dyson.webp"    alt="Dyson"    className="marquee-logo max-sm:h-6 md:h-10" />
+<img src="/logos/grab.webp"     alt="Grab"     className="marquee-logo max-sm:h-6 md:h-10" />
+<img src="/logos/marriott.webp" alt="Marriott" className="marquee-logo max-sm:h-6 md:h-10" />
+<img src="/logos/mondelez.webp" alt="Mondelez" className="marquee-logo max-sm:h-6 md:h-10" />
+
+Repeat the logos twice to preserve continuous marquee scrolling.
+
+Do NOT alter:
+• marquee animation
+• scroll speed
+• wrapper structure
+• spacing above/below
+
+========================================================
+2) Reduce size of logosbrands.webp in Integrations section
+========================================================
+
+Open Home.tsx and locate the <img src="/logos/logosbrands.webp"> inside <section id="integrations">.
+
+Replace its className with EXACTLY this:
+
+className="
+  w-full 
+  max-w-3xl     /* smaller, prevents stretching */
+  mx-auto
+  rounded-lg 
+  shadow-sm
+"
+
+Remove ANY of the following if they exist:
+- hover:*
+- transition-*
+- duration-*
+- ease-*
+- scale-*
+- brightness-*
+- shadow-xl
+
+The goal is a clean, static, non-stretched image that displays crisply.
+
+========================================================
+Rules:
+========================================================
+• Do NOT change spacing (pt-24 pb-24)
+• Do NOT change text or layout
+• Do NOT modify the hero, glitch, marquee animation, or other sections
+• Only replace PNG → WEBP in marquee
+• Only resize the logosbrands.webp image

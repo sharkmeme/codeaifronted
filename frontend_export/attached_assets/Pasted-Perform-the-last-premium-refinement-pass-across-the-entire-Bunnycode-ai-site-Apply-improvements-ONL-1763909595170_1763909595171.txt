@@ -1,0 +1,97 @@
+Perform the last premium refinement pass across the entire Bunnycode.ai site. Apply improvements ONLY for spacing, alignment, borders, shadows, and typography. Do NOT touch typewriter or glitch logic.
+
+Make these exact adjustments:
+
+-------------------------------------------
+1. HERO SECTION
+-------------------------------------------
+• Reduce bottom spacing between hero and intro by ~20%.
+• Lower bunny orb by 10–15px.
+• Reduce glitch slice clip-path heights in keyframes by 20%.
+• Keep all other hero effects unchanged.
+
+-------------------------------------------
+2. INTRO SECTION
+-------------------------------------------
+• Reduce top padding by ~10–12%.
+• Change max-w-xl to max-w-lg for the text block.
+• Change button group gap from gap-3 to gap-2.
+• Reduce bottom padding before marquee by ~20%.
+
+-------------------------------------------
+3. MARQUEE SECTION
+-------------------------------------------
+• Reduce top margin by ~16–24px.
+• Slightly increase opacity of marquee items to 0.62.
+• Slow animation duration to 26s.
+• Add subtle left/right mask gradient using:
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+
+-------------------------------------------
+4. WHAT WE AUTOMATE
+-------------------------------------------
+• Add 10px extra spacing between title and cards.
+• Increase icon size by 12%.
+• Add hover:shadow-lg with transition.
+• Slightly reduce grid gap.
+
+-------------------------------------------
+5. FEATURED WORK
+-------------------------------------------
+• Add 20px more spacing between title and cards.
+• Increase category label color to text-blue-500.
+• Add hover:shadow-md.
+• Reduce top padding by 15%.
+
+-------------------------------------------
+6. WHO WE ARE
+-------------------------------------------
+• Reduce top padding by ~20%.
+• Reduce the divider thickness to h-0.5 and opacity-70.
+• Apply leading-relaxed to all paragraph text.
+• Add subtle section background tint: bg-neutral-50.
+• Add px-4 padding for better text balance.
+
+-------------------------------------------
+7. AUDIT / BUILD / OPTIMIZE
+-------------------------------------------
+• Reduce icon size by another 8%.
+• Increase spacing between cards by 12px.
+• Ensure consistent border styles: border-neutral-200 for all.
+• Reduce bottom margin by ~20%.
+
+-------------------------------------------
+8. CONTACT SECTION
+-------------------------------------------
+• Reduce top spacing before headline by ~20%.
+• Reduce spacing between headline and form.
+• Adjust submit button color to slightly less saturated blue:
+  bg-[#3f80f5] hover:bg-[#3069d5]
+
+-------------------------------------------
+9. FOOTER
+-------------------------------------------
+• Add letter-spacing-wide to column headings.
+• Add gradient divider above footer:
+  <div className="h-px bg-gradient-to-r from-transparent via-neutral-300 to-transparent"></div>
+• Align all footer column text to top.
+• Reduce vertical padding by ~10%.
+
+-------------------------------------------
+10. GET AUTOMATED PAGE
+-------------------------------------------
+• Reduce container max-width by ~10%.
+• Add shadow: shadow-[0_2px_12px_rgba(0,0,0,0.04)].
+• Increase input border radius to rounded-xl.
+• Add small subtitle under title: “Let’s automate your workflow.”
+• Reduce vertical spacing throughout form by ~15%.
+
+-------------------------------------------
+IMPORTANT:
+-------------------------------------------
+• Do NOT touch backend logic or routes.
+• Do NOT alter glitch animations except clip-path height.
+• Do NOT adjust typewriter behavior.
+• Only apply layout, spacing, and styling refinements.
+
+Restart the frontend after applying all changes.

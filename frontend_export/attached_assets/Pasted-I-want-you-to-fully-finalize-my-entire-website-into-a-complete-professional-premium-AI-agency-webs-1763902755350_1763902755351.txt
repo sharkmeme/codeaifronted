@@ -1,0 +1,146 @@
+I want you to fully finalize my entire website into a complete, professional, premium AI agency website. 
+
+Follow ALL of these steps EXACTLY and thoroughly:
+
+========================================
+1) AUDIT THE ENTIRE PROJECT
+========================================
+Review the full codebase under client/src and identify:
+- unused components
+- placeholder text like “Client 1, Client 2…”
+- incomplete sections (Services, Showcase, About, Contact)
+- missing images
+- dead links
+- navbar items that don’t scroll correctly
+- inconsistent spacing or typography
+- components that need branding
+
+Do NOT delete anything yet. Just audit so you know what to fix.
+
+========================================
+2) UPDATE ALL COPYWRITING (VERY IMPORTANT)
+========================================
+Write premium, concise, modern agency-level copy for all sections:
+
+HERO SECTION:
+- Headline: “AI-Native Automation That Moves Fast.”
+- Subheadline: “We build fully automated systems, AI content engines, and next-generation workflows for creators and businesses.”
+- CTA 1: “Get Automated”
+- CTA 2: “View Services”
+
+SERVICES SECTION:
+Create 4 service cards:
+1. Process Automation  
+2. Content Automation  
+3. Trading Automation  
+4. AI Website Development
+
+Each service card needs:
+- Title
+- 2–3 sentence professional description
+
+SHOWCASE SECTION:
+Create 6 high-quality placeholder showcase tiles:
+- “Automation Dashboard”
+- “AI Content Engine”
+- “Trading Bot Framework”
+- “AI Website Builder”
+- “Short-Form Automation”
+- “Lead-Gen Funnels”
+
+Each with a short subtitle.
+
+ABOUT SECTION:
+Create premium about copy:
+- who Bunnycode/Bunnyhoney is
+- why we build AI systems
+- unique selling points
+
+CONTACT SECTION:
+Link directly to /get-automated
+
+========================================
+3) FIX NAVBAR AND SCROLL ROUTING
+========================================
+Make all navbar items anchor-scroll to their sections:
+
+- Services → scroll to #services
+- Showcase → scroll to #showcase
+- About → scroll to #about
+- Contact → scroll to #contact
+- Get Automated → route to /get-automated
+
+Implement smooth scrolling.
+
+========================================
+4) ADD REAL SECTION IDS
+========================================
+Add the following to the respective containers:
+id="services"
+id="showcase"
+id="about"
+id="contact"
+
+========================================
+5) REPLACE ALL PLACEHOLDER TEXT
+========================================
+Remove:
+- “Client 1, Client 2…”
+- placeholder images
+- placeholder text blocks
+
+Replace client list with actual dummy brands:
+- “Trusted by forward-thinking creators and businesses.”
+
+Add 5 placeholder client logos (use neutral monochrome SVGs located in public folder).
+
+========================================
+6) ADD VISUAL STRUCTURE & STYLING
+========================================
+Apply consistent:
+- spacing (padding sections 96px top/bottom)
+- typography hierarchy
+- Tailwind classes
+- layout max-w-7xl centered grids
+- responsive breakpoints
+
+Ensure the site looks visually cohesive.
+
+========================================
+7) FIX ALL BUTTONS
+========================================
+Ensure:
+- top navbar links work
+- “GET AUTOMATED” button routes correctly
+- “View Services” scrolls to #services
+
+========================================
+8) FOOTER
+========================================
+Add a clean footer:
+- Bunnyhoney.ai © 2025
+- “AI-Native Automation”
+- Links to: Services / Showcase / About / Contact / Get Automated
+
+========================================
+9) DO NOT TOUCH BACKEND OR DATABASE
+========================================
+
+========================================
+10) APPLY ALL CHANGES
+========================================
+Refactor all necessary files under:
+- client/src/pages/App.tsx
+- client/src/routes/Home.tsx (if exists)
+- client/src/components
+- client/src/sections (create if needed)
+
+Keep everything consistent and style-safe.
+
+========================================
+11) REPORT BACK
+========================================
+After completion, output:
+- List of all updated files
+- Summary of changes
+- Any remaining TODOs (if needed)

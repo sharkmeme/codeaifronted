@@ -1,0 +1,79 @@
+Add a complete “Integrations” section AFTER the “Featured Work” section and BEFORE the “Who We Are” section in Home.tsx.  
+Also implement premium hover effects on all integration logos.
+
+---------------------------------------------
+SECTION INSERTION
+---------------------------------------------
+Insert this new section:
+
+<section id="integrations" className="bg-background dark:bg-neutral-950 w-full pt-24 pb-24">
+
+  <h2 className="text-center text-3xl font-bold mb-8">
+    We Connect Your Apps and Services
+  </h2>
+
+  <p className="text-center max-w-2xl mx-auto mb-12 text-neutral-600 dark:text-neutral-300">
+    From CRMs and payment processors to AI platforms, marketing suites, and cloud systems—
+    we integrate everything into one unified automation engine. 
+    APIs, webhooks, custom scripts, and AI agents—whatever your stack looks like, we make it work together.
+  </p>
+
+  <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 place-items-center max-w-6xl mx-auto">
+
+    {/* EXAMPLE LOGOS – keep same classes for ALL logos */}
+    <img src="/logos/sap.png" alt="SAP" className="integration-logo" />
+    <img src="/logos/sage.png" alt="Sage" className="integration-logo" />
+    <img src="/logos/oracle.png" alt="Oracle" className="integration-logo" />
+    <img src="/logos/odoo.png" alt="Odoo" className="integration-logo" />
+    <img src="/logos/outlook.png" alt="Outlook" className="integration-logo" />
+    <img src="/logos/discord.png" alt="Discord" className="integration-logo" />
+    <img src="/logos/teams.png" alt="Teams" className="integration-logo" />
+    <img src="/logos/gmail.png" alt="Gmail" className="integration-logo" />
+    <img src="/logos/shopify.png" alt="Shopify" className="integration-logo" />
+    <img src="/logos/trello.png" alt="Trello" className="integration-logo" />
+    <img src="/logos/stripe.png" alt="Stripe" className="integration-logo" />
+    <img src="/logos/salesforce.png" alt="Salesforce" className="integration-logo" />
+    <img src="/logos/asana.png" alt="Asana" className="integration-logo" />
+    <img src="/logos/hubspot.png" alt="Hubspot" className="integration-logo" />
+    <img src="/logos/meta.png" alt="Meta" className="integration-logo" />
+    <img src="/logos/notion.png" alt="Notion" className="integration-logo" />
+    <img src="/logos/slack.png" alt="Slack" className="integration-logo" />
+    <img src="/logos/drive.png" alt="Google Drive" className="integration-logo" />
+    <img src="/logos/zoom.png" alt="Zoom" className="integration-logo" />
+    <img src="/logos/zapier.png" alt="Zapier" className="integration-logo" />
+    <img src="/logos/jira.png" alt="Jira" className="integration-logo" />
+    <img src="/logos/zendesk.png" alt="Zendesk" className="integration-logo" />
+    <img src="/logos/twitter.png" alt="Twitter" className="integration-logo" />
+    <img src="/logos/download.png" alt="Download" className="integration-logo" />
+
+  </div>
+</section>
+
+---------------------------------------------
+HOVER EFFECT IMPLEMENTATION
+---------------------------------------------
+In index.css OR tailwind layer, define the integration-logo class:
+
+.integration-logo {
+  @apply h-10 opacity-80 cursor-pointer transition-all duration-200 ease-out hover:scale-110 hover:opacity-100;
+  filter: drop-shadow(0 0 0 transparent);
+}
+.integration-logo:hover {
+  filter: drop-shadow(0 0 6px rgba(0,140,255,0.45));
+}
+.dark .integration-logo:hover {
+  filter: drop-shadow(0 0 8px rgba(0,170,255,0.55));
+}
+
+---------------------------------------------
+REQUIREMENTS
+---------------------------------------------
+• Do NOT modify spacing of any other section.
+• Do NOT change hero, glitch, typewriter, or marquee.
+• Do NOT alter the Featured Work, Services, or Contact form.
+• Ensure the new section uses the global spacing system (pt-24 pb-24, title mb-8).
+• Ensure grid is fully responsive (3 columns mobile, 4 on small screens, 6 on desktop).
+• Support both light and dark mode.
+• If logo files are missing, keep img tags intact; I will upload the logos separately.
+
+Add the section and the hover effects exactly as described.
