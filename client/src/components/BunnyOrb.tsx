@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 export function BunnyOrb() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const isTouch = 'ontouchstart' in window;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -17,7 +18,7 @@ export function BunnyOrb() {
   }, []);
 
   useEffect(() => {
-    if (prefersReducedMotion) return;
+    if (prefersReducedMotion || isTouch) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       const heroSection = document.querySelector("section");
@@ -41,12 +42,12 @@ export function BunnyOrb() {
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [prefersReducedMotion]);
+  }, [prefersReducedMotion, isTouch]);
 
   return (
     <div
       ref={wrapperRef}
-      className="bunny-orb-wrapper max-sm:w-40 max-sm:h-40 max-sm:mx-auto max-sm:pt-0 max-sm:pb-0 max-sm:mt-0 max-sm:mb-0 max-sm:p-0 max-sm:py-0 max-sm:my-0"
+      className={`bunny-orb-wrapper max-sm:w-40 max-sm:h-40 max-sm:mx-auto max-sm:pt-0 max-sm:pb-0 max-sm:mt-0 max-sm:mb-0 max-sm:p-0 max-sm:py-0 max-sm:my-0 ${isTouch ? 'bunny-orb--mobile-bounce' : ''}`}
       data-testid="bunny-orb-wrapper"
     >
       <div

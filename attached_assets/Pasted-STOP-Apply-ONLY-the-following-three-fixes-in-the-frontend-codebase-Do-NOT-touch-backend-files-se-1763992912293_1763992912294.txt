@@ -1,0 +1,77 @@
+STOP. Apply ONLY the following three fixes in the frontend codebase. 
+Do NOT touch backend files, server code, Vercel configs, Tailwind configs, vite configs, or anything unrelated.
+
+============================================================
+1) MOBILE BUNNY ORB FIX — BunnyOrb.tsx
+============================================================
+Goal: When device is touch/mobile, disable mouse-follow and enable a smooth bouncing animation instead.
+
+In client/src/components/BunnyOrb.tsx:
+- Detect mobile using: const isTouch = 'ontouchstart' in window;
+- If NOT touch: keep current mouse-follow behavior.
+- If IS touch: remove/disable mousemove listeners AND add a CSS class "bunny-orb--mobile-bounce".
+- Do NOT change any JSX structure besides adding the class conditionally.
+
+In index.css, add:
+
+.bunny-orb--mobile-bounce {
+  animation: mobileBounce 12s ease-in-out infinite alternate;
+}
+
+@keyframes mobileBounce {
+  0%   { transform: translate(-50%, -45%) scale(1.01); }
+  50%  { transform: translate(-48%, -52%) scale(0.99); }
+  100% { transform: translate(-52%, -48%) scale(1.02); }
+}
+
+============================================================
+2) MOBILE COLOR ANIMATION FIX — Home.tsx
+============================================================
+Goal: “BUNNYCODE.AI” should animate color on mobile (blue → red → blue).
+
+In client/src/routes/Home.tsx:
+- Wrap the existing heading text inside:
+    <span className="brand-glitch"> ... </span>
+
+Do NOT change the heading text content or layout.
+
+In index.css, add:
+
+.brand-glitch {
+  animation: brandColorShift 4s ease-in-out infinite;
+}
+
+@keyframes brandColorShift {
+  0%   { color: #4EA8FF; }
+  50%  { color: #FF477E; }
+  100% { color: #4EA8FF; }
+}
+
+============================================================
+3) GET AUTOMATED PAGE SCROLL FIX — GetAutomated.tsx
+============================================================
+Goal: When clicking “Get Automated”, page always loads at top.
+
+In client/src/routes/GetAutomated.tsx:
+- Add at the top of the component:
+
+import { useEffect } from "react";
+
+- Add inside the component:
+
+useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "instant" });
+}, []);
+
+Do NOT add any other logic.
+
+============================================================
+IMPORTANT RULES:
+============================================================
+- Modify ONLY these 3 files: BunnyOrb.tsx, Home.tsx, GetAutomated.tsx, and index.css.
+- Do NOT restructure folders.
+- Do NOT edit Vite/Tailwind/PostCSS/server/backend files.
+- Do NOT introduce new dependencies.
+- Make minimal, safe changes only.
+- After implementing, show me a summary of EXACT changes per file.
+

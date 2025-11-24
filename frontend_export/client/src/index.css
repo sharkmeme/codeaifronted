@@ -640,10 +640,10 @@
     white-space: nowrap;
   }
 
-  @keyframes marquee-scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-33.333%); }
-  }
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
 
   /* Integration Logo Hover Effects */
   .integration-logo {

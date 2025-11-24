@@ -91,7 +91,7 @@ export default function Home() {
             data-glitch="BUNNYCODE.AI"
             data-testid="text-hero-title"
           >
-            <Typewriter text="BUNNYCODE.AI" />
+            <span className="brand-glitch"><Typewriter text="BUNNYCODE.AI" /></span>
           </h1>
         </div>
       </section>
