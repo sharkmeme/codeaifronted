@@ -6,6 +6,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
 import Home from "./routes/Home";
 import GetAutomated from "./routes/GetAutomated";
+import PrivacyPolicy from "@/pages/PrivacyPolicy";
+import TermsOfService from "@/pages/TermsOfService";
 import NotFound from "@/pages/not-found";
 
 export default function App() {
@@ -17,6 +19,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/get-automated" element={<GetAutomated />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </TooltipProvider>

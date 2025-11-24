@@ -460,12 +460,12 @@ export default function Home() {
               © 2025 Bunnycode.ai — All rights reserved
             </p>
             <div className="flex items-center gap-6">
-              <a href="#" className="text-sm text-muted-foreground dark:text-neutral-400 hover:text-foreground transition-colors" data-testid="link-privacy">
+              <Link to="/privacy-policy" className="text-sm text-muted-foreground dark:text-neutral-400 hover:text-foreground transition-colors" data-testid="link-privacy">
                 Privacy Policy
-              </a>
-              <a href="#" className="text-sm text-muted-foreground dark:text-neutral-400 hover:text-foreground transition-colors" data-testid="link-terms">
+              </Link>
+              <Link to="/terms-of-service" className="text-sm text-muted-foreground dark:text-neutral-400 hover:text-foreground transition-colors" data-testid="link-terms">
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
         </div>
