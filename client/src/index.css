@@ -527,7 +527,7 @@
   /* Bunny Orb - Animated orb with image */
   .bunny-orb-wrapper {
     position: absolute;
-    top: calc(50vh - 48px);
+    top: 50%;
     left: 50%;
     width: min(60vw, 520px);
     height: min(60vw, 520px);
@@ -670,12 +670,10 @@
 
   /* Mobile Bunny Orb Positioning & Animation */
   @media (max-width: 768px) {
-    .bunny-orb.mobile-orb {
-      position: absolute;
-      top: 2cap;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 0; /* behind the text */
+    .bunny-orb-wrapper {
+      top: 30%;
+      width: 180px;
+      height: 180px;
     }
 
     .bunny-orb--mobile {
@@ -686,13 +684,13 @@
   /* Much stronger bounce + 45 degree wobble */
   @keyframes mobileBounceSpin {
     0% {
-      transform: translate(-50%, -35%) scale(1.05) rotate(-45deg);
+      transform: translate(-50%, -50%) scale(1.05) rotate(-45deg);
     }
     50% {
-      transform: translate(-45%, -60%) scale(0.95) rotate(45deg);
+      transform: translate(-50%, -50%) scale(0.95) rotate(45deg);
     }
     100% {
-      transform: translate(-55%, -40%) scale(1.08) rotate(-45deg);
+      transform: translate(-50%, -50%) scale(1.08) rotate(-45deg);
     }
   }
 
