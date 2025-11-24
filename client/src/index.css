@@ -527,7 +527,7 @@
   /* Bunny Orb - Animated orb with image */
   .bunny-orb-wrapper {
     position: absolute;
-    top: 50%;
+    top: calc(50vh - 48px);
     left: 50%;
     width: min(60vw, 520px);
     height: min(60vw, 520px);
