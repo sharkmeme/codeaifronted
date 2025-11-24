@@ -76,7 +76,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section - Minimal */}
-      <section className="hero relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-2 dark:bg-black max-sm:pt-12 max-sm:pb-12">
+      <section className="hero relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-2 dark:bg-black max-sm:pt-4 max-sm:pb-4">
         {/* Visual effects scoped to hero */}
         <div className="noise-overlay" />
         <div className="vertical-lines" />
@@ -278,7 +278,7 @@ export default function Home() {
       </section>
 
       {/* CTA Button */}
-      <div className="w-full flex justify-center pt-12 pb-8 dark:bg-black bg-background">
+      <div className="w-full flex justify-center pt-12 pb-8 bg-background dark:bg-neutral-950">
         <button
           onClick={() => {
             const url = "https://calendly.com/akademischesghosteditor/30min?hide_event_type_details=1";
