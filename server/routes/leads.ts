@@ -9,25 +9,23 @@ const router = Router();
 const isProduction = process.env.NODE_ENV === 'production';
 
 const leadSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters").max(100),
+  name: z.string().min(1, "Name is required").max(100),
   email: z.string().email("Invalid email address"),
   phone: z.string().max(20).optional().or(z.literal('')),
   socials: z.string().max(500).optional().or(z.literal('')),
   projectType: z.string().min(1, "Project type is required").max(100),
-  description: z.string().min(10, "Description must be at least 10 characters").max(2000),
+  description: z.string().min(1, "Description is required").max(2000),
   extraInfo: z.string().max(2000).optional().or(z.literal('')),
 });
 
 router.post("/", rateLimiter, async (req, res) => {
   try {
-    console.log("=== INCOMING REQUEST BODY ===");
-    console.log(JSON.stringify(req.body, null, 2));
-    
     const validation = leadSchema.safeParse(req.body);
     
     if (!validation.success) {
-      console.log("=== VALIDATION FAILED ===");
-      console.log(JSON.stringify(validation.error.errors, null, 2));
+      if (!isProduction) {
+        console.log("Validation error:", validation.error.errors);
+      }
       
       return res.status(400).json({ 
         success: false,
