@@ -7,7 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2, CheckCircle2 } from "lucide-react";
-import { apiRequest } from "@/lib/queryClient";
+import { getApiUrl } from "@/lib/api";
 import { insertLeadSchema, type InsertLead } from "@shared/schema";
 
 export function ContactForm() {
@@ -25,7 +25,7 @@ export function ContactForm() {
 
   const onSubmit = async (data: InsertLead) => {
     try {
-      const response = await fetch("/api/leads", {
+      const response = await fetch(getApiUrl("/api/leads"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

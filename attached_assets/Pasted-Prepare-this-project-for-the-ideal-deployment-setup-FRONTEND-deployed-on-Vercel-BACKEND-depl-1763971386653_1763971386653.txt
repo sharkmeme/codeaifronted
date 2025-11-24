@@ -1,0 +1,113 @@
+Prepare this project for the ideal deployment setup:
+
+FRONTEND = deployed on Vercel  
+BACKEND = deployed on Replit
+
+–––––––––––––––––––––––
+1. EXTRACT BACKEND PORTION
+–––––––––––––––––––––––
+Verify that everything inside /server can run independently as a backend API:
+
+• Confirm that /server/index-prod.ts starts an Express server.  
+• Ensure express.json() and CORS middleware are enabled.  
+• Ensure routes are mounted under /api (for example: /api/leads).  
+• Make sure the backend uses process.env variables for Supabase, email, API keys, etc.  
+• Confirm the backend starts with:  
+   `node server/index-prod.ts`  
+  (or whichever file is your production entry)
+
+Do NOT modify backend logic.
+
+–––––––––––––––––––––––
+2. FIX BACKEND CORS FOR VERCEL FRONTEND
+–––––––––––––––––––––––
+Update the backend CORS configuration to allow only:
+
+- http://localhost:5173 (local dev)
+- <Vercel URL> (placeholder)
+- <your custom domain> (placeholder: https://bunnycode.ai)
+
+Example CORS:
+
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://bunnycodeai.vercel.app",
+    "https://bunnycode.ai"
+  ],
+  methods: ["GET", "POST"],
+  allowedHeaders: ["Content-Type"],
+}));
+
+Do NOT break security. 
+Only update the allowed list.
+
+–––––––––––––––––––––––
+3. PREPARE FRONTEND FOR VERCEL
+–––––––––––––––––––––––
+Modify the frontend code so API calls do NOT use relative paths.
+
+Replace EVERY occurrence of:
+  fetch("/api/...")
+with:
+  fetch(`${import.meta.env.VITE_API_BASE_URL}/api/...`)
+
+Create a new file:
+  client/.env
+with:
+  VITE_API_BASE_URL="https://<your-replit-backend-url>"
+
+Do NOT hard-code the backend domain inside components.
+
+–––––––––––––––––––––––
+4. ENSURE FRONTEND CAN BUILD ON VERCEL
+–––––––––––––––––––––––
+Verify these values for the Vite build:
+
+Install command: npm install  
+Build command: npm run build  
+Output: dist  
+
+Ensure vite.config.ts includes:
+
+build: {
+  sourcemap: false,
+}
+
+–––––––––––––––––––––––
+5. CREATE SITEMAP + ROBOTS FOR SEO
+–––––––––––––––––––––––
+Create /client/public/sitemap.xml including:
+
+https://bunnycode.ai/
+https://bunnycode.ai/get-automated
+https://bunnycode.ai/privacy-policy
+https://bunnycode.ai/terms-of-service
+
+Create /client/public/robots.txt:
+
+User-agent: *
+Allow: /
+
+–––––––––––––––––––––––
+6. DO NOT CHANGE:
+–––––––––––––––––––––––
+• Hero layout  
+• BunnyOrb  
+• Calendly  
+• Animations  
+• Spacing  
+• Footer  
+• Marquee  
+• Components  
+• Tailwind config  
+• Server logic  
+
+Only prepare the project for separate Frontend/Backend deployment.
+
+–––––––––––––––––––––––
+7. After changes, output:
+–––––––––––––––––––––––
+• Backend URL to use in Vercel  
+• Files that were modified  
+• Instructions for connecting Vercel custom domain  

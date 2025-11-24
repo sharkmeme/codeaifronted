@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { getApiUrl } from "@/lib/api";
 
 export default function GetAutomated() {
   const [loading, setLoading] = useState(false);
@@ -13,7 +14,7 @@ export default function GetAutomated() {
     const formData = new FormData(e.currentTarget);
     const payload = Object.fromEntries(formData);
 
-    const res = await fetch("/api/leads", {
+    const res = await fetch(getApiUrl("/api/leads"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
