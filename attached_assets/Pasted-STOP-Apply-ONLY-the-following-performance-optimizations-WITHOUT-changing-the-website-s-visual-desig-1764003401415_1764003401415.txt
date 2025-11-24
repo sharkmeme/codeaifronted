@@ -1,0 +1,166 @@
+STOP. Apply ONLY the following performance optimizations WITHOUT changing
+the website’s visual design, layout, colors, spacing, or component behavior.
+These changes MUST NOT break mobile or desktop styling.
+
+============================================================
+PERFORMANCE OPTIMIZATION PLAN (SAFE FOR PRODUCTION)
+============================================================
+
+GOAL:
+Increase mobile PageSpeed score from ~85 → 95–100 by improving:
+- LCP (bunny orb image)
+- render-blocking CSS
+- unused CSS/JS
+- marquee efficiency
+- GPU animation performance
+- CLS stabilization
+
+Do NOT change visible UI. Do NOT change spacing or alignment.
+
+============================================================
+1) LCP OPTIMIZATION — BunnyOrb image
+============================================================
+
+File: client/src/components/BunnyOrb.tsx
+
+A) Update the <img> tag:
+- Add loading="lazy"
+- Add decoding="async"
+- Add fetchPriority="high"
+
+Example:
+<img
+  src="/bunny-orb-optimized-small.webp"
+  srcSet="/bunny-orb-optimized-small.webp 300w,
+          /bunny-orb-optimized.webp 1024w"
+  sizes="(max-width:768px) 160px, 300px"
+  loading="lazy"
+  decoding="async"
+  fetchPriority="high"
+  className="bunny-orb-image"
+  alt="bunnycode.ai logo"
+/>
+
+B) Create a smaller mobile asset (300px version) and reference it
+— DO NOT modify design or positioning.
+
+============================================================
+2) REMOVE RENDER-BLOCKING CSS
+============================================================
+
+File: client/src/index.css
+
+A) Move ALL heavy visual effects into a new file:
+- glitch text effects
+- scanlines
+- vertical-lines
+- matrix-circle
+- heavy hover effects
+
+Extract them into:
+client/src/effects.css
+
+B) Lazy-load effects.css in Home.tsx:
+
+useEffect(() => {
+  import("../effects.css");
+}, []);
+
+This must NOT modify UI appearance — only load timing.
+
+============================================================
+3) UNUSED CSS REDUCTION
+============================================================
+
+Inside index.css:
+
+Wrap heavy desktop-only effects in:
+@media (min-width: 1024px) {
+   /* glitch / matrix / vertical-lines / scanlines */
+}
+
+Do NOT move or delete the styles themselves—just wrap them.
+
+============================================================
+4) UNUSED JS (Radix / Shadcn) REDUCTION
+============================================================
+
+File: vite.config.ts
+
+Add:
+
+optimizeDeps: {
+  exclude: [
+    "@radix-ui/react-dialog",
+    "@radix-ui/react-hover-card",
+    "@radix-ui/react-navigation-menu",
+    "react-day-picker"
+  ]
+}
+
+This MUST NOT break your components.
+It only prevents unused bundles from inflating the homepage JS.
+
+============================================================
+5) FIX CLS (Cumulative Layout Shift)
+============================================================
+
+File: Home.tsx or where logos are rendered
+
+For every <img> logo in the marquee:
+- Add width="40" height="20" (or actual logo aspect ratio)
+Do NOT change actual rendered size; this only reserves space.
+
+============================================================
+6) GPU-SAFE ANIMATION FIXES
+============================================================
+
+A) Update brand-glitch color animation:
+Replace color animation with filter: hue-rotate()
+
+.brand-glitch {
+  animation: brandHue 4s linear infinite;
+}
+@keyframes brandHue {
+  0% { filter: hue-rotate(0deg); }
+  50% { filter: hue-rotate(140deg); }
+ 100% { filter: hue-rotate(0deg); }
+}
+
+This must NOT change the visual colors—only how it's rendered.
+
+B) Ensure all marquee + orb animations use ONLY transform, not paint.
+
+============================================================
+7) MARQUEE OPTIMIZATION (SMOOTH + LONG)
+============================================================
+
+In index.css:
+
+- Keep FOUR sets of logos in the DOM.
+- Use infinite transform loop:
+
+.marquee-content {
+  animation: marqueeLoop 40s linear infinite;
+}
+@keyframes marqueeLoop {
+  0%   { transform: translateX(0%); }
+ 100%  { transform: translateX(-25%); }
+}
+
+Do NOT touch layout.
+
+============================================================
+RULES — DO NOT BREAK UI
+============================================================
+
+- DO NOT adjust heights, margins, spacing, colors.
+- DO NOT reposition any element.
+- DO NOT modify orb desktop/mobile positioning.
+- DO NOT remove effects — only defer loading.
+- DO NOT change text, fonts, or sizes.
+- DO NOT remove existing components.
+
+ONLY apply the optimizations above.
+
+When finished, show me exactly which files were modified and ONLY the diffs.

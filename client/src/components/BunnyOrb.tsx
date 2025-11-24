@@ -59,6 +59,8 @@ export function BunnyOrb() {
           src="/bunny-orb-optimized.webp"
           alt="bunnycode.ai logo"
           className="bunny-orb-image"
+          loading="lazy"
+          decoding="async"
         />
       </div>
     </div>

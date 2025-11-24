@@ -13,6 +13,9 @@ export default function Home() {
     script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
     document.body.appendChild(script);
+
+    // Lazy-load heavy visual effects CSS
+    import("../effects.css");
   }, []);
 
   const scrollToSection = (id: string) => {
@@ -141,19 +144,19 @@ export default function Home() {
             <div className="marquee opacity-62 dark:opacity-80" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
               <div className="marquee-content h-12 max-sm:h-10 flex items-center justify-center max-sm:gap-6">
                 {/* First set */}
-                <img src="/logos/7eleven.webp" alt="7-Eleven" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" data-testid="logo-client-1" />
-                <img src="/logos/doordash.webp" alt="Doordash" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" data-testid="logo-client-2" />
-                <img src="/logos/dyson.webp" alt="Dyson" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" data-testid="logo-client-3" />
-                <img src="/logos/grab.webp" alt="Grab" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" data-testid="logo-client-4" />
-                <img src="/logos/marriott.webp" alt="Marriott" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" data-testid="logo-client-5" />
-                <img src="/logos/mondelez.webp" alt="Mondelez" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" data-testid="logo-client-6" />
+                <img src="/logos/7eleven.webp" alt="7-Eleven" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" width="80" height="40" data-testid="logo-client-1" />
+                <img src="/logos/doordash.webp" alt="Doordash" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" width="80" height="40" data-testid="logo-client-2" />
+                <img src="/logos/dyson.webp" alt="Dyson" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" width="80" height="40" data-testid="logo-client-3" />
+                <img src="/logos/grab.webp" alt="Grab" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" width="80" height="40" data-testid="logo-client-4" />
+                <img src="/logos/marriott.webp" alt="Marriott" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" width="80" height="40" data-testid="logo-client-5" />
+                <img src="/logos/mondelez.webp" alt="Mondelez" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" width="80" height="40" data-testid="logo-client-6" />
                 {/* Second set */}
-                <img src="/logos/7eleven.webp" alt="7-Eleven" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" />
-                <img src="/logos/doordash.webp" alt="Doordash" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" />
-                <img src="/logos/dyson.webp" alt="Dyson" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" />
-                <img src="/logos/grab.webp" alt="Grab" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" />
-                <img src="/logos/marriott.webp" alt="Marriott" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" />
-                <img src="/logos/mondelez.webp" alt="Mondelez" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" />
+                <img src="/logos/7eleven.webp" alt="7-Eleven" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" width="80" height="40" />
+                <img src="/logos/doordash.webp" alt="Doordash" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" width="80" height="40" />
+                <img src="/logos/dyson.webp" alt="Dyson" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" width="80" height="40" />
+                <img src="/logos/grab.webp" alt="Grab" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" width="80" height="40" />
+                <img src="/logos/marriott.webp" alt="Marriott" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" width="80" height="40" />
+                <img src="/logos/mondelez.webp" alt="Mondelez" className="marquee-logo max-sm:h-6 md:h-10" loading="lazy" width="80" height="40" />
               </div>
             </div>
           </div>
