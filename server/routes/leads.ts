@@ -45,11 +45,11 @@ router.post("/", rateLimiter, async (req, res) => {
     const sanitizedData = {
       name: sanitizeInput(req.body.name),
       email: sanitizedEmail,
-      phone: req.body.phone ? sanitizeInput(req.body.phone) : null,
-      socials: req.body.socials ? sanitizeInput(req.body.socials) : null,
+      phone: req.body.phone ? sanitizeInput(req.body.phone) : '',
+      socials: req.body.socials ? sanitizeInput(req.body.socials) : '',
       project_type: sanitizeInput(req.body.projectType),
       description: sanitizeInput(req.body.description),
-      extra_info: req.body.extraInfo ? sanitizeInput(req.body.extraInfo) : null,
+      extra_info: req.body.extraInfo ? sanitizeInput(req.body.extraInfo) : '',
     };
 
     const { data, error } = await supabase
