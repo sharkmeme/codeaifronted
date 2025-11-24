@@ -4,6 +4,13 @@ import { storage } from "./storage";
 
 const isProduction = process.env.NODE_ENV === 'production';
 
+if (isProduction && !process.env.ADMIN_API_KEY) {
+  throw new Error(
+    "ADMIN_API_KEY environment variable is required in production. " +
+    "Please set this secret in your Replit environment."
+  );
+}
+
 const ADMIN_API_KEY = process.env.ADMIN_API_KEY || 'dev-admin-key';
 
 export async function registerRoutes(app: Express): Promise<Server> {
