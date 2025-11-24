@@ -1,0 +1,81 @@
+STOP. Add a floating quick-contact button to the site WITHOUT changing any existing layout or breaking design.
+
+============================================================
+GOAL:
+Create a floating round “Contact” button in the bottom-right corner.
+
+When clicked (or tapped), it expands upward into TWO buttons:
+1) WhatsApp → http://wa.me/491637830812
+2) Telegram → http://t.me/kingarthi
+
+The button(s) must:
+- Be visible on ALL pages
+- Not overlap the hero content
+- Work on mobile and desktop
+- Use Tailwind styling consistent with the site
+- Never block the GET AUTOMATED button
+- Stay above the footer and marquee
+
+============================================================
+1) Create a new component:
+client/src/components/FloatingContact.tsx
+
+Content:
+
+import { useState } from "react";
+import { MessageCircle, Send } from "lucide-react";
+
+export function FloatingContact() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
+      {open && (
+        <div className="flex flex-col gap-2 mb-2">
+          <a
+            href="http://wa.me/491637830812"
+            target="_blank"
+            className="bg-green-500 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 hover:bg-green-600 transition"
+          >
+            <MessageCircle size={18} /> WhatsApp
+          </a>
+          <a
+            href="http://t.me/kingarthi"
+            target="_blank"
+            className="bg-blue-500 text-white px-4 py-2 rounded-full shadow-lg flex items-center gap-2 hover:bg-blue-600 transition"
+          >
+            <Send size={18} /> Telegram
+          </a>
+        </div>
+      )}
+
+      <button
+        onClick={() => setOpen(!open)}
+        className="bg-primary text-white w-14 h-14 rounded-full shadow-xl flex items-center justify-center hover:scale-105 transition"
+      >
+        <span className="text-lg">✉️</span>
+      </button>
+    </div>
+  );
+}
+
+============================================================
+2) Load this component globally in:
+client/src/App.tsx
+
+Add inside the returned JSX, above </ThemeProvider>:
+
+<FloatingContact />
+
+Make sure to import:
+import { FloatingContact } from "./components/FloatingContact";
+
+============================================================
+RULES:
+- Do NOT modify existing UI.
+- Do NOT change hero section or BunnyOrb.
+- Do NOT modify any animations.
+- Do NOT touch CSS files besides using Tailwind classes.
+- The floating button must be bottom-right on ALL pages.
+
+After implementing, show me exactly which files changed.

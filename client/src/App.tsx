@@ -4,6 +4,7 @@ import { queryClient } from "./lib/queryClient";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/toaster";
+import { FloatingContact } from "./components/FloatingContact";
 import Home from "./routes/Home";
 import GetAutomated from "./routes/GetAutomated";
 import PrivacyPolicy from "@/pages/PrivacyPolicy";
@@ -23,6 +24,7 @@ export default function App() {
             <Route path="/terms-of-service" element={<TermsOfService />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <FloatingContact />
         </TooltipProvider>
       </ThemeProvider>
     </QueryClientProvider>
