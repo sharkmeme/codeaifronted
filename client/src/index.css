@@ -641,12 +641,12 @@
     display: flex;
     gap: 3rem;
     white-space: nowrap;
-    animation: marqueeLoop 18s linear infinite;
+    animation: marqueeLoop 40s linear infinite;
   }
 
   @keyframes marqueeLoop {
     0%   { transform: translateX(0%); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-25%); }
   }
 
   /* Integration Logo Hover Effects */
