@@ -25,23 +25,35 @@ export function ContactForm() {
 
   const onSubmit = async (data: InsertLead) => {
     try {
-      await apiRequest("POST", "/api/leads", data);
+      const response = await fetch("/api/leads", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          phone: "",
+          socials: "",
+          projectType: "Contact Form",
+          description: data.message,
+          extraInfo: ""
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit form. Please try again.");
+      }
       
       setIsSuccess(true);
       form.reset();
       
       toast({
         title: "Success!",
-        description: "Thank you for your interest. We'll be in touch soon.",
+        description: "Message sent! We'll get back to you soon.",
       });
     } catch (error: any) {
-      const errorMessage = error.details 
-        ? error.details.map((e: any) => e.message).join(", ")
-        : error.message || "Failed to submit form. Please try again.";
-      
       toast({
         title: "Error",
-        description: errorMessage,
+        description: error.message || "Failed to submit form. Please try again.",
         variant: "destructive",
       });
     }
