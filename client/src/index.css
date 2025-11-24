@@ -666,13 +666,13 @@
 
   /* Mobile Bunny Orb Bounce Animation */
   .bunny-orb--mobile-bounce {
-    animation: mobileBounce 12s ease-in-out infinite alternate;
+    animation: mobileBounce 8s ease-in-out infinite alternate;
   }
 
   @keyframes mobileBounce {
-    0%   { transform: translate(-50%, -45%) scale(1.01); }
-    50%  { transform: translate(-48%, -52%) scale(0.99); }
-    100% { transform: translate(-52%, -48%) scale(1.02); }
+    0%   { transform: translate(-50%, -35%) scale(1.05); }
+    50%  { transform: translate(-45%, -60%) scale(0.95); }
+    100% { transform: translate(-55%, -40%) scale(1.08); }
   }
 
   /* Mobile Brand Color Animation */
