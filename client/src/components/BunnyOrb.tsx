@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from "react";
 export function BunnyOrb() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const isMobile = typeof window !== "undefined" &&
+                   window.matchMedia("(max-width: 768px)").matches;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -51,7 +52,7 @@ export function BunnyOrb() {
       data-testid="bunny-orb-wrapper"
     >
       <div
-        className={`bunny-orb mobile-orb ${isMobile ? "bunny-orb--mobile" : ""} ${prefersReducedMotion ? "" : "bunny-orb--float"}`}
+        className={`bunny-orb ${isMobile ? "mobile-orb bunny-orb--mobile" : ""} ${prefersReducedMotion ? "" : "bunny-orb--float"}`}
         data-testid="bunny-orb"
       >
         <img

@@ -537,6 +537,11 @@
   }
 
   .bunny-orb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
     width: 100%;
     height: 100%;
     border-radius: 9999px;
@@ -549,7 +554,6 @@
       0 0 0 1px rgba(0, 0, 0, 0.05),
       0 0 80px rgba(0, 0, 0, 0.18) inset;
     overflow: hidden;
-    position: relative;
   }
 
   .bunny-orb-image {
@@ -665,16 +669,18 @@
   }
 
   /* Mobile Bunny Orb Positioning & Animation */
-  .bunny-orb.mobile-orb {
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 0; /* behind the text */
-  }
+  @media (max-width: 768px) {
+    .bunny-orb.mobile-orb {
+      position: absolute;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0; /* behind the text */
+    }
 
-  .bunny-orb--mobile {
-    animation: mobileBounceSpin 6s ease-in-out infinite alternate;
+    .bunny-orb--mobile {
+      animation: mobileBounceSpin 6s ease-in-out infinite alternate;
+    }
   }
 
   /* Much stronger bounce + 45 degree wobble */
@@ -687,6 +693,19 @@
     }
     100% {
       transform: translate(-50%, -40%) scale(1.20) rotate(-45deg);
+    }
+  }
+
+  /* Prevent mobile transforms from affecting desktop */
+  @media (min-width: 769px) {
+    .mobile-orb,
+    .bunny-orb--mobile {
+      animation: none !important;
+      transform: none !important;
+      position: absolute !important;
+      top: 50% !important;
+      left: 50% !important;
+      z-index: auto !important;
     }
   }
 
