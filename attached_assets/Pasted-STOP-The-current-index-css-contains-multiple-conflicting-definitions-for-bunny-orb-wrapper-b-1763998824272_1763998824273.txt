@@ -1,0 +1,79 @@
+STOP. The current index.css contains multiple conflicting definitions for 
+`.bunny-orb-wrapper`, `.bunny-orb`, `.mobile-orb`, and `.bunny-orb--mobile`.
+
+This breaks the cascade and causes the same styles to apply to both desktop and 
+mobile, making it impossible to control each layout separately.
+
+FIX THIS BY DOING THE FOLLOWING:
+
+============================================================
+1) CLEAN UP ALL DUPLICATE RULES
+============================================================
+
+Search the entire index.css and REMOVE every definition of:
+
+.bunny-orb-wrapper
+.bunny-orb
+.mobile-orb
+.bunny-orb--mobile
+
+EXCEPT for ONE main desktop block AND ONE mobile override block.
+
+============================================================
+2) INSERT THIS AS THE ONLY VALID DESKTOP VERSION
+============================================================
+
+.bunny-orb-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: min(70vw, 620px);
+  height: min(70vw, 620px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bunny-orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+============================================================
+3) INSERT THIS AS THE ONLY VALID MOBILE OVERRIDE
+============================================================
+
+@media (max-width: 768px) {
+  .bunny-orb-wrapper {
+    top: 30%;
+    left: 50%;
+    width: 260px;
+    height: 260px;
+    transform: translate(-50%, -50%);
+  }
+
+  .bunny-orb--mobile {
+    animation: mobileBounceSpin 6s ease-in-out infinite alternate;
+  }
+}
+
+============================================================
+4) ENSURE MOBILE BLOCK COMES AFTER DESKTOP BLOCK
+============================================================
+
+DO NOT duplicate any definitions, DO NOT move them inside other rules,
+and DO NOT wrap desktop styles in media queries.
+
+============================================================
+5) Verify:
+- Desktop orb follows cursor and stays centered
+- Mobile orb bounces/spins and stays centered
+- No more overwritten behavior
+============================================================
+
+After making the edits, show me ONLY the replaced blocks.

@@ -529,8 +529,8 @@
     position: absolute;
     top: 50%;
     left: 50%;
-    width: min(60vw, 520px);
-    height: min(60vw, 520px);
+    width: min(70vw, 620px);
+    height: min(70vw, 620px);
     transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 0;
@@ -541,9 +541,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    pointer-events: none;
     width: 100%;
     height: 100%;
+    pointer-events: none;
     border-radius: 9999px;
     background: radial-gradient(
         circle at center,
@@ -672,8 +672,10 @@
   @media (max-width: 768px) {
     .bunny-orb-wrapper {
       top: 30%;
-      width: 180px;
-      height: 180px;
+      left: 50%;
+      width: 260px;
+      height: 260px;
+      transform: translate(-50%, -50%);
     }
 
     .bunny-orb--mobile {
@@ -691,16 +693,6 @@
     }
     100% {
       transform: translate(-50%, -50%) scale(1.08) rotate(-45deg);
-    }
-  }
-
-
-  /* Prevent mobile transforms from affecting desktop */
-  @media (min-width: 769px) {
-    .mobile-orb,
-    .bunny-orb--mobile {
-      animation: none !important;
-      transform: translate(-50%, -50%) !important;
     }
   }
 
