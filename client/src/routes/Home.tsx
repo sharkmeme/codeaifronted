@@ -221,7 +221,7 @@ export default function Home() {
             Featured Work
           </h2>
           
-          <div className="grid grid-cols-1 max-sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-9 max-sm:gap-6">
+          <div className="max-sm:flex max-sm:overflow-x-auto max-sm:snap-x max-sm:snap-mandatory max-sm:gap-4 max-sm:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-9">
             {[
               {
                 title: 'Full-Spectrum Workflow Intelligence',
@@ -254,22 +254,23 @@ export default function Home() {
                 category: 'Process Automation',
               },
             ].map((project, i) => (
-              <div
-                key={project.title}
-                className="group border border-border/50 p-8 max-sm:p-4 hover-elevate hover:border-primary/30 hover:shadow-md transition-all duration-300 relative overflow-hidden dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200 dark:hover:shadow-neutral-800 max-sm:text-center"
-                data-testid={`card-showcase-${i + 1}`}
-              >
-                <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors" />
-                <div className="relative">
-                  <p className="text-[10px] uppercase tracking-ultra-wide text-blue-500 dark:text-blue-400 mb-3" data-testid={`text-showcase-category-${i + 1}`}>
-                    {project.category}
-                  </p>
-                  <h3 className="font-heading font-bold text-xl mb-2 tracking-wide" data-testid={`heading-showcase-${i + 1}`}>
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm" data-testid={`text-showcase-${i + 1}`}>
-                    {project.subtitle}
-                  </p>
+              <div key={project.title} className="max-sm:snap-center max-sm:flex-shrink-0 max-sm:w-[85%]">
+                <div
+                  className="group border border-border/50 p-8 max-sm:p-4 hover-elevate hover:border-primary/30 hover:shadow-md transition-all duration-300 relative overflow-hidden dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200 dark:hover:shadow-neutral-800 max-sm:text-center h-full"
+                  data-testid={`card-showcase-${i + 1}`}
+                >
+                  <div className="absolute top-0 right-0 w-24 h-24 bg-primary/5 rounded-full blur-3xl group-hover:bg-primary/10 transition-colors" />
+                  <div className="relative">
+                    <p className="text-[10px] uppercase tracking-ultra-wide text-blue-500 dark:text-blue-400 mb-3" data-testid={`text-showcase-category-${i + 1}`}>
+                      {project.category}
+                    </p>
+                    <h3 className="font-heading font-bold text-xl mb-2 tracking-wide" data-testid={`heading-showcase-${i + 1}`}>
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm" data-testid={`text-showcase-${i + 1}`}>
+                      {project.subtitle}
+                    </p>
+                  </div>
                 </div>
               </div>
             ))}
