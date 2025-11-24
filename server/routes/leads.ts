@@ -1,59 +1,110 @@
 import { Router } from "express";
 import { supabase } from "@shared/supabase";
 import { mailer } from "../utils/mailer";
+import { rateLimiter, sanitizeInput, sanitizeEmail } from "../middleware/security";
+import { z } from "zod";
 
 const router = Router();
 
-router.post("/", async (req, res) => {
-  try {
-    const { data, error } = await supabase.from("leads").insert([
-      {
-        name: req.body.name,
-        email: req.body.email,
-        phone: req.body.phone,
-        socials: req.body.socials || null,
-        project_type: req.body.projectType,
-        description: req.body.description,
-        extra_info: req.body.extraInfo || null,
-      },
-    ]).select();
+const isProduction = process.env.NODE_ENV === 'production';
 
-    if (error) {
-      console.error("Supabase error:", error);
-      return res.status(500).json({ error: "Database error" });
+const leadSchema = z.object({
+  name: z.string().min(2).max(100),
+  email: z.string().email(),
+  phone: z.string().min(5).max(20).optional(),
+  socials: z.string().max(500).optional(),
+  projectType: z.string().min(2).max(100),
+  description: z.string().min(10).max(2000),
+  extraInfo: z.string().max(2000).optional(),
+});
+
+router.post("/", rateLimiter, async (req, res) => {
+  try {
+    const validation = leadSchema.safeParse(req.body);
+    
+    if (!validation.success) {
+      return res.status(400).json({ 
+        success: false,
+        error: "Invalid input data",
+        details: isProduction ? undefined : validation.error.errors
+      });
     }
 
-    console.log("✅ Lead saved to Supabase:", data);
+    const sanitizedEmail = sanitizeEmail(req.body.email);
+    if (!sanitizedEmail) {
+      return res.status(400).json({ 
+        success: false,
+        error: "Invalid email address" 
+      });
+    }
+
+    const sanitizedData = {
+      name: sanitizeInput(req.body.name),
+      email: sanitizedEmail,
+      phone: req.body.phone ? sanitizeInput(req.body.phone) : null,
+      socials: req.body.socials ? sanitizeInput(req.body.socials) : null,
+      project_type: sanitizeInput(req.body.projectType),
+      description: sanitizeInput(req.body.description),
+      extra_info: req.body.extraInfo ? sanitizeInput(req.body.extraInfo) : null,
+    };
+
+    const { data, error } = await supabase
+      .from("leads")
+      .insert([sanitizedData])
+      .select();
+
+    if (error) {
+      if (!isProduction) {
+        console.error("Supabase error:", error);
+      }
+      return res.status(500).json({ 
+        success: false,
+        error: "Unable to save lead. Please try again." 
+      });
+    }
+
+    if (!isProduction) {
+      console.log("✅ Lead saved to Supabase");
+    }
 
     res.json({ success: true });
 
     setImmediate(async () => {
-      console.log("Sending email FROM:", process.env.SMTP_USER, "TO:", process.env.ALERT_EMAIL);
       try {
         await mailer.sendMail({
           from: process.env.SMTP_USER,
           to: process.env.ALERT_EMAIL,
-          subject: "New Lead Submission",
+          subject: "New Lead Submission - Bunnycode.ai",
           text: `
-New lead received:
+New lead received from bunnycode.ai:
 
-Name: ${req.body.name}
-Email: ${req.body.email}
-Phone: ${req.body.phone}
-Instagram: ${req.body.socials}
-Project Type: ${req.body.projectType}
-Description: ${req.body.description}
-Extra Info: ${req.body.extraInfo}
+Name: ${sanitizedData.name}
+Email: ${sanitizedData.email}
+Phone: ${sanitizedData.phone || 'N/A'}
+Social Media: ${sanitizedData.socials || 'N/A'}
+Project Type: ${sanitizedData.project_type}
+Description: ${sanitizedData.description}
+Extra Info: ${sanitizedData.extra_info || 'N/A'}
   `,
         });
-        console.log("EMAIL SENT OK");
+        
+        if (!isProduction) {
+          console.log("Email notification sent");
+        }
       } catch (err) {
-        console.error("EMAIL SEND ERROR:", err);
+        if (!isProduction) {
+          console.error("Email send error:", err);
+        }
       }
     });
   } catch (err) {
-    console.error("Server error:", err);
-    return res.status(500).json({ error: "Server error" });
+    if (!isProduction) {
+      console.error("Server error:", err);
+    }
+    return res.status(500).json({ 
+      success: false,
+      error: "An error occurred. Please try again later." 
+    });
   }
 });
 

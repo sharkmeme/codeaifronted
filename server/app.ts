@@ -6,22 +6,38 @@ import express, {
   Response,
   NextFunction,
 } from "express";
+import cors from "cors";
 
 import { registerRoutes } from "./routes";
 import leadsRoute from "./routes/leads";
+import { 
+  securityHeaders, 
+  strictRateLimiter, 
+  corsOptions, 
+  permissionsPolicyMiddleware,
+  errorHandler 
+} from "./middleware/security";
+
+const isProduction = process.env.NODE_ENV === 'production';
 
 export function log(message: string, source = "express") {
-  const formattedTime = new Date().toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: true,
-  });
-
-  console.log(`${formattedTime} [${source}] ${message}`);
+  if (!isProduction) {
+    const formattedTime = new Date().toLocaleTimeString("en-US", {
+      hour: "numeric",
+      minute: "2-digit",
+      second: "2-digit",
+      hour12: true,
+    });
+    console.log(`${formattedTime} [${source}] ${message}`);
+  }
 }
 
 export const app = express();
+
+app.use(securityHeaders);
+app.use(permissionsPolicyMiddleware);
+app.use(cors(corsOptions));
+app.use(strictRateLimiter);
 
 declare module 'http' {
   interface IncomingMessage {
@@ -29,11 +45,12 @@ declare module 'http' {
   }
 }
 app.use(express.json({
+  limit: '1mb',
   verify: (req, _res, buf) => {
     req.rawBody = buf;
   }
 }));
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false, limit: '1mb' }));
 
 app.use((req, res, next) => {
   const start = Date.now();
@@ -72,13 +89,7 @@ export default async function runApp(
 ) {
   const server = await registerRoutes(app);
 
-  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
-    const status = err.status || err.statusCode || 500;
-    const message = err.message || "Internal Server Error";
-
-    res.status(status).json({ message });
-    throw err;
-  });
+  app.use(errorHandler);
 
   // importantly run the final setup after setting up all the other routes so
   // the catch-all route doesn't interfere with the other routes

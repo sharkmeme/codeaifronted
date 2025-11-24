@@ -1,0 +1,65 @@
+Perform a complete security review of the project without modifying layout, UI, animations, hero section spacing, or BunnyOrb behavior.
+
+Apply ONLY the following security improvements:
+
+1. Environment Variables & Secrets
+   - Scan the entire codebase for any API keys, Supabase keys, SMTP credentials, tokens, or private keys inside client-side code.
+   - If any secrets are exposed in the React client, move them to server/.env and import them via the server only.
+   - Ensure .env is listed in .gitignore.
+   - Confirm no secrets are bundled into the Vite build.
+
+2. CORS & API Hardening
+   - In server/index-prod.ts or server/app.ts:
+     - Restrict CORS to only allow:
+       https://bunnycode.ai
+       http://localhost:3000
+     - Block all other origins.
+   - Ensure API endpoints do not accept unsafe or unvalidated input.
+   - Sanitize any user-supplied data before sending to Supabase or email services.
+
+3. Security Headers
+   Add these headers globally to server responses (Express or equivalent):
+     - X-Frame-Options: DENY
+     - X-Content-Type-Options: nosniff
+     - Referrer-Policy: strict-origin-when-cross-origin
+     - Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+     - Strict-Transport-Security for HTTPS (max-age=63072000)
+
+4. Rate Limiting
+   - Add a simple rate limiter to contact form endpoints (e.g., max 5 requests per minute per IP).
+   - Prevent automated spam or abuse of Supabase email sending.
+
+5. Input Validation
+   - Validate and sanitize:
+     - Contact form fields (name, email, message)
+     - Any user input sent to logs, email, or database
+   - Prevent injection or malformed payloads.
+
+6. Remove Sensitive Info From Error Messages
+   - Ensure no server error responses leak stack traces or secrets.
+   - Replace with generic "An error occurred" messages in production.
+
+7. Disable Debugging in Production
+   - Remove console.log, console.error, console.warn from production builds.
+   - Ensure Vite config disables sourcemaps:
+       build: { sourcemap: false }
+
+8. File Safety
+   - Ensure /public files are served as static assets only.
+   - Confirm no uploaded file execution is possible.
+
+9. robots.txt (for search engines)
+   - Leave as-is unless changed manually. No action needed for security.
+
+10. Output a full report:
+   - List all vulnerabilities found.
+   - List what was fixed automatically.
+   - List what requires manual review.
+   - Confirm that no visual UI was modified.
+
+Do NOT modify:
+- Hero layout
+- BunnyOrb positioning or transforms
+- Any spacing or margins
+- Any animations
+- Any components unrelated to security
