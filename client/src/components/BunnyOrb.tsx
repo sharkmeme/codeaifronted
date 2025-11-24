@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 export function BunnyOrb() {
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-  const isTouch = 'ontouchstart' in window;
+  const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -18,7 +18,7 @@ export function BunnyOrb() {
   }, []);
 
   useEffect(() => {
-    if (prefersReducedMotion || isTouch) return;
+    if (prefersReducedMotion || isMobile) return;
 
     const handleMouseMove = (e: MouseEvent) => {
       const heroSection = document.querySelector("section");
@@ -42,16 +42,16 @@ export function BunnyOrb() {
 
     window.addEventListener("mousemove", handleMouseMove);
     return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [prefersReducedMotion, isTouch]);
+  }, [prefersReducedMotion, isMobile]);
 
   return (
     <div
       ref={wrapperRef}
-      className={`bunny-orb-wrapper max-sm:w-40 max-sm:h-40 max-sm:mx-auto max-sm:pt-0 max-sm:pb-0 max-sm:mt-0 max-sm:mb-0 max-sm:p-0 max-sm:py-0 max-sm:my-0 ${isTouch ? 'bunny-orb--mobile-bounce' : ''}`}
+      className={`bunny-orb-wrapper max-sm:w-40 max-sm:h-40 max-sm:mx-auto max-sm:pt-0 max-sm:pb-0 max-sm:mt-0 max-sm:mb-0 max-sm:p-0 max-sm:py-0 max-sm:my-0`}
       data-testid="bunny-orb-wrapper"
     >
       <div
-        className={`bunny-orb ${prefersReducedMotion ? "" : "bunny-orb--float"}`}
+        className={`bunny-orb mobile-orb ${isMobile ? "bunny-orb--mobile" : ""} ${prefersReducedMotion ? "" : "bunny-orb--float"}`}
         data-testid="bunny-orb"
       >
         <img

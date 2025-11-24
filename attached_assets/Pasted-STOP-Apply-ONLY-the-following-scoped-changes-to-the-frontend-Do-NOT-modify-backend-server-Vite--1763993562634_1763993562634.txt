@@ -1,0 +1,82 @@
+STOP. Apply ONLY the following scoped changes to the frontend. 
+Do NOT modify backend, server, Vite config, Tailwind config, or anything outside the files I specify.
+
+============================================================
+1) UPDATE BunnyOrb.tsx (mobile-specific positioning + spin)
+============================================================
+
+Goal: On mobile screens:
+- Move the bunny orb image directly BEHIND the "BUNNYCODE.AI" text (z-index lower)
+- Add much stronger bounce
+- Add alternating 45° spin left/right
+- Keep desktop behavior EXACTLY as is
+
+Instructions for client/src/components/BunnyOrb.tsx:
+
+A) Detect mobile:
+   const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+B) If NOT mobile → keep mouse-follow logic unchanged.
+
+C) If mobile:
+   - Disable mouse tracking
+   - Wrap the orb div with a conditional className:
+        className={`bunny-orb mobile-orb ${isMobile ? "bunny-orb--mobile" : ""}`}
+   - Ensure the orb positions behind text by applying z-index: 0
+   - Remove any transform override from desktop JS logic
+
+============================================================
+2) UPDATE index.css (strong bounce + 45° spin)
+============================================================
+
+Add or update these styles ONLY:
+
+.bunny-orb.mobile-orb {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0; /* behind the text */
+}
+
+.bunny-orb--mobile {
+  animation: mobileBounceSpin 6s ease-in-out infinite alternate;
+}
+
+/* Much stronger bounce + 45 degree wobble */
+@keyframes mobileBounceSpin {
+  0% {
+    transform: translate(-50%, -45%) scale(1.15) rotate(-45deg);
+  }
+  50% {
+    transform: translate(-50%, -65%) scale(0.85) rotate(45deg);
+  }
+  100% {
+    transform: translate(-50%, -40%) scale(1.20) rotate(-45deg);
+  }
+}
+
+============================================================
+3) UPDATE Home.tsx (layering)
+============================================================
+
+In the hero section:
+- Add a wrapper around the brand text:
+     <div className="relative z-10">
+         ... existing heading ...
+     </div>
+
+- Add the BunnyOrb component BEFORE or AFTER that element, but ensure BunnyOrb has z-index: 0 (behind) and text wrapper has z-index: 10.
+
+Do NOT change layout on desktop.
+
+============================================================
+RULES:
+============================================================
+- Modify ONLY: BunnyOrb.tsx, index.css, Home.tsx.
+- Do NOT change imports or remove logic.
+- Do NOT touch server folder, shared folder, routes, vite config, tailwind config.
+- Preserve all desktop behaviors.
+- Apply all mobile-only changes behind conditional checks.
+- After implementing, show me ONLY the patches applied.
+

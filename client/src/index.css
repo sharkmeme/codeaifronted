@@ -664,15 +664,30 @@
     @apply h-10 w-auto opacity-80 transition-all duration-200 ease-out hover:opacity-100 hover:scale-110 dark:opacity-90;
   }
 
-  /* Mobile Bunny Orb Bounce Animation */
-  .bunny-orb--mobile-bounce {
-    animation: mobileBounce 8s ease-in-out infinite alternate;
+  /* Mobile Bunny Orb Positioning & Animation */
+  .bunny-orb.mobile-orb {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0; /* behind the text */
   }
 
-  @keyframes mobileBounce {
-    0%   { transform: translate(-50%, -35%) scale(1.05); }
-    50%  { transform: translate(-45%, -60%) scale(0.95); }
-    100% { transform: translate(-55%, -40%) scale(1.08); }
+  .bunny-orb--mobile {
+    animation: mobileBounceSpin 6s ease-in-out infinite alternate;
+  }
+
+  /* Much stronger bounce + 45 degree wobble */
+  @keyframes mobileBounceSpin {
+    0% {
+      transform: translate(-50%, -45%) scale(1.15) rotate(-45deg);
+    }
+    50% {
+      transform: translate(-50%, -65%) scale(0.85) rotate(45deg);
+    }
+    100% {
+      transform: translate(-50%, -40%) scale(1.20) rotate(-45deg);
+    }
   }
 
   /* Mobile Brand Color Animation */
@@ -681,7 +696,7 @@
   }
 
   @keyframes brandColorShift {
-    0%   { color: #4EA8FF; }
+    0%   { color: #070808; }
     50%  { color: #FF477E; }
     100% { color: #4EA8FF; }
   }
