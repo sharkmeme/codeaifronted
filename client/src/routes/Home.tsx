@@ -273,8 +273,9 @@ export default function Home() {
       <div className="w-full flex justify-center pt-24 pb-12">
         <button
           onClick={() => {
-            const target = document.getElementById("calendly");
-            if (target) target.scrollIntoView({ behavior: "smooth" });
+            (window as any).Calendly.initPopupWidget({
+              url: "https://calendly.com/akademischesghosteditor/30min?hide_event_type_details=1"
+            });
           }}
           className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-medium shadow-md transition-all duration-200"
           data-testid="button-book-session"
@@ -301,21 +302,6 @@ export default function Home() {
               className="w-full max-w-3xl mx-auto rounded-lg shadow-sm"
             />
           </div>
-        </div>
-      </section>
-
-      {/* Calendly Section */}
-      <section id="calendly" className="bg-background dark:bg-neutral-950 w-full pt-24 pb-24">
-        <h2 className="text-center text-3xl font-bold mb-8" data-testid="heading-calendly">
-          Schedule Your Consultation
-        </h2>
-
-        <div className="max-w-3xl mx-auto px-4">
-          <div
-            className="calendly-inline-widget"
-            data-url="https://calendly.com/akademischesghosteditor/30min?hide_event_type_details=1"
-            style={{ minWidth: "320px", height: "700px" }}
-          ></div>
         </div>
       </section>
 
