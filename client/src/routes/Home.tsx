@@ -76,7 +76,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section - Minimal */}
-      <section className="hero relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-2 dark:bg-black max-sm:pt-4 max-sm:pb-4">
+      <section className="hero relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-2 dark:bg-black max-sm:pt-0 max-sm:pb-0 max-sm:mt-0 max-sm:mb-0">
         {/* Visual effects scoped to hero */}
         <div className="noise-overlay" />
         <div className="vertical-lines" />
@@ -84,10 +84,10 @@ export default function Home() {
         <div className="matrix-circle" />
         <BunnyOrb />
         
-        <div className="max-w-7xl mx-auto w-full text-center relative z-10">
+        <div className="max-w-7xl mx-auto w-full text-center relative z-10 max-sm:pt-0 max-sm:pb-0 max-sm:mt-0 max-sm:mb-0 max-sm:space-y-0">
           {/* Main glitch title */}
           <h1 
-            className="glitch-text font-heading font-bold text-4xl max-sm:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-extra-wide max-sm:text-center max-sm:leading-[1.1]"
+            className="glitch-text font-heading font-bold text-4xl max-sm:text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl tracking-extra-wide max-sm:text-center max-sm:leading-[1.1] max-sm:pt-0 max-sm:pb-0 max-sm:mt-0 max-sm:mb-0"
             data-glitch="BUNNYCODE.AI"
             data-testid="text-hero-title"
           >
