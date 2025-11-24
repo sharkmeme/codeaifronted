@@ -76,7 +76,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section - Minimal */}
-      <section className="hero relative min-h-screen max-sm:min-h-[50vh] flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-2 dark:bg-black max-sm:pt-0 max-sm:pb-0 max-sm:mt-0 max-sm:mb-0">
+      <section className="hero relative min-h-screen sm:min-h-screen max-sm:min-h-[45vh] max-sm:h-[45vh] max-sm:py-4 max-sm:pt-8 flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-2 dark:bg-black max-sm:mt-0 max-sm:mb-0">
         {/* Visual effects scoped to hero */}
         <div className="noise-overlay" />
         <div className="vertical-lines" />
