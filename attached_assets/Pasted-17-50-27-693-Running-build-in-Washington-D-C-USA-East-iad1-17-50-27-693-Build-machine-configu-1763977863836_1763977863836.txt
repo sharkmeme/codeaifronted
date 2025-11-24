@@ -1,0 +1,47 @@
+17:50:27.693 Running build in Washington, D.C., USA (East) – iad1
+17:50:27.693 Build machine configuration: 2 cores, 8 GB
+17:50:27.704 Cloning github.com/sharkmeme/bunnycodeai (Branch: main, Commit: 37dfb98)
+17:50:27.705 Skipping build cache, deployment was triggered without cache.
+17:50:28.397 Cloning completed: 693.000ms
+17:50:28.877 Running "vercel build"
+17:50:29.280 Vercel CLI 48.10.5
+17:50:29.916 Running "install" command: `npm install`...
+17:50:35.637 npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+17:50:35.638 npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+17:50:41.583 
+17:50:41.583 added 580 packages, and audited 581 packages in 11s
+17:50:41.583 
+17:50:41.584 67 packages are looking for funding
+17:50:41.584   run `npm fund` for details
+17:50:41.616 
+17:50:41.616 9 vulnerabilities (3 low, 5 moderate, 1 high)
+17:50:41.617 
+17:50:41.617 To address issues that do not require attention, run:
+17:50:41.617   npm audit fix
+17:50:41.617 
+17:50:41.617 To address all issues (including breaking changes), run:
+17:50:41.618   npm audit fix --force
+17:50:41.618 
+17:50:41.618 Run `npm audit` for details.
+17:50:42.040 [36mvite v5.4.20 [32mbuilding for production...[36m[39m
+17:50:42.099 transforming...
+17:50:42.424 
+17:50:42.426 [1m[33mwarn[39m[22m - The `content` option in your Tailwind CSS configuration is missing or empty.
+17:50:42.426 [1m[33mwarn[39m[22m - Configure your content sources or your generated CSS will be missing styles.
+17:50:42.427 [1m[33mwarn[39m[22m - https://tailwindcss.com/docs/content-configuration
+17:50:42.553 [32m✓[39m 4 modules transformed.
+17:50:42.558 [31mx[39m Build failed in 496ms
+17:50:42.559 [31merror during build:
+17:50:42.559 [31m[vite:css] [postcss] /vercel/path0/client/src/index.css:1:1: The `border-border` class does not exist. If `border-border` is a custom class, make sure it is defined within a `@layer` directive.[31m
+17:50:42.559 file: [36m/vercel/path0/client/src/index.css:1:0[31m
+17:50:42.560     at Input.error (/vercel/path0/node_modules/postcss/lib/input.js:106:16)
+17:50:42.560     at AtRule.error (/vercel/path0/node_modules/postcss/lib/node.js:115:32)
+17:50:42.560     at processApply (/vercel/path0/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:380:29)
+17:50:42.560     at /vercel/path0/node_modules/tailwindcss/lib/lib/expandApplyAtRules.js:551:9
+17:50:42.560     at /vercel/path0/node_modules/tailwindcss/lib/processTailwindFeatures.js:55:50
+17:50:42.561     at async plugins (/vercel/path0/node_modules/tailwindcss/lib/plugin.js:38:17)
+17:50:42.561     at async LazyResult.runAsync (/vercel/path0/node_modules/postcss/lib/lazy-result.js:261:11)
+17:50:42.561     at async compileCSS (file:///vercel/path0/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:36898:21)
+17:50:42.561     at async Object.transform (file:///vercel/path0/node_modules/vite/dist/node/chunks/dep-D_zLpgQd.js:36171:11)
+17:50:42.561     at async transform (file:///vercel/path0/node_modules/rollup/dist/es/shared/node-entry.js:19640:16)[39m
+17:50:42.570 Error: Command "vite build" exited with 1

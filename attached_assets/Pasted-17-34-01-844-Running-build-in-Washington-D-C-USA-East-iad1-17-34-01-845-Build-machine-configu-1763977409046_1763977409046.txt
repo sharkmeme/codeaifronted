@@ -1,0 +1,51 @@
+17:34:01.844 Running build in Washington, D.C., USA (East) – iad1
+17:34:01.845 Build machine configuration: 2 cores, 8 GB
+17:34:01.981 Cloning github.com/sharkmeme/bunnycodeai (Branch: main, Commit: 37dfb98)
+17:34:01.982 Previous build caches not available.
+17:34:02.405 Cloning completed: 423.000ms
+17:34:03.016 Running "vercel build"
+17:34:03.424 Vercel CLI 48.10.5
+17:34:04.082 Running "install" command: `npm install`...
+17:34:09.347 npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+17:34:09.419 npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+17:34:15.792 
+17:34:15.794 added 580 packages, and audited 581 packages in 11s
+17:34:15.795 
+17:34:15.795 67 packages are looking for funding
+17:34:15.795   run `npm fund` for details
+17:34:15.830 
+17:34:15.830 9 vulnerabilities (3 low, 5 moderate, 1 high)
+17:34:15.830 
+17:34:15.830 To address issues that do not require attention, run:
+17:34:15.830   npm audit fix
+17:34:15.830 
+17:34:15.831 To address all issues (including breaking changes), run:
+17:34:15.831   npm audit fix --force
+17:34:15.831 
+17:34:15.831 Run `npm audit` for details.
+17:34:16.198 
+17:34:16.202 > rest-express@1.0.0 build
+17:34:16.202 > vite build && esbuild server/index-prod.ts --platform=node --packages=external --bundle --format=esm --outfile=dist/index.js
+17:34:16.203 
+17:34:16.478 [36mvite v5.4.20 [32mbuilding for production...[36m[39m
+17:34:16.541 transforming...
+17:34:18.055 
+17:34:18.055 A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+17:34:21.673 [32m✓[39m 1784 modules transformed.
+17:34:22.049 rendering chunks...
+17:34:22.061 computing gzip size...
+17:34:22.080 [2m../dist/public/[22m[32mindex.html                 [39m[1m[2m  3.33 kB[22m[1m[22m[2m │ gzip:   1.14 kB[22m
+17:34:22.080 [2m../dist/public/[22m[2massets/[22m[35mindex-Bw5aQ7GO.css  [39m[1m[2m102.23 kB[22m[1m[22m[2m │ gzip:  16.78 kB[22m
+17:34:22.081 [2m../dist/public/[22m[2massets/[22m[36mindex-BREYe98n.js   [39m[1m[2m465.58 kB[22m[1m[22m[2m │ gzip: 141.60 kB[22m
+17:34:22.083 [32m✓ built in 5.58s[39m
+17:34:22.125 
+17:34:22.125   dist/index.js  12.9kb
+17:34:22.125 
+17:34:22.126 ⚡ Done in 7ms
+17:34:22.169 Build Completed in /vercel/output [18s]
+17:34:22.271 Deploying outputs...
+17:34:24.680 Deployment completed
+17:34:25.332 Creating build cache...
+17:34:40.841 Created build cache: 15.509s
+17:34:40.843 Uploading build cache [81.46 MB]
+17:34:41.989 Build cache uploaded: 1.147s
