@@ -133,33 +133,19 @@ export default function Home() {
             <div className="marquee opacity-62 dark:opacity-80" style={{ maskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)', WebkitMaskImage: 'linear-gradient(to right, transparent, black 10%, black 90%, transparent)' }}>
               <div className="marquee-content h-12 max-sm:h-10 flex items-center justify-center max-sm:gap-6">
                 {/* First set */}
-                {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
-                  <div 
-                    key={`${client}-1-${i}`}
-                    className="flex items-center justify-center h-12 max-sm:h-10 px-6 border border-border/50 bg-card/30 text-xs max-sm:text-[10px] font-mono tracking-wider dark:text-neutral-300"
-                    data-testid={`logo-client-${i + 1}`}
-                  >
-                    {client}
-                  </div>
-                ))}
+                <img src="/logos/7eleven.png" alt="7-Eleven" className="marquee-logo max-sm:h-6 md:h-10" data-testid="logo-client-1" />
+                <img src="/logos/doordash.png" alt="Doordash" className="marquee-logo max-sm:h-6 md:h-10" data-testid="logo-client-2" />
+                <img src="/logos/dyson.png" alt="Dyson" className="marquee-logo max-sm:h-6 md:h-10" data-testid="logo-client-3" />
+                <img src="/logos/grab.png" alt="Grab" className="marquee-logo max-sm:h-6 md:h-10" data-testid="logo-client-4" />
+                <img src="/logos/marriott.png" alt="Marriott" className="marquee-logo max-sm:h-6 md:h-10" data-testid="logo-client-5" />
+                <img src="/logos/mondelez.png" alt="Mondelez" className="marquee-logo max-sm:h-6 md:h-10" data-testid="logo-client-6" />
                 {/* Second set */}
-                {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
-                  <div 
-                    key={`${client}-2-${i}`}
-                    className="flex items-center justify-center h-12 max-sm:h-10 px-6 border border-border/50 bg-card/30 text-xs max-sm:text-[10px] font-mono tracking-wider dark:text-neutral-300"
-                  >
-                    {client}
-                  </div>
-                ))}
-                {/* Third set */}
-                {['APEX', 'NEXUS', 'QUANTUM', 'CIPHER', 'VECTOR'].map((client, i) => (
-                  <div 
-                    key={`${client}-3-${i}`}
-                    className="flex items-center justify-center h-12 max-sm:h-10 px-6 border border-border/50 bg-card/30 text-xs max-sm:text-[10px] font-mono tracking-wider dark:text-neutral-300"
-                  >
-                    {client}
-                  </div>
-                ))}
+                <img src="/logos/7eleven.png" alt="7-Eleven" className="marquee-logo max-sm:h-6 md:h-10" />
+                <img src="/logos/doordash.png" alt="Doordash" className="marquee-logo max-sm:h-6 md:h-10" />
+                <img src="/logos/dyson.png" alt="Dyson" className="marquee-logo max-sm:h-6 md:h-10" />
+                <img src="/logos/grab.png" alt="Grab" className="marquee-logo max-sm:h-6 md:h-10" />
+                <img src="/logos/marriott.png" alt="Marriott" className="marquee-logo max-sm:h-6 md:h-10" />
+                <img src="/logos/mondelez.png" alt="Mondelez" className="marquee-logo max-sm:h-6 md:h-10" />
               </div>
             </div>
           </div>
