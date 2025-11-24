@@ -26,7 +26,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border/40 backdrop-blur-sm bg-background/80">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="text-sm font-heading font-bold tracking-wide" data-testid="text-logo">
+            <div className="text-sm sm:text-base md:text-lg font-heading font-bold tracking-wide" data-testid="text-logo">
               bunnycode.ai
             </div>
             
@@ -76,7 +76,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section - Minimal */}
-      <section className="hero relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-2 dark:bg-black max-sm:pt-16 max-sm:pb-12">
+      <section className="hero relative min-h-screen flex flex-col items-center justify-center px-6 lg:px-8 overflow-hidden -mt-24 mb-2 dark:bg-black max-sm:pt-12 max-sm:pb-12">
         {/* Visual effects scoped to hero */}
         <div className="noise-overlay" />
         <div className="vertical-lines" />
@@ -278,7 +278,7 @@ export default function Home() {
       </section>
 
       {/* CTA Button */}
-      <div className="w-full flex justify-center pt-12 pb-8">
+      <div className="w-full flex justify-center pt-12 pb-8 dark:bg-black bg-background">
         <button
           onClick={() => {
             const url = "https://calendly.com/akademischesghosteditor/30min?hide_event_type_details=1";
