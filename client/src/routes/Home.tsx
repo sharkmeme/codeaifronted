@@ -413,38 +413,29 @@ export default function Home() {
             </div>
             
             <div>
-              <h4 className="font-heading font-semibold text-sm max-sm:text-xs uppercase tracking-wide mb-4" data-testid="heading-footer-links">
+              <h4 className="font-heading font-semibold text-sm max-sm:text-xs uppercase tracking-wide mb-4">
                 Navigation
               </h4>
+
+              <div className="flex flex-col gap-2 mb-6">
+                <button onClick={() => scrollToSection('services')} className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center">Services</button>
+                <button onClick={() => scrollToSection('showcase')} className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center">Showcase</button>
+                <button onClick={() => scrollToSection('about')} className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center">About</button>
+                <button onClick={() => scrollToSection('contact')} className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center">Contact</button>
+              </div>
+
+              <h4 className="font-heading font-semibold text-sm max-sm:text-xs uppercase tracking-wide mb-4">
+                Ecosystem
+              </h4>
+
               <div className="flex flex-col gap-2">
-                <button 
-                  onClick={() => scrollToSection('services')}
-                  className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center"
-                  data-testid="link-footer-services"
-                >
-                  Services
-                </button>
-                <button 
-                  onClick={() => scrollToSection('showcase')}
-                  className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center"
-                  data-testid="link-footer-showcase"
-                >
-                  Showcase
-                </button>
-                <button 
-                  onClick={() => scrollToSection('about')}
-                  className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center"
-                  data-testid="link-footer-about"
-                >
-                  About
-                </button>
-                <button 
-                  onClick={() => scrollToSection('contact')}
-                  className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center"
-                  data-testid="link-footer-contact"
-                >
-                  Contact
-                </button>
+                <a href="https://bunny-honey-9a9aed.webflow.io" target="_blank" rel="noopener noreferrer" className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center">Bunny Honey</a>
+
+                <a href="https://bunny-honey-9a9aed.webflow.io/software" target="_blank" rel="noopener noreferrer" className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center">AI Software</a>
+
+                <a href="https://bunny-honey-9a9aed.webflow.io/studios" target="_blank" rel="noopener noreferrer" className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center">AI Film Studios</a>
+
+                <a href="https://bunny-honey-9a9aed.webflow.io/club-vip" target="_blank" rel="noopener noreferrer" className="text-sm max-sm:text-xs text-muted-foreground hover:text-foreground transition-colors text-left max-sm:text-center">Learn AI</a>
               </div>
             </div>
             
