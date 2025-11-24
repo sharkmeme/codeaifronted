@@ -273,9 +273,13 @@ export default function Home() {
       <div className="w-full flex justify-center pt-24 pb-12">
         <button
           onClick={() => {
-            (window as any).Calendly.initPopupWidget({
-              url: "https://calendly.com/akademischesghosteditor/30min?hide_event_type_details=1"
-            });
+            if ((window as any).Calendly) {
+              (window as any).Calendly.initPopupWidget({
+                url: "https://calendly.com/akademischesghosteditor/30min?hide_event_type_details=1"
+              });
+            } else {
+              console.error("Calendly script not loaded");
+            }
           }}
           className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-medium shadow-md transition-all duration-200"
           data-testid="button-book-session"
