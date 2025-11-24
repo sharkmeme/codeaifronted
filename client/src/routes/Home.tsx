@@ -298,7 +298,7 @@ export default function Home() {
             <img
               src="/logos/logosbrands.webp"
               alt="App Integrations"
-              className="w-full max-w-5xl rounded-lg shadow-sm transition-all duration-300 ease-out hover:scale-[1.02] hover:shadow-xl"
+              className="w-full max-w-5xl rounded-lg shadow-sm"
             />
           </div>
         </div>
