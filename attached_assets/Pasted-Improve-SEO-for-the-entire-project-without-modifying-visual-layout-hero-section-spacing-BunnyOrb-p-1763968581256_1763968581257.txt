@@ -1,0 +1,71 @@
+Improve SEO for the entire project without modifying visual layout, hero section spacing, BunnyOrb positioning, or any UI elements.
+
+Perform ONLY the following optimizations:
+
+1. Update the <head> section in client/index.html:
+   - Add <title>Bunnycode.ai — AI Automation Agency</title>
+   - Add meta description:
+     <meta name="description" content="AI-native automation systems, content engines, and workflow intelligence for creators and businesses.">
+   - Add canonical URL:
+     <link rel="canonical" href="https://bunnycode.ai" />
+   - Add meta robots:
+     <meta name="robots" content="index, follow" />
+   - Add viewport tag if missing:
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+2. Add Open Graph (OG) tags to improve social media previews:
+     <meta property="og:title" content="Bunnycode.ai — AI Automation for Creators & Businesses" />
+     <meta property="og:description" content="AI-native automation engines, workflow intelligence, and content automation systems built for modern creators and companies." />
+     <meta property="og:image" content="/favicon.png" />
+     <meta property="og:url" content="https://bunnycode.ai" />
+     <meta property="og:type" content="website" />
+
+3. Add Twitter Card tags:
+     <meta name="twitter:card" content="summary_large_image" />
+     <meta name="twitter:title" content="Bunnycode.ai — AI Automation Agency" />
+     <meta name="twitter:description" content="We build AI systems, automation engines, and intelligent workflows." />
+     <meta name="twitter:image" content="/favicon.png" />
+
+4. Add schema.org JSON-LD structured data to index.html:
+     <script type="application/ld+json">
+     {
+       "@context": "https://schema.org",
+       "@type": "Organization",
+       "name": "Bunnycode.ai",
+       "url": "https://bunnycode.ai",
+       "logo": "/favicon.png",
+       "description": "AI automation systems and intelligent content engines for creators and businesses."
+     }
+     </script>
+
+5. Create /public/robots.txt:
+   - Use:
+     User-agent: *
+     Allow: /
+
+6. Create /public/sitemap.xml listing all routes:
+   Include:
+   - https://bunnycode.ai/
+   - https://bunnycode.ai/get-automated
+   - https://bunnycode.ai/privacy-policy
+   - https://bunnycode.ai/terms-of-service
+
+7. Performance improvements (do NOT change layout):
+   - Preload important fonts in index.html.
+   - Ensure all images use WebP where possible.
+   - Make sure Vite build disables sourcemaps in production:
+       build: { sourcemap: false }
+   - Add loading="lazy" to non-critical images (NOT BunnyOrb).
+
+8. Confirm H1/H2/H3 hierarchy is SEO-valid but visually unchanged:
+   - Only ensure there is exactly one <h1>.
+   - DO NOT change text content or styling.
+
+9. Output a summary of all SEO improvements applied, and verify no UI files were visually modified.
+
+Do NOT modify:
+- The hero layout
+- BunnyOrb positioning
+- Any CSS spacing
+- Any component behavior
+- Any animations
