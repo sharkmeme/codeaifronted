@@ -701,11 +701,7 @@
     .mobile-orb,
     .bunny-orb--mobile {
       animation: none !important;
-      transform: none !important;
-      position: absolute !important;
-      top: 50% !important;
-      left: 50% !important;
-      z-index: auto !important;
+      transform: translate(-50%, -50%) !important;
     }
   }
 

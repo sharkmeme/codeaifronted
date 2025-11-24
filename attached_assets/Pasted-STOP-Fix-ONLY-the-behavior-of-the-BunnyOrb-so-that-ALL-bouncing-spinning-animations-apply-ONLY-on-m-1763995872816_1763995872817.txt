@@ -1,0 +1,71 @@
+STOP. Fix ONLY the behavior of the BunnyOrb so that ALL bouncing/spinning animations apply ONLY on mobile, and desktop returns to the original clean behavior:
+
+============================================================
+1) BUNNYORB.TSX FIX (Desktop = No Bounce/Spin)
+============================================================
+
+In client/src/components/BunnyOrb.tsx:
+
+• Detect mobile EXACTLY as:
+   const isMobile = typeof window !== "undefined" &&
+                    window.matchMedia("(max-width: 768px)").matches;
+
+• If NOT mobile:
+   - REMOVE any class that contains:
+       "mobile-orb"
+       "bunny-orb--mobile"
+   - Do NOT apply mobileBounceSpin or any mobile transform.
+   - KEEP mouse-follow and the original desktop transform only:
+       transform: translate(-50%, -50%);
+   - The ONLY classes should be:
+       "bunny-orb"  (+ optionally "bunny-orb--float" if reducedMotion is false)
+
+• If IS mobile:
+   - Apply:
+       "bunny-orb mobile-orb bunny-orb--mobile"
+   - Disable mouse-follow entirely for mobile.
+
+============================================================
+2) INDEX.CSS FIX (Remove ALL bounce/spin from desktop)
+============================================================
+
+Modify index.css:
+
+A) Add this guard to REMOVE mobile animation from desktop users:
+
+@media (min-width: 769px) {
+  .bunny-orb--mobile,
+  .mobile-orb {
+    animation: none !important;
+    transform: translate(-50%, -50%) !important;
+  }
+}
+
+B) Ensure base desktop orb stays centered:
+
+.bunny-orb {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+C) KEEP the mobileBounceSpin animation AS-IS
+but wrap ALL of its usage in:
+
+@media (max-width: 768px) {
+   .bunny-orb--mobile {
+      animation: mobileBounceSpin 6s ease-in-out infinite alternate;
+   }
+}
+
+============================================================
+RULES:
+- Do NOT modify any other files (Home.tsx, App.tsx, etc.).
+- Do NOT remove the mobileBounceSpin keyframes.
+- Desktop MUST have zero bounce/spin and correct mouse-follow.
+- Mobile MUST have the bounce + spin and top: 20% positioning.
+============================================================
+
+After modifying, show me a summary of the exact changes applied.
