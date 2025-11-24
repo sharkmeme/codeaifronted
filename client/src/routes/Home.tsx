@@ -283,6 +283,46 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Integrations Section */}
+      <section id="integrations" className="bg-background dark:bg-neutral-950 w-full pt-24 pb-24 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-center text-3xl md:text-4xl font-heading font-bold tracking-wide mb-8" data-testid="heading-integrations">
+            We Connect Your Apps and Services
+          </h2>
+
+          <p className="text-center max-w-2xl mx-auto mb-12 text-neutral-600 dark:text-neutral-300" data-testid="text-integrations-description">
+            From CRMs and payment processors to AI platforms, marketing suites, and cloud systems—we integrate everything into one unified automation engine. APIs, webhooks, custom scripts, and AI agents—whatever your stack looks like, we make it work together.
+          </p>
+
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8 place-items-center max-w-6xl mx-auto">
+            <img src="/logos/sap.png" alt="SAP" className="integration-logo" data-testid="logo-sap" />
+            <img src="/logos/sage.png" alt="Sage" className="integration-logo" data-testid="logo-sage" />
+            <img src="/logos/oracle.png" alt="Oracle" className="integration-logo" data-testid="logo-oracle" />
+            <img src="/logos/odoo.png" alt="Odoo" className="integration-logo" data-testid="logo-odoo" />
+            <img src="/logos/outlook.png" alt="Outlook" className="integration-logo" data-testid="logo-outlook" />
+            <img src="/logos/discord.png" alt="Discord" className="integration-logo" data-testid="logo-discord" />
+            <img src="/logos/teams.png" alt="Teams" className="integration-logo" data-testid="logo-teams" />
+            <img src="/logos/gmail.png" alt="Gmail" className="integration-logo" data-testid="logo-gmail" />
+            <img src="/logos/shopify.png" alt="Shopify" className="integration-logo" data-testid="logo-shopify" />
+            <img src="/logos/trello.png" alt="Trello" className="integration-logo" data-testid="logo-trello" />
+            <img src="/logos/stripe.png" alt="Stripe" className="integration-logo" data-testid="logo-stripe" />
+            <img src="/logos/salesforce.png" alt="Salesforce" className="integration-logo" data-testid="logo-salesforce" />
+            <img src="/logos/asana.png" alt="Asana" className="integration-logo" data-testid="logo-asana" />
+            <img src="/logos/hubspot.png" alt="Hubspot" className="integration-logo" data-testid="logo-hubspot" />
+            <img src="/logos/meta.png" alt="Meta" className="integration-logo" data-testid="logo-meta" />
+            <img src="/logos/notion.png" alt="Notion" className="integration-logo" data-testid="logo-notion" />
+            <img src="/logos/slack.png" alt="Slack" className="integration-logo" data-testid="logo-slack" />
+            <img src="/logos/drive.png" alt="Google Drive" className="integration-logo" data-testid="logo-drive" />
+            <img src="/logos/zoom.png" alt="Zoom" className="integration-logo" data-testid="logo-zoom" />
+            <img src="/logos/zapier.png" alt="Zapier" className="integration-logo" data-testid="logo-zapier" />
+            <img src="/logos/jira.png" alt="Jira" className="integration-logo" data-testid="logo-jira" />
+            <img src="/logos/zendesk.png" alt="Zendesk" className="integration-logo" data-testid="logo-zendesk" />
+            <img src="/logos/twitter.png" alt="Twitter" className="integration-logo" data-testid="logo-twitter" />
+            <img src="/logos/download.png" alt="Download" className="integration-logo" data-testid="logo-download" />
+          </div>
+        </div>
+      </section>
+
       {/* About Section */}
       <section id="about" className="pt-24 pb-24 px-6 lg:px-8 relative z-10 bg-neutral-50 dark:bg-neutral-950">
         <div className="max-w-7xl mx-auto px-4">

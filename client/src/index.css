@@ -644,4 +644,18 @@
     from { transform: translateX(0); }
     to { transform: translateX(-33.333%); }
   }
+
+  /* Integration Logo Hover Effects */
+  .integration-logo {
+    @apply h-10 opacity-80 cursor-pointer transition-all duration-200 ease-out hover:scale-110 hover:opacity-100;
+    filter: drop-shadow(0 0 0 transparent);
+  }
+
+  .integration-logo:hover {
+    filter: drop-shadow(0 0 6px rgba(0,140,255,0.45));
+  }
+
+  .dark .integration-logo:hover {
+    filter: drop-shadow(0 0 8px rgba(0,170,255,0.55));
+  }
 }
