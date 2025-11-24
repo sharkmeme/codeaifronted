@@ -11,7 +11,12 @@ export const allowedOrigins = [
   'https://www.bunnycode.ai',
   'http://localhost:5000',
   'http://localhost:3000',
+  'http://localhost:5173',
 ];
+
+function isVercelDomain(origin: string): boolean {
+  return origin.endsWith('.vercel.app');
+}
 
 export const corsOptions = {
   origin: function (origin: string | undefined, callback: (err: Error | null, allow?: boolean) => void) {
@@ -19,7 +24,11 @@ export const corsOptions = {
       return callback(null, true);
     }
     
-    if (allowedOrigins.indexOf(origin) !== -1 || !isProduction) {
+    const isAllowed = allowedOrigins.indexOf(origin) !== -1 || 
+                      isVercelDomain(origin) || 
+                      !isProduction;
+    
+    if (isAllowed) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
