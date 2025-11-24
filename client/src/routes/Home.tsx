@@ -278,7 +278,7 @@ export default function Home() {
       </section>
 
       {/* CTA Button */}
-      <div className="w-full flex justify-center pt-24 pb-12">
+      <div className="w-full flex justify-center pt-12 pb-8">
         <button
           onClick={() => {
             const url = "https://calendly.com/akademischesghosteditor/30min?hide_event_type_details=1";
