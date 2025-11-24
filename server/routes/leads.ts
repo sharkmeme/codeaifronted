@@ -20,9 +20,15 @@ const leadSchema = z.object({
 
 router.post("/", rateLimiter, async (req, res) => {
   try {
+    console.log("=== INCOMING REQUEST BODY ===");
+    console.log(JSON.stringify(req.body, null, 2));
+    
     const validation = leadSchema.safeParse(req.body);
     
     if (!validation.success) {
+      console.log("=== VALIDATION FAILED ===");
+      console.log(JSON.stringify(validation.error.errors, null, 2));
+      
       return res.status(400).json({ 
         success: false,
         error: "Invalid input data",
