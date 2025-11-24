@@ -1,0 +1,70 @@
+STOP. Apply ONLY the following two fixes in the frontend codebase.
+
+============================================================
+1) FIX MARQUEE TO BE TRULY INFINITE (NO GAP, NO PAUSE)
+============================================================
+
+Goal: The brand logos must scroll endlessly with zero pause,
+zero empty space, and no visible restart.
+
+Apply these changes:
+
+A) In client/src/index.css:
+- Replace the marquee animation completely with a true infinite loop.
+- Overwrite the current marquee-content + marquee-scroll definitions.
+
+Use this:
+
+.marquee-content {
+  display: flex;
+  gap: 3rem;
+  white-space: nowrap;
+  animation: marqueeLoop 18s linear infinite;
+}
+
+@keyframes marqueeLoop {
+  0%   { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+IMPORTANT:
+The component MUST contain two copies of the logos (first set + second set),
+so that -50% perfectly aligns set #2 with the viewport.
+
+Do NOT animate -33%. ONLY animate -50%.
+
+============================================================
+2) ADD “BACK TO HOME” BUTTON ON GET AUTOMATED PAGE
+============================================================
+
+Goal: On the /get-automated form page, show a clean button that
+links back to the landing page.
+
+In client/src/routes/GetAutomated.tsx:
+
+BEFORE the form, insert:
+
+import { Link } from "react-router-dom";
+
+Then INSIDE the JSX, ABOVE the form container, insert:
+
+<div className="w-full text-left mb-4">
+  <Link
+    to="/"
+    className="text-sm text-blue-600 hover:underline"
+  >
+    ← Back to Home
+  </Link>
+</div>
+
+Do NOT change any other layout.
+Do NOT modify form logic.
+Do NOT wrap in additional containers.
+
+============================================================
+RULES:
+- Modify ONLY: index.css + GetAutomated.tsx.
+- Do NOT alter other pages or components.
+- Keep all desktop + mobile layouts unchanged except for the fixes above.
+- After applying, show only the exact diff of modified sections.
+============================================================
