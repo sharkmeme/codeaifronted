@@ -9,13 +9,13 @@ const router = Router();
 const isProduction = process.env.NODE_ENV === 'production';
 
 const leadSchema = z.object({
-  name: z.string().min(2).max(100),
-  email: z.string().email(),
-  phone: z.string().min(5).max(20).optional(),
-  socials: z.string().max(500).optional(),
-  projectType: z.string().min(2).max(100),
-  description: z.string().min(10).max(2000),
-  extraInfo: z.string().max(2000).optional(),
+  name: z.string().min(2, "Name must be at least 2 characters").max(100),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().max(20).optional().or(z.literal('')),
+  socials: z.string().max(500).optional().or(z.literal('')),
+  projectType: z.string().min(1, "Project type is required").max(100),
+  description: z.string().min(10, "Description must be at least 10 characters").max(2000),
+  extraInfo: z.string().max(2000).optional().or(z.literal('')),
 });
 
 router.post("/", rateLimiter, async (req, res) => {
